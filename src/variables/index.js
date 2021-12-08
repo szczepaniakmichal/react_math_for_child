@@ -1,0 +1,1 @@
+export const paddingButton = '10px 30px';
