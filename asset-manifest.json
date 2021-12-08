@@ -1,23 +1,22 @@
 {
   "files": {
-    "main.css": "/react_math_for_child/static/css/main.a617e044.chunk.css",
-    "main.js": "/react_math_for_child/static/js/main.48155311.chunk.js",
-    "main.js.map": "/react_math_for_child/static/js/main.48155311.chunk.js.map",
-    "runtime-main.js": "/react_math_for_child/static/js/runtime-main.accb98f2.js",
-    "runtime-main.js.map": "/react_math_for_child/static/js/runtime-main.accb98f2.js.map",
-    "static/js/2.1ecd8868.chunk.js": "/react_math_for_child/static/js/2.1ecd8868.chunk.js",
-    "static/js/2.1ecd8868.chunk.js.map": "/react_math_for_child/static/js/2.1ecd8868.chunk.js.map",
-    "static/js/3.6c79f1b8.chunk.js": "/react_math_for_child/static/js/3.6c79f1b8.chunk.js",
-    "static/js/3.6c79f1b8.chunk.js.map": "/react_math_for_child/static/js/3.6c79f1b8.chunk.js.map",
+    "main.css": "/react_math_for_child/static/css/main.ea1455b2.chunk.css",
+    "main.js": "/react_math_for_child/static/js/main.d56267c2.chunk.js",
+    "main.js.map": "/react_math_for_child/static/js/main.d56267c2.chunk.js.map",
+    "runtime-main.js": "/react_math_for_child/static/js/runtime-main.202d3b93.js",
+    "runtime-main.js.map": "/react_math_for_child/static/js/runtime-main.202d3b93.js.map",
+    "static/js/2.89c90d0e.chunk.js": "/react_math_for_child/static/js/2.89c90d0e.chunk.js",
+    "static/js/2.89c90d0e.chunk.js.map": "/react_math_for_child/static/js/2.89c90d0e.chunk.js.map",
+    "static/js/3.6e35eebd.chunk.js": "/react_math_for_child/static/js/3.6e35eebd.chunk.js",
+    "static/js/3.6e35eebd.chunk.js.map": "/react_math_for_child/static/js/3.6e35eebd.chunk.js.map",
     "index.html": "/react_math_for_child/index.html",
-    "static/css/main.a617e044.chunk.css.map": "/react_math_for_child/static/css/main.a617e044.chunk.css.map",
-    "static/js/2.1ecd8868.chunk.js.LICENSE.txt": "/react_math_for_child/static/js/2.1ecd8868.chunk.js.LICENSE.txt",
-    "static/media/logo.6ce24c58.svg": "/react_math_for_child/static/media/logo.6ce24c58.svg"
+    "static/css/main.ea1455b2.chunk.css.map": "/react_math_for_child/static/css/main.ea1455b2.chunk.css.map",
+    "static/js/2.89c90d0e.chunk.js.LICENSE.txt": "/react_math_for_child/static/js/2.89c90d0e.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.accb98f2.js",
-    "static/js/2.1ecd8868.chunk.js",
-    "static/css/main.a617e044.chunk.css",
-    "static/js/main.48155311.chunk.js"
+    "static/js/runtime-main.202d3b93.js",
+    "static/js/2.89c90d0e.chunk.js",
+    "static/css/main.ea1455b2.chunk.css",
+    "static/js/main.d56267c2.chunk.js"
   ]
 }
