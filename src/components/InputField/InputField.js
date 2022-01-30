@@ -3,7 +3,7 @@ import Div from 'styled-kit/Div';
 
 import { Label, Input } from './styles';
 
-function InputField({title, ...props}) {
+function InputField({title}) {
     return (
         <Div padding="5px 0">
             <Label>{title}

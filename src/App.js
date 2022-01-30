@@ -1,8 +1,8 @@
 import Div from 'styled-kit/Div';
 
-import './App.css';
-import Button from "./components/Button/Button";
-import InputField from "./components/InputField/InputField";
+import 'App.css';
+import Button from "components/Button/Button";
+import InputField from "components/InputField/InputField";
 
 
 function App() {

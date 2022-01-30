@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
-import { black, orange, white } from "../../colors";
-import { paddingButton } from "../../variables";
+import { black, orange, white } from "colors";
+import { paddingButton } from "variables";
 
 export const Wrapper = styled.button`
   width: max-content;
