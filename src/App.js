@@ -79,9 +79,7 @@ useEffect(() => {
         const howManyValue = Number(document.querySelector(".how-many-value").value);
         const toValue = Number(document.querySelector(".to-value").value);
         const taskList = document.querySelector('.task-list');
-        if (taskList.hasChildNodes()) {
-            window.confirm("You have tasks to do. Do You want create new tasks?")
-        }
+        if (taskList.hasChildNodes() && window.confirm("You have tasks to do. Do You want create new tasks?") === false) return;
         removeChild(taskList);
         getMathOperation();
         addTask(howManyTask, taskList, 'li', howManyValue, toValue);
