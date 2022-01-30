@@ -5,3 +5,11 @@
 .task-list__result.in-correct {
     background-color: red;
 }
+
+.task-list {
+    list-style-type:decimal-leading-zero;
+}
+
+.oneTask--js {
+    margin-left: 20px;
+}
