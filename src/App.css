@@ -1,0 +1,7 @@
+.task-list__result.correct {
+    background-color: yellowgreen;
+}
+
+.task-list__result.in-correct {
+    background-color: red;
+}

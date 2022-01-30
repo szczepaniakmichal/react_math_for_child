@@ -4,11 +4,26 @@ import 'App.css';
 import Button from "components/Button/Button";
 import InputField from "components/InputField/InputField";
 import InputMathOperators from "components/InputMathOperators/InputMathOperators";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 
 var stringMath = require('string-math');
 
 function App() {
+    const [howManyTasks, setHowManyTasks ] = useState(10)
+    const [howManyValues, setHowManyValues ] = useState(2)
+    const [maximumSingleValue, setMaximumSingleValue ] = useState(50)
+
+    const handleHowManyTasks = (e) => {
+        setHowManyTasks(e.target.value)
+    }
+
+    const handleHowManyValues = (e) => {
+        setHowManyValues(e.target.value)
+    }
+
+    const handleMaximumSingleValue = (e) => {
+        setMaximumSingleValue(e.target.value)
+    }
 
 useEffect(() => {
     const btnCheckAllTask = document.querySelector('.btn-check-task');
@@ -26,8 +41,6 @@ useEffect(() => {
     }
 
     function addTask(howManyTask, nodeParent, child, howManyValue, toValue) {
-        // console.log(arguments);
-
         const mathOperators = getMathOperation();
 
         for (let i = 0; i < howManyTask; i++) {
@@ -63,11 +76,12 @@ useEffect(() => {
 
     function generateTask() {
         const howManyTask = Number(document.querySelector(".how-many-task").value);
-        console.log("howManyTask", howManyTask)
         const howManyValue = Number(document.querySelector(".how-many-value").value);
-        console.log("howManyTask", howManyTask)
         const toValue = Number(document.querySelector(".to-value").value);
         const taskList = document.querySelector('.task-list');
+        if (taskList.hasChildNodes()) {
+            window.confirm("You have tasks to do. Do You want create new tasks?")
+        }
         removeChild(taskList);
         getMathOperation();
         addTask(howManyTask, taskList, 'li', howManyValue, toValue);
@@ -91,7 +105,7 @@ useEffect(() => {
                 answerInput.classList.remove('in-correct');
                 answerInput.classList.remove('correct')
                 return answerInput.setAttribute("placeholder", "complete the result")
-            };
+            }
 
             const correctAnswer = document.createElement('span');
             correctAnswer.classList.add('result-text');
@@ -103,7 +117,7 @@ useEffect(() => {
             inCorrectAnswer.classList.add('in-correct-answer');
             inCorrectAnswer.textContent = 'Upsss... spróbuj jeszcze raz';
 
-            let counter = Number(stringMath(allNumbers.join('')).toFixed(2));
+            let counter = Number(stringMath(allNumbers.slice(0, -1).join('')).toFixed(2));
 
             if (counter === userAnswer) {
                 answerInput.classList.add('correct');
@@ -132,9 +146,9 @@ useEffect(() => {
     return (
     <Div padding={20} column>
         <Div column>
-            <InputField title="how many tasks?" className="how-many-task"/>
-            <InputField title="how many values to calculate?" className="how-many-value"/>
-            <InputField title="maximum single value?" className="to-value"/>
+            <InputField title="how many tasks?" className="how-many-task" value={howManyTasks} onChange={handleHowManyTasks}/>
+            <InputField title="how many values to calculate?" className="how-many-value" value={howManyValues} onChange={handleHowManyValues}/>
+            <InputField title="maximum single value?" className="to-value" value={maximumSingleValue} onChange={handleMaximumSingleValue}/>
         </Div>
         <Div column>
             <p>Type of mathematical operations:</p>
@@ -148,7 +162,7 @@ useEffect(() => {
                     isBolder
                     className="btn-generate-task-js"
             />
-            <ul className="task-list"></ul>
+            <ul className="task-list" />
             <Button label='check task' className='btn-check-task'/>
         </Div>
     </Div>
