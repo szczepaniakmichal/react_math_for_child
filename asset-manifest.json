@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/react_math_for_child/static/css/main.2a83114e.chunk.css",
+    "main.css": "/react_math_for_child/static/css/main.355a15ce.chunk.css",
     "main.js": "/react_math_for_child/static/js/main.9c192cd7.chunk.js",
     "main.js.map": "/react_math_for_child/static/js/main.9c192cd7.chunk.js.map",
     "runtime-main.js": "/react_math_for_child/static/js/runtime-main.41987767.js",
@@ -10,13 +10,13 @@
     "static/js/3.08f45039.chunk.js": "/react_math_for_child/static/js/3.08f45039.chunk.js",
     "static/js/3.08f45039.chunk.js.map": "/react_math_for_child/static/js/3.08f45039.chunk.js.map",
     "index.html": "/react_math_for_child/index.html",
-    "static/css/main.2a83114e.chunk.css.map": "/react_math_for_child/static/css/main.2a83114e.chunk.css.map",
+    "static/css/main.355a15ce.chunk.css.map": "/react_math_for_child/static/css/main.355a15ce.chunk.css.map",
     "static/js/2.2d45c96a.chunk.js.LICENSE.txt": "/react_math_for_child/static/js/2.2d45c96a.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.41987767.js",
     "static/js/2.2d45c96a.chunk.js",
-    "static/css/main.2a83114e.chunk.css",
+    "static/css/main.355a15ce.chunk.css",
     "static/js/main.9c192cd7.chunk.js"
   ]
 }
