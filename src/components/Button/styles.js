@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 import { black, orange, white } from "colors";
-import { paddingButton } from "variables";
+import { paddingButton, transition } from "variables";
 
 export const Wrapper = styled.button`
   width: max-content;
@@ -16,6 +16,6 @@ export const Wrapper = styled.button`
   
   &:hover {
     color: ${white};
-    transition: .5s;
+    transition: ${transition};
   }
 `;

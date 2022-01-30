@@ -1,16 +1,15 @@
 import React from 'react';
-import Div from 'styled-kit/Div';
 
-import { Label, Input } from './styles';
+import { Label, Input, WrapperInputField } from './styles';
 
 function InputField({title}) {
     return (
-        <Div padding="5px 0">
+        <WrapperInputField>
             <Label>{title}
                 <Input type="number" className="input-value how-many-task"
                        placeholder={title} />
             </Label>
-        </Div>
+        </WrapperInputField>
     );
 }
 
