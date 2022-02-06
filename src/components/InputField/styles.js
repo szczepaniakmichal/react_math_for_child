@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { paddingTopBottom } from "variables";
+import { outlineColor, paddingTopBottom } from "variables";
 
 export const WrapperInputField = styled.div`
   padding: ${paddingTopBottom};
@@ -13,4 +13,5 @@ export const Label = styled.label`
 
 export const Input = styled.input`
   padding: 5px;
+  outline-color: ${outlineColor};
 `;

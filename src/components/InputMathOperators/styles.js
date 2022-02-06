@@ -1,15 +1,15 @@
 import styled from 'styled-components';
 
 import { orange } from 'colors';
-import { paddingTopBottom, transition } from "variables";
+import { borderWidth, outlineColor, paddingTopBottom, transition } from "variables";
 
 export const WrapperInputMathOperators = styled.div`
   padding: ${paddingTopBottom};
-  border: 1px solid transparent;
+  border: ${borderWidth} solid transparent;
   transition: ${transition};
   
   &:hover {
-    border: 1px solid ${orange};
+    border: ${borderWidth} solid ${orange};
   }
 `;
 
@@ -23,4 +23,5 @@ export const Label = styled.label`
 export const Input = styled.input`
   width: 20px;
   height: 20px;
+  outline-color: ${outlineColor};
 `;

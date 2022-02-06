@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 import { black, orange, white } from "colors";
-import { paddingButton, transition } from "variables";
+import { outlineColor, paddingButton, transition } from "variables";
 
 export const Wrapper = styled.button`
   width: max-content;
@@ -13,6 +13,7 @@ export const Wrapper = styled.button`
   font-weight: ${(props) => props.isBolder ? 700 : 400};
   text-transform: uppercase;
   border: none;
+  outline-color: ${outlineColor};      
   
   &:hover {
     color: ${white};
