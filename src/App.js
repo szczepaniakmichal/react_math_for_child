@@ -139,7 +139,7 @@ useEffect(() => {
     btnCheckAllTask.addEventListener('click', checkAllTask);
 
     test();
-})
+}, [])
 
     return (
     <Div padding={20} column>
