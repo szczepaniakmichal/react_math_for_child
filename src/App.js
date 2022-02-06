@@ -58,20 +58,35 @@ useEffect(() => {
                 const randomMathOperator = mathOperators[Math.floor(Math.random() * mathOperators.length)] || '+';
                 return (
                     `<span class="number">${number}</span>
-                ${index === numberValue.length - 1 ? '<span> = </span>' : `<span>${randomMathOperator} </span>`}
-`
+                    ${index === numberValue.length - 1 ? '<span> = </span>' : `<span>${randomMathOperator} </span>`}
+                    `
                 )
             })
 
             task.innerHTML = `
         <span class="oneTask--js">${matchTask.join('')}</span>
-        <span>
+        <span class="oneTask__result>
             <label for="result${i}"></label>
             <input type="number" class="task-list__result" id="result${i}">
         </span>
         `;
             nodeParent.appendChild(task);
         }
+    }
+
+    function clearClass(elements, nameClass) {
+        elements.forEach(el => el.classList.remove(nameClass));
+    }
+
+    function focusTask() {
+        const taskListItem = document.querySelectorAll('.task-list__item');
+        const taskListResult = document.querySelectorAll('.task-list__result');
+        taskListResult.forEach(input => {
+           input.addEventListener('focus', () => {
+               clearClass(taskListItem, 'focus')
+               input.closest('.task-list__item').classList.add('focus');
+           })
+        })
     }
 
     function generateTask() {
@@ -83,6 +98,7 @@ useEffect(() => {
         removeChild(taskList);
         getMathOperation();
         addTask(howManyTask, taskList, 'li', howManyValue, toValue);
+        focusTask();
     }
 
     function checkAllTask() {
@@ -108,7 +124,7 @@ useEffect(() => {
             const correctAnswer = document.createElement('span');
             correctAnswer.classList.add('result-text');
             correctAnswer.classList.add('correct-answer');
-            correctAnswer.textContent = 'Super to poprawny wynik :)';
+            correctAnswer.textContent = 'Super, to poprawny wynik :)';
 
             const inCorrectAnswer = document.createElement('span');
             inCorrectAnswer.classList.add('result-text');
