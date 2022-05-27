@@ -4,6 +4,8 @@ import { black, orange, white } from "colors";
 import { outlineColor, paddingButton, transition } from "variables";
 
 export const Wrapper = styled.button`
+  position: ${({sticky}) => sticky && 'sticky'};
+  bottom: ${({sticky}) => sticky && '0px'};
   width: max-content;
   padding: ${paddingButton};
   margin: 10px 0;
@@ -18,5 +20,9 @@ export const Wrapper = styled.button`
   &:hover {
     color: ${white};
     transition: ${transition};
+  }
+  
+  @media screen and (max-width: 768px) {
+    width: 100%;
   }
 `;

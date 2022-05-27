@@ -25,6 +25,8 @@ function App() {
         setMaximumSingleValue(e.target.value)
     }
 
+    const goBackToTop = () => window.scroll({top: 0, behavior: 'smooth'});
+
 useEffect(() => {
     const btnCheckAllTask = document.querySelector('.btn-check-task');
 
@@ -177,8 +179,16 @@ useEffect(() => {
                     className="btn-generate-task-js"
             />
             <ul className="task-list" />
-            <Button label='check task' className='btn-check-task'/>
+            <Button label='check task'
+                    className='btn-check-task'
+            />
         </Div>
+        <Button
+            onClick={goBackToTop}
+            label='back to top'
+            className='btn-go-up'
+            sticky
+        />
     </Div>
   );
 }
