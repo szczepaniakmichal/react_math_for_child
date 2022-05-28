@@ -9,7 +9,7 @@ export const Wrapper = styled.button`
   width: max-content;
   padding: ${paddingButton};
   margin: 10px 0;
-  background-color: ${(props) => props.backgroundColor ? props.backgroundColor : orange };
+  background-color: ${(props) => props.backgroundColor ? props.backgroundColor : 'rgba(147, 131, 108, 0.3)' };
   color: ${(props) => props.color ? props.color : black};
   font-size: ${(props) => props.fontSize ? props.fontSize : '1.5rem' };
   font-weight: ${(props) => props.isBolder ? 700 : 400};
@@ -18,8 +18,9 @@ export const Wrapper = styled.button`
   outline-color: ${outlineColor};      
   
   &:hover {
-    color: ${white};
     transition: ${transition};
+    background-color: ${(props) => props.backgroundColor ? props.backgroundColor : 'rgba(147, 131, 108, 0.5)' };
+    filter: blur(0.5px);
   }
   
   @media screen and (max-width: 768px) {

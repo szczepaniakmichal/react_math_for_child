@@ -179,16 +179,19 @@ useEffect(() => {
                     className="btn-generate-task-js"
             />
             <ul className="task-list" />
+
+        </Div>
+        <div style={{position: 'sticky', bottom: 0}}>
             <Button label='check task'
                     className='btn-check-task'
             />
-        </Div>
-        <Button
-            onClick={goBackToTop}
-            label='back to top'
-            className='btn-go-up'
-            sticky
-        />
+            <Button
+                onClick={goBackToTop}
+                label='back to top'
+                className='btn-go-up'
+            />
+        </div>
+
     </Div>
   );
 }
