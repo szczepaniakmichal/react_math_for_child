@@ -1,12 +1,11 @@
 import styled from "styled-components";
 
 import { black, orange, white } from "colors";
-import { outlineColor, paddingButton, transition } from "variables";
+import { borderRadius, outlineColor, paddingButton, rwdSmallDevices, rwdTablet, transition } from "variables";
 
-export const Wrapper = styled.button`
+export const ButtonWrapper = styled.button`
   position: ${({sticky}) => sticky && 'sticky'};
   bottom: ${({sticky}) => sticky && '0px'};
-  width: max-content;
   padding: ${paddingButton};
   background-color: ${(props) => props.backgroundColor ? props.backgroundColor : 'rgba(147, 131, 108, 0.3)' };
   color: ${(props) => props.color ? props.color : black};
@@ -14,15 +13,22 @@ export const Wrapper = styled.button`
   font-weight: ${(props) => props.isBolder ? 700 : 400};
   text-transform: uppercase;
   border: 1px solid white;
-  outline-color: ${outlineColor};      
+  border-radius: ${borderRadius};
+  outline-color: ${outlineColor};     
   
   &:hover {
     transition: ${transition};
     background-color: ${(props) => props.backgroundColor ? props.backgroundColor : 'rgba(147, 131, 108, 0.5)' };
     filter: blur(0.5px);
   }
-  
-  @media screen and (max-width: 768px) {
-    width: 100%;
+
+  @media screen and (${rwdSmallDevices}) {
+    width: max-content;
   }
+`;
+
+export const GroupButtonWrapper = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
 `;

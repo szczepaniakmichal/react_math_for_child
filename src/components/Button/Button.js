@@ -1,11 +1,11 @@
 import React from 'react';
-import { Wrapper } from "./styles";
+import { ButtonWrapper } from "./styles";
 
 function Button({label, ...props}) {
     return (
-        <Wrapper {...props}>
+        <ButtonWrapper {...props}>
             {label}
-        </Wrapper>
+        </ButtonWrapper>
     );
 }
 
