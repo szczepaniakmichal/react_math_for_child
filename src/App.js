@@ -177,6 +177,7 @@ useEffect(() => {
             <Button label='generate task'
                     isBolder
                     className="btn-generate-task-js"
+                    backgroundColor='silver'
             />
             <ul className="task-list" />
 
@@ -184,11 +185,13 @@ useEffect(() => {
         <div style={{position: 'sticky', bottom: 0}}>
             <Button label='check task'
                     className='btn-check-task'
+                    backgroundColor='silver'
             />
             <Button
                 onClick={goBackToTop}
                 label='back to top'
                 className='btn-go-up'
+                backgroundColor='silver'
             />
         </div>
 

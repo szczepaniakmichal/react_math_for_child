@@ -8,13 +8,12 @@ export const Wrapper = styled.button`
   bottom: ${({sticky}) => sticky && '0px'};
   width: max-content;
   padding: ${paddingButton};
-  margin: 10px 0;
   background-color: ${(props) => props.backgroundColor ? props.backgroundColor : 'rgba(147, 131, 108, 0.3)' };
   color: ${(props) => props.color ? props.color : black};
   font-size: ${(props) => props.fontSize ? props.fontSize : '1.5rem' };
   font-weight: ${(props) => props.isBolder ? 700 : 400};
   text-transform: uppercase;
-  border: none;
+  border: 1px solid white;
   outline-color: ${outlineColor};      
   
   &:hover {
