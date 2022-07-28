@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 
 import { black, orange, white } from "colors";
 import { borderRadius, outlineColor, paddingButton, rwdSmallDevices, rwdTablet, transition } from "variables";
@@ -32,3 +32,109 @@ export const GroupButtonWrapper = styled.div`
   flex-wrap: wrap;
   flex-direction: column;
 `;
+
+export const pulseLight = keyframes`
+  0% {
+    background-position: right;
+    background-image: linear-gradient(
+               to right,
+               transparent 0%,
+               rgba(255,255,255,0.4) 50%,
+               transparent 66%
+       )
+  }
+  50% {
+    background-position: right;
+    background-image: linear-gradient(
+            to right,
+            transparent 33%,
+            rgba(255,255,255,0.4) 50%,
+            transparent 66%
+    )
+  }
+  0% {
+    background-position: right;
+    background-image: linear-gradient(
+            to right,
+            transparent 100%,
+            rgba(255,255,255,0.4) 50%,
+            transparent 66%
+    )
+  }
+`;
+
+
+
+export const GlassButtonWrapper = styled.button`
+  color: #000;
+  background-color: transparent;
+  font-weight: 400;
+  font-size: 1.2rem;
+  line-height: 1.8rem;
+  margin: .5rem 0;
+  padding: .3rem 1.9rem;
+  width: auto;
+  max-width: 98%;
+  //border: solid transparent .2rem;
+  display: inline-block;
+  text-align: center;
+  text-decoration: none;
+  box-sizing: border-box;
+  
+  animation: ${pulseLight} 3s infinite;
+  
+       border: 2px solid #fff;
+       border-radius: 3px;
+       text-transform: uppercase;
+       -webkit-transition: 0.3s;
+       transition: 0.3s;
+  
+  &:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    text-decoration: none;
+  }
+  
+`;
+
+// .white {
+//     border: 2px solid #fff;
+//     border-radius: 3px;
+//     font-size: 1.8rem;
+//     text-transform: uppercase;
+//     color: #fff;
+//     line-height: 3.8rem;
+//     width: 100%;
+//     max-width: 320px;
+//     -webkit-transition: 0.3s;
+//     transition: 0.3s;
+// }
+
+// .white:hover {
+//     background-color: rgba(255, 255, 255, 0.2);
+// }
+
+// .pulse-light {
+//     background-image: linear-gradient(
+//         to right,
+//         transparent 33%,
+//         rgba(255,255,255,0.4) 50%,
+//         transparent 66%
+// );
+//     background-size:300% 100%;
+//     animation: shine 5s infinite;
+// }
+
+
+
+// .pulse-dark {
+//     background-image: linear-gradient(
+//         to right,
+//         transparent 33%,
+//         rgba(0,0,0,0.1) 50%,
+//         transparent 66%
+// );
+//     background-size:300% 100%;
+//     animation: shine 5s infinite;
+// }
+
+

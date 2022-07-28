@@ -1,11 +1,15 @@
 import React from 'react';
-import { ButtonWrapper } from "./styles";
+import { ButtonWrapper, GlassButtonWrapper } from "./styles";
 
 function Button({label, ...props}) {
     return (
-        <ButtonWrapper {...props}>
+        // <ButtonWrapper {...props}>
+        //     {label}
+        // </ButtonWrapper>
+
+        <GlassButtonWrapper {...props}>
             {label}
-        </ButtonWrapper>
+        </GlassButtonWrapper>
     );
 }
 
