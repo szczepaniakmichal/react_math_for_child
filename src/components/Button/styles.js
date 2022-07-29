@@ -35,65 +35,56 @@ export const GroupButtonWrapper = styled.div`
 
 export const pulseLight = keyframes`
   0% {
-    background-position: right;
     background-image: linear-gradient(
                to right,
-               transparent 0%,
+               transparent 33%,
                rgba(255,255,255,0.4) 50%,
                transparent 66%
-       )
+       );
+           background-size:300% 100%;
+	  
   }
-  50% {
+  100% {
     background-position: right;
     background-image: linear-gradient(
             to right,
             transparent 33%,
             rgba(255,255,255,0.4) 50%,
             transparent 66%
-    )
-  }
-  0% {
-    background-position: right;
-    background-image: linear-gradient(
-            to right,
-            transparent 100%,
-            rgba(255,255,255,0.4) 50%,
-            transparent 66%
-    )
+    );
+    background-size:300% 100%;
   }
 `;
 
 
 
 export const GlassButtonWrapper = styled.button`
-  color: #000;
+  color: ${(props) => props.color ? props.color : '#fff'};
   background-color: transparent;
   font-weight: 400;
   font-size: 1.2rem;
   line-height: 1.8rem;
   margin: .5rem 0;
   padding: .3rem 1.9rem;
-  width: auto;
-  max-width: 98%;
-  //border: solid transparent .2rem;
+  width: 100%;
   display: inline-block;
   text-align: center;
   text-decoration: none;
   box-sizing: border-box;
-  
-  animation: ${pulseLight} 3s infinite;
+	
+  animation-name: ${pulseLight};
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
   
        border: 2px solid #fff;
        border-radius: 3px;
        text-transform: uppercase;
-       -webkit-transition: 0.3s;
        transition: 0.3s;
   
   &:hover {
     background-color: rgba(255, 255, 255, 0.2);
     text-decoration: none;
   }
-  
 `;
 
 // .white {
