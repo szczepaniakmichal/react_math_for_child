@@ -70,18 +70,21 @@ export const GlassButtonWrapper = styled.button`
   display: inline-block;
   text-align: center;
   text-decoration: none;
+  text-transform: uppercase;
   box-sizing: border-box;
 	
-  animation-name: ${pulseLight};
-  animation-duration: 3s;
-  animation-iteration-count: infinite;
+  // animation-name: ${pulseLight};
+  // animation-duration: 3s;
+  // animation-iteration-count: infinite;
   
-       border: 2px solid #fff;
-       border-radius: 3px;
-       text-transform: uppercase;
-       transition: 0.3s;
+	border: 2px solid #fff;
+  border-radius: ${borderRadius};
+	transition: 0.3s;
   
   &:hover {
+    animation-name: ${pulseLight};
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
     background-color: rgba(255, 255, 255, 0.2);
     text-decoration: none;
   }
