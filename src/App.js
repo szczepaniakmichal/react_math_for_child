@@ -45,7 +45,6 @@ function App() {
         </Div>
         <Div column>
             <Button label='generate task'
-                    isBolder
                     backgroundColor='silver'
             />
         </Div>
