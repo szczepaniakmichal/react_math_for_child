@@ -1,13 +1,14 @@
-import { orange } from "../colors";
+import { white } from "../colors";
 
 export const paddingButton = '10px 30px';
 export const paddingTopBottom = '3px 0';
 
 export const borderWidth = '2px';
 export const borderRadius = '4px';
+export const border = `${borderWidth} ${white} solid`;
 
 export const transition = '.5s';
-export const outlineColor = `${orange}`;
+export const outlineColor = `${white}`;
 
 // RWD
 

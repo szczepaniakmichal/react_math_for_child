@@ -1,16 +1,16 @@
 import styled from 'styled-components';
 
-import { orange, white } from 'colors';
-import { borderRadius, borderWidth, outlineColor, paddingTopBottom, transition } from "variables";
+import { white } from 'colors';
+import { borderRadius, borderWidth, transition, border } from "variables";
+import {pulseLight} from "components/Button/styles";
 
 export const WrapperInputMathOperators = styled.div`
-  padding: ${paddingTopBottom};
   border: ${borderWidth} solid transparent;
-	border-radius: ${borderRadius};
+  border-radius: ${borderRadius};
   transition: ${transition};
   
   &:hover {
-    border: ${borderWidth} solid ${white};
+    border: ${border};
   }
 `;
 
@@ -20,10 +20,16 @@ export const Label = styled.label`
   justify-content: space-between;
   padding: 0 5px ;
   color: ${white};
+
+  &:hover {
+    animation-name: ${pulseLight};
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+    background-color: rgba(255, 255, 255, 0.2);
+  }
 `;
 
 export const Input = styled.input`
   width: 20px;
   height: 20px;
-  outline-color: ${outlineColor};
 `;

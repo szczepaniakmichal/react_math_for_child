@@ -1,7 +1,7 @@
 import styled, { keyframes } from "styled-components";
 
-import { black, orange, white } from "colors";
-import { borderRadius, outlineColor, paddingButton, rwdSmallDevices, rwdTablet, transition } from "variables";
+import { black } from "colors";
+import { border, borderRadius, outlineColor, paddingButton, rwdSmallDevices, transition } from "variables";
 
 export const ButtonWrapper = styled.button`
   position: ${({sticky}) => sticky && 'sticky'};
@@ -72,14 +72,10 @@ export const GlassButtonWrapper = styled.button`
   text-decoration: none;
   text-transform: uppercase;
   box-sizing: border-box;
-	
-  // animation-name: ${pulseLight};
-  // animation-duration: 3s;
-  // animation-iteration-count: infinite;
   
-	border: 2px solid #fff;
+  border: ${border};
   border-radius: ${borderRadius};
-	transition: 0.3s;
+  transition: 0.3s;
   
   &:hover {
     animation-name: ${pulseLight};
