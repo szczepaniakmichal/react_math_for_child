@@ -5,7 +5,7 @@ import { Input, Label, WrapperInputMathOperators } from './styles'
 function InputMathOperators({type, value}) {
     return (
         <WrapperInputMathOperators>
-            <Label className="math-operation" for={type}>
+            <Label for={type}>
                 {type}
                 <Input type="checkbox"
                        value={value}

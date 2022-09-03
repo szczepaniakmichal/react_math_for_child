@@ -55,13 +55,11 @@ function App() {
 
         <GroupButtonWrapper style={{position: 'sticky', bottom: 0}}>
             <Button label='check task'
-                    className='btn-check-task'
                     backgroundColor='silver'
             />
             <Button
                 onClick={goBackToTop}
                 label='back to top'
-                className='btn-go-up'
                 backgroundColor='silver'
             />
         </GroupButtonWrapper>

@@ -10,7 +10,7 @@ export const WrapperInputField = styled.div`
 export const Label = styled.label`
   width: 100%;
   display: flex;
-  flex-direction: column;
+  flex-direction: ${({horizontalLabel}) => horizontalLabel ? 'row' : 'column'} ;
 	color: ${white};
 `;
 
@@ -28,5 +28,10 @@ export const Input = styled.input`
     animation-iteration-count: infinite;
     background-color: rgba(255, 255, 255, 0.2);
     //text-decoration: none;
+  }
+  
+  &::placeholder {
+    color: ${white};
+    opacity: .6;
   }
 `;

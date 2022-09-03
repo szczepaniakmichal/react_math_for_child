@@ -1,12 +1,11 @@
 import React from 'react';
 import { TaskListWrapper } from "./styles";
+import ListItem from 'components/ListItem/ListItem'
 
 function TasksList() {
     return (
         <TaskListWrapper>
-            <li>
-                firs item
-            </li>
+            <ListItem taskToDo='2 + 9 =' />
         </TaskListWrapper>
     );
 }
