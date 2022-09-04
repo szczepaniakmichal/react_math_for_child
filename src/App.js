@@ -13,6 +13,9 @@ function App() {
     const [howManyTasks, setHowManyTasks ] = useState(10)
     const [howManyValues, setHowManyValues ] = useState(2)
     const [maximumSingleValue, setMaximumSingleValue ] = useState(50)
+    const [typeOfMathOperators, setTypeOfMathOperators] = useState([]);
+
+    console.log("typeOfMathOperators", typeOfMathOperators)
 
     const handleHowManyTasks = (e) => {
         setHowManyTasks(e.target.value)
@@ -24,6 +27,22 @@ function App() {
 
     const handleMaximumSingleValue = (e) => {
         setMaximumSingleValue(e.target.value)
+    }
+
+    const handleGenerateTasks = () => {
+        console.log("handleGenerateTasks")
+    }
+
+    const handleMathOperatorChange = (e) => {
+        const mathOperator = e.target.value;
+        const isChecked = e.target.checked;
+
+        if (isChecked) {
+            setTypeOfMathOperators([...typeOfMathOperators, mathOperator])
+        } else {
+            const newArr = typeOfMathOperators.filter(el => el !== mathOperator)
+            setTypeOfMathOperators(newArr);
+        }
     }
 
     const goBackToTop = () => window.scroll({top: 0, behavior: 'smooth'});
@@ -38,20 +57,19 @@ function App() {
         </Div>
         <Div column>
             <Header title="Type of mathematical operations"/>
-            <InputMathOperators type='addition' value='+'/>
-            <InputMathOperators type='subtraction' value='-'/>
-            <InputMathOperators type='multiplication' value='*'/>
-            <InputMathOperators type='division' value='/'/>
+            <InputMathOperators type='addition' value='+' onChange={handleMathOperatorChange} />
+            <InputMathOperators type='subtraction' value='-' onChange={handleMathOperatorChange}/>
+            <InputMathOperators type='multiplication' value='*' onChange={handleMathOperatorChange}/>
+            <InputMathOperators type='division' value='/'  onChange={handleMathOperatorChange}/>
         </Div>
         <Div column>
             <Button label='generate task'
                     backgroundColor='silver'
+                    onClick={handleGenerateTasks}
             />
         </Div>
 
-        <TasksList>
-
-        </TasksList>
+        <TasksList />
 
         <GroupButtonWrapper style={{position: 'sticky', bottom: 0}}>
             <Button label='check task'

@@ -2,7 +2,7 @@ import React from 'react';
 
 import { Input, Label, WrapperInputMathOperators } from './styles'
 
-function InputMathOperators({type, value}) {
+function InputMathOperators({type, value, onChange}) {
     return (
         <WrapperInputMathOperators>
             <Label htmlFor={type}>
@@ -10,6 +10,7 @@ function InputMathOperators({type, value}) {
                 <Input type="checkbox"
                        value={value}
                        id={type}
+                       onChange={onChange}
                 />
             </Label>
         </WrapperInputMathOperators>
