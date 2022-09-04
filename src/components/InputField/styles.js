@@ -5,6 +5,7 @@ import {pulseLight} from "components/Button/styles";
 
 export const WrapperInputField = styled.div`
   padding: ${paddingTopBottom};
+  flex-grow: 1;
 `;
 
 export const Label = styled.label`
@@ -14,6 +15,16 @@ export const Label = styled.label`
 	color: ${white};
 `;
 
+export const LabelField = styled(Label)`
+  flex-direction: column;
+`;
+
+export const LabelResult = styled(Label)`
+  flex-direction: row;
+  align-items: center;
+  flex-grow: 1;
+`;
+
 export const Input = styled.input`
   padding: 5px;
   outline: none;
@@ -21,13 +32,13 @@ export const Input = styled.input`
   color: ${white};
   border: ${border};
   border-radius: ${borderRadius};
+  flex-grow: 1;
   
   &:focus {
     animation-name: ${pulseLight};
     animation-duration: 3s;
     animation-iteration-count: infinite;
     background-color: rgba(255, 255, 255, 0.2);
-    //text-decoration: none;
   }
   
   &::placeholder {

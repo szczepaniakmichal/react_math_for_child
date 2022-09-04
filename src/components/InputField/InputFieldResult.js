@@ -1,19 +1,19 @@
 import React from 'react';
 
-import { Input, WrapperInputField, LabelField } from './styles';
+import { Input, WrapperInputField, LabelResult } from './styles';
 
-function InputField({title, value, className, placeholder, horizontalLabel, onChange, ...props}) {
+function InputFieldResult({title, value, className, placeholder, horizontalLabel, onChange, ...props}) {
     return (
         <WrapperInputField>
-            <LabelField {...{horizontalLabel}}>{title}
+            <LabelResult>{title}
                 <Input
                     {...props}
                     {...{value, className, onChange}}
                     type="number"
                     placeholder={placeholder  || title} />
-            </LabelField>
+            </LabelResult>
         </WrapperInputField>
     );
 }
 
-export default InputField;
+export default InputFieldResult;

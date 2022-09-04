@@ -7,8 +7,7 @@ import InputMathOperators from "components/InputMathOperators/InputMathOperators
 import { useState } from "react";
 import { GroupButtonWrapper } from "./components/Button/styles";
 import TasksList from "./components/TasksList/TasksList";
-
-var stringMath = require('string-math');
+import Header from "./components/Header/Header";
 
 function App() {
     const [howManyTasks, setHowManyTasks ] = useState(10)
@@ -32,12 +31,13 @@ function App() {
     return (
     <Div padding={20} column>
         <Div column>
+            <Header title="Settings"/>
             <InputField title="how many tasks?" value={howManyTasks} onChange={handleHowManyTasks}/>
             <InputField title="how many values to calculate?" value={howManyValues} onChange={handleHowManyValues}/>
             <InputField title="maximum single value?" value={maximumSingleValue} onChange={handleMaximumSingleValue}/>
         </Div>
         <Div column>
-            <p>Type of mathematical operations:</p>
+            <Header title="Type of mathematical operations"/>
             <InputMathOperators type='addition' value='+'/>
             <InputMathOperators type='subtraction' value='-'/>
             <InputMathOperators type='multiplication' value='*'/>
