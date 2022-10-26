@@ -1,11 +1,12 @@
 import React from 'react';
 import { TaskListWrapper } from "./styles";
-import ListItem from 'components/ListItem/ListItem'
+import ListItem from 'components/ListItem/ListItem';
 
-function TasksList() {
+function TasksList({tasks, isCheckTasksActive}) {
+    if (!tasks) return null;
     return (
         <TaskListWrapper>
-            <ListItem taskToDo='2 + 9' />
+          {tasks.map(task => <ListItem key={task} taskToDo={task} {...{ isCheckTasksActive }}/>)}
         </TaskListWrapper>
     );
 }

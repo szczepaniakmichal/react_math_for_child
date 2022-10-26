@@ -2,7 +2,7 @@ import React from 'react';
 
 import { Input, WrapperInputField, LabelResult } from './styles';
 
-function InputFieldResult({title, value, className, placeholder, horizontalLabel, onChange, ...props}) {
+function InputFieldResult({title, value, className, placeholder, horizontalLabel, onChange, isCheckTasksActive,  ...props}) {
     return (
         <WrapperInputField>
             <LabelResult>{title}
@@ -10,7 +10,9 @@ function InputFieldResult({title, value, className, placeholder, horizontalLabel
                     {...props}
                     {...{value, className, onChange}}
                     type="number"
-                    placeholder={placeholder  || title} />
+                    placeholder={placeholder  || title}
+                    disabled={isCheckTasksActive}
+                />
             </LabelResult>
         </WrapperInputField>
     );

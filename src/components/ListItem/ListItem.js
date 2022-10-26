@@ -4,9 +4,8 @@ import InformationAboutResult from 'components/InformationAboutResult/Informatio
 import { LiWrapper } from "./styles";
 var stringMath = require('string-math');
 
-function ListItem({taskToDo}) {
+function ListItem({taskToDo, isCheckTasksActive}) {
     const [value, setValue] = useState('');
-
     const correctResult = stringMath(taskToDo)
 
     const isCorrect = Number(value) === correctResult;
@@ -15,14 +14,14 @@ function ListItem({taskToDo}) {
 
     return (
         <LiWrapper>
-            <InputFieldResult {...{value}}
+            <InputFieldResult {...{value, isCheckTasksActive}}
                         title={taskToDo}
                         placeholder='Enter the result'
                         style={{ marginLeft: '10px' }}
                         horizontalLabel
                         onChange={handleValueChange}
             />
-            <InformationAboutResult {...{isCorrect}} />
+          {isCheckTasksActive && value && <InformationAboutResult {...{isCorrect}} />}
         </LiWrapper>
     );
 }

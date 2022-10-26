@@ -5,33 +5,28 @@ import Button from "components/Button/Button";
 import InputField from "components/InputField/InputField";
 import InputMathOperators from "components/InputMathOperators/InputMathOperators";
 import { useState } from "react";
-import { GroupButtonWrapper } from "./components/Button/styles";
-import TasksList from "./components/TasksList/TasksList";
-import Header from "./components/Header/Header";
+import { GroupButtonWrapper } from "components/Button/styles";
+import TasksList from "components/TasksList/TasksList";
+import Header from "components/Header/Header";
+import {createTasks} from "utils/createTasks";
 
 function App() {
-    const [howManyTasks, setHowManyTasks ] = useState(10)
-    const [howManyValues, setHowManyValues ] = useState(2)
-    const [maximumSingleValue, setMaximumSingleValue ] = useState(50)
+    const [howManyTasks, setHowManyTasks ] = useState(5);
+    const [howManyValues, setHowManyValues ] = useState(2);
+    const [maximumSingleValue, setMaximumSingleValue ] = useState(10);
     const [typeOfMathOperators, setTypeOfMathOperators] = useState([]);
+    const [tasks, setTasks] = useState([]);
+    const [isCheckTasksActive, setisCheckTasksActive] = useState(false);
 
-    console.log("typeOfMathOperators", typeOfMathOperators)
+    const handleHowManyTasks = (e) => setHowManyTasks(e.target.value);
 
-    const handleHowManyTasks = (e) => {
-        setHowManyTasks(e.target.value)
-    }
+    const handleHowManyValues = (e) => setHowManyValues(e.target.value);
 
-    const handleHowManyValues = (e) => {
-        setHowManyValues(e.target.value)
-    }
+    const handleMaximumSingleValue = (e) => setMaximumSingleValue(e.target.value);
 
-    const handleMaximumSingleValue = (e) => {
-        setMaximumSingleValue(e.target.value)
-    }
+    const handleGenerateTasks = () => setTasks(createTasks({howManyTasks, howManyValues, maximumSingleValue, typeOfMathOperators }));
 
-    const handleGenerateTasks = () => {
-        console.log("handleGenerateTasks")
-    }
+    const handleCheckTask = () => setisCheckTasksActive(!isCheckTasksActive);
 
     const handleMathOperatorChange = (e) => {
         const mathOperator = e.target.value;
@@ -69,11 +64,12 @@ function App() {
             />
         </Div>
 
-        <TasksList />
+        <TasksList {...{tasks, isCheckTasksActive }} />
 
         <GroupButtonWrapper style={{position: 'sticky', bottom: 0}}>
-            <Button label='check task'
+            <Button label={isCheckTasksActive ? 'go to edit task' : 'check task'}
                     backgroundColor='silver'
+                    onClick={handleCheckTask}
             />
             <Button
                 onClick={goBackToTop}
