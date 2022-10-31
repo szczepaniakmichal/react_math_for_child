@@ -5,7 +5,7 @@ import {pulseLight} from "components/Button/styles";
 
 export const WrapperInputField = styled.div`
   padding: ${paddingTopBottom};
-  flex-grow: 1;
+  flex: 1 0 auto;
 `;
 
 export const Label = styled.label`
@@ -22,7 +22,7 @@ export const LabelField = styled(Label)`
 export const LabelResult = styled(Label)`
   flex-direction: row;
   align-items: center;
-  flex-grow: 1;
+  flex: 0 0 auto;
 `;
 
 export const Input = styled.input`
@@ -32,7 +32,7 @@ export const Input = styled.input`
   color: ${white};
   border: ${border};
   border-radius: ${borderRadius};
-  flex-grow: 1;
+  flex: 0 0 auto;
   
   &:focus {
     animation-name: ${pulseLight};

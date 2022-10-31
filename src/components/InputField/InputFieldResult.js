@@ -5,7 +5,8 @@ import { Input, WrapperInputField, LabelResult } from './styles';
 function InputFieldResult({title, value, className, placeholder, horizontalLabel, onChange, isCheckTasksActive,  ...props}) {
     return (
         <WrapperInputField>
-            <LabelResult>{title}
+            <LabelResult>
+                <span style={{ flex: '1 0 auto'}}>{title}</span>
                 <Input
                     {...props}
                     {...{value, className, onChange}}

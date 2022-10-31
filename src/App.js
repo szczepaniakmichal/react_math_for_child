@@ -11,7 +11,7 @@ import Header from "components/Header/Header";
 import {createTasks} from "utils/createTasks";
 
 function App() {
-    const [howManyTasks, setHowManyTasks ] = useState(5);
+    const [howManyTasks, setHowManyTasks ] = useState(30);
     const [howManyValues, setHowManyValues ] = useState(2);
     const [maximumSingleValue, setMaximumSingleValue ] = useState(10);
     const [typeOfMathOperators, setTypeOfMathOperators] = useState([]);

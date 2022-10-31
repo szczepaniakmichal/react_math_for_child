@@ -1,36 +1,14 @@
 import styled, { keyframes } from "styled-components";
 
-import { black } from "colors";
-import { border, borderRadius, outlineColor, paddingButton, rwdSmallDevices, transition } from "variables";
-
-export const ButtonWrapper = styled.button`
-  position: ${({sticky}) => sticky && 'sticky'};
-  bottom: ${({sticky}) => sticky && '0px'};
-  padding: ${paddingButton};
-  background-color: ${(props) => props.backgroundColor ? props.backgroundColor : 'rgba(147, 131, 108, 0.3)' };
-  color: ${(props) => props.color ? props.color : black};
-  font-size: ${(props) => props.fontSize ? props.fontSize : '1.5rem' };
-  font-weight: ${(props) => props.isBolder ? 700 : 400};
-  text-transform: uppercase;
-  border: 1px solid white;
-  border-radius: ${borderRadius};
-  outline-color: ${outlineColor};     
-  
-  &:hover {
-    transition: ${transition};
-    background-color: ${(props) => props.backgroundColor ? props.backgroundColor : 'rgba(147, 131, 108, 0.5)' };
-    filter: blur(0.5px);
-  }
-
-  @media screen and (${rwdSmallDevices}) {
-    width: max-content;
-  }
-`;
+import { darkGreen } from "colors";
+import { border, borderRadius } from "variables";
 
 export const GroupButtonWrapper = styled.div`
   display: flex;
   flex-wrap: wrap;
-  flex-direction: column;
+  flex-direction: row;
+  gap: 10px;
+  background-color: ${darkGreen};
 `;
 
 export const pulseLight = keyframes`
@@ -64,9 +42,8 @@ export const GlassButtonWrapper = styled.button`
   font-weight: 400;
   font-size: 1.2rem;
   line-height: 1.8rem;
-  margin: .5rem 0;
   padding: .3rem 1.9rem;
-  width: 100%;
+  flex: 1 1 auto;
   display: inline-block;
   text-align: center;
   text-decoration: none;

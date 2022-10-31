@@ -5,5 +5,5 @@ export const LiWrapper = styled.li`
   flex-direction: row;
   gap: 10px;
   align-items: center;
-  flex-grow: 1;
+  flex: 1 1 auto;
 `;

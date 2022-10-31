@@ -13,7 +13,7 @@ export const outlineColor = `${white}`;
 // RWD
 
 export const rwdExtraSmallDevices = 'max-width: 600px';
-export const rwdSmallDevices = 'min-width: 600px';
+export const rwdSmallDevices = 'max-width: 600px';
 export const rwdTablet = 'min-width: 768px';
 export const rwdLargeDevices = 'min-width: 992px';
 export const rwdExtraLargeDevices = 'min-width: 1200px';
