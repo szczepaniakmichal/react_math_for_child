@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import InputFieldResult from "components/InputField/InputFieldResult";
 import InformationAboutResult from 'components/InformationAboutResult/InformationAboutResult'
-import { LiWrapper } from "./styles";
+import { CounterItem, LiWrapper } from "./styles";
 var stringMath = require('string-math');
 
-function ListItem({taskToDo, isCheckTasksActive}) {
+function ListItem({taskToDo, isCheckTasksActive, index}) {
     const [value, setValue] = useState('');
     const correctResult = stringMath(taskToDo)
 
@@ -14,6 +14,7 @@ function ListItem({taskToDo, isCheckTasksActive}) {
 
     return (
         <LiWrapper>
+            <CounterItem>{index + 1}.</CounterItem>
             <InputFieldResult {...{value, isCheckTasksActive}}
                         title={taskToDo}
                         placeholder='Enter the result'

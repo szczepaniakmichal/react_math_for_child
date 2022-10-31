@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { paddingTopBottom, border, borderRadius } from "variables";
-import { darkGreen, white } from "colors";
+import { darkGreen, white, black } from "colors";
 import {pulseLight} from "components/Button/styles";
 
 export const WrapperInputField = styled.div`
@@ -44,5 +44,14 @@ export const Input = styled.input`
   &::placeholder {
     color: ${white};
     opacity: .6;
+  }
+  
+  &:disabled {
+    cursor: not-allowed;
+    color: ${black};
+
+    &::placeholder {
+      color: ${black};
+    }
   }
 `;

@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { gray} from "colors";
 
 export const LiWrapper = styled.li`
   display: flex;
@@ -7,3 +8,10 @@ export const LiWrapper = styled.li`
   align-items: center;
   flex: 1 1 auto;
 `;
+
+export const CounterItem = styled.span`
+ color: ${gray};
+`;
+
+CounterItem.displayName = 'ListItem_CounterItem'
+
