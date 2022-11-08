@@ -13,6 +13,20 @@ function App() {
     const [howManyValues, setHowManyValues ] = useState(2)
     const [maximumSingleValue, setMaximumSingleValue ] = useState(50)
 
+    const [maxPoints, setMaxPoints] = useState(70);
+    const [getPoints, setGetPoints] = useState(maxPoints);
+    const result = (100 / maxPoints * getPoints).toFixed(1);
+
+    const handleGetPoints = e => {
+        const value = e.target.value;
+        return setGetPoints(value)
+    };
+    const handleMaxPoint = e => {
+        const value = e.target.value;
+        setMaxPoints(value);
+    };
+
+
     const handleHowManyTasks = (e) => {
         setHowManyTasks(e.target.value)
     }
@@ -160,42 +174,52 @@ useEffect(() => {
 }, [])
 
     return (
-    <Div padding={20} column>
-        <Div column>
-            <InputField title="how many tasks?" className="how-many-task" value={howManyTasks} onChange={handleHowManyTasks}/>
-            <InputField title="how many values to calculate?" className="how-many-value" value={howManyValues} onChange={handleHowManyValues}/>
-            <InputField title="maximum single value?" className="to-value" value={maximumSingleValue} onChange={handleMaximumSingleValue}/>
-        </Div>
-        <Div column>
-            <p>Type of mathematical operations:</p>
-            <InputMathOperators type='addition' value='+'/>
-            <InputMathOperators type='subtraction' value='-'/>
-            <InputMathOperators type='multiplication' value='*'/>
-            <InputMathOperators type='division' value='/'/>
-        </Div>
-        <Div column>
-            <Button label='generate task'
-                    isBolder
-                    className="btn-generate-task-js"
-                    backgroundColor='silver'
-            />
-            <ul className="task-list" />
+      <>
+          <div style={{marginBottom: '1500px', padding: '20px', fontSize: '24px'}}>
+              <InputField title="uzyskane punkty" className="how-many-task" value={getPoints} onChange={handleGetPoints}/>
+              <InputField title="max wynik" className="how-many-task" value={maxPoints} onChange={handleMaxPoint}/>
+              <p>Wynik: {result}%</p>
+          </div>
 
-        </Div>
-        <div style={{position: 'sticky', bottom: 0}}>
-            <Button label='check task'
-                    className='btn-check-task'
-                    backgroundColor='silver'
-            />
-            <Button
-                onClick={goBackToTop}
-                label='back to top'
-                className='btn-go-up'
-                backgroundColor='silver'
-            />
-        </div>
 
-    </Div>
+          <Div padding={20} column >
+              <Div column>
+                  <InputField title="how many tasks?" className="how-many-task" value={howManyTasks} onChange={handleHowManyTasks}/>
+                  <InputField title="how many values to calculate?" className="how-many-value" value={howManyValues} onChange={handleHowManyValues}/>
+                  <InputField title="maximum single value?" className="to-value" value={maximumSingleValue} onChange={handleMaximumSingleValue}/>
+              </Div>
+              <Div column>
+                  <p>Type of mathematical operations:</p>
+                  <InputMathOperators type='addition' value='+'/>
+                  <InputMathOperators type='subtraction' value='-'/>
+                  <InputMathOperators type='multiplication' value='*'/>
+                  <InputMathOperators type='division' value='/'/>
+              </Div>
+              <Div column>
+                  <Button label='generate task'
+                          isBolder
+                          className="btn-generate-task-js"
+                          backgroundColor='silver'
+                  />
+                  <ul className="task-list" />
+
+              </Div>
+              <div style={{position: 'sticky', bottom: 0}}>
+                  <Button label='check task'
+                          className='btn-check-task'
+                          backgroundColor='silver'
+                  />
+                  <Button
+                    onClick={goBackToTop}
+                    label='back to top'
+                    className='btn-go-up'
+                    backgroundColor='silver'
+                  />
+              </div>
+
+          </Div>
+      </>
+
   );
 }
 
