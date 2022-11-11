@@ -4,8 +4,9 @@ import ListItem from 'components/ListItem/ListItem';
 
 function TasksList({tasks, isCheckTasksActive}) {
     if (!tasks) return null;
+
     return (
-        <TaskListWrapper>
+        <TaskListWrapper {...{isCheckTasksActive}}>
             {tasks.map((task, index) => <ListItem key={task} taskToDo={task} {...{isCheckTasksActive, index}}/>)}
         </TaskListWrapper>
     );

@@ -1,26 +1,27 @@
 import React from 'react';
 
-import { Input, LabelResult, WrapperInputField } from './styles';
+import { Input, LabelResult, WrapperInputField, labelStyles, LabelTask } from './styles';
 
 function InputFieldResult({
-                              title,
+                              taskToDo,
                               value,
                               className,
                               placeholder,
                               horizontalLabel,
                               onChange,
                               isCheckTasksActive,
+                              isCorrect,
                               ...props
                           }) {
     return (
         <WrapperInputField>
             <LabelResult>
-                <span style={{flex: '1 0 auto'}}>{title}</span>
+                <LabelTask style={labelStyles({isCorrect, isCheckTasksActive})}>{taskToDo}</LabelTask>
                 <Input
                     {...props}
                     {...{value, className, onChange}}
                     type="number"
-                    placeholder={placeholder || title}
+                    placeholder={placeholder || taskToDo}
                     disabled={isCheckTasksActive}
                 />
             </LabelResult>

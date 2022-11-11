@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { border, borderRadius, opacity, paddingTopBottom } from "variables";
-import { black, darkGreen, white } from "colors";
+import { darkGreen, red, white } from "colors";
 import { pulseLight } from "components/Button/styles";
 
 export const WrapperInputField = styled.div`
@@ -48,10 +48,18 @@ export const Input = styled.input`
 
   &:disabled {
     cursor: not-allowed;
-    color: ${black};
-
-    &::placeholder {
-      color: ${black};
-    }
   }
 `;
+
+export const LabelTask = styled.span`
+  flex: 1 0 auto;
+`;
+
+export const labelStyles = (options = {}) => {
+    const {isCorrect, isCheckTasksActive} = options;
+    if (!isCheckTasksActive) return;
+    return {
+        color: `${isCorrect ? white : red}`
+    }
+
+}
