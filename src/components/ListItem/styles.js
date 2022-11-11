@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { gray} from "colors";
+import { gray, white} from "colors";
 
 export const LiWrapper = styled.li`
   display: flex;
@@ -10,7 +10,8 @@ export const LiWrapper = styled.li`
 `;
 
 export const CounterItem = styled.span`
- color: ${gray};
+ color: ${white};
+  opacity: 0.6;
 `;
 
 CounterItem.displayName = 'ListItem_CounterItem'
