@@ -1,17 +1,26 @@
 import React from 'react';
 
-import { Input, WrapperInputField, LabelResult } from './styles';
+import { Input, LabelResult, WrapperInputField } from './styles';
 
-function InputFieldResult({title, value, className, placeholder, horizontalLabel, onChange, isCheckTasksActive,  ...props}) {
+function InputFieldResult({
+                              title,
+                              value,
+                              className,
+                              placeholder,
+                              horizontalLabel,
+                              onChange,
+                              isCheckTasksActive,
+                              ...props
+                          }) {
     return (
         <WrapperInputField>
             <LabelResult>
-                <span style={{ flex: '1 0 auto'}}>{title}</span>
+                <span style={{flex: '1 0 auto'}}>{title}</span>
                 <Input
                     {...props}
                     {...{value, className, onChange}}
                     type="number"
-                    placeholder={placeholder  || title}
+                    placeholder={placeholder || title}
                     disabled={isCheckTasksActive}
                 />
             </LabelResult>

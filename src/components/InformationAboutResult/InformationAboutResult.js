@@ -1,6 +1,6 @@
 import React from 'react';
 import { InformationAboutResultWrapper } from "./style";
-import {green, yellow} from "colors";
+import { green, yellow } from "colors";
 
 function InformationAboutResult({isCorrect}) {
     const color = isCorrect ? green : yellow;

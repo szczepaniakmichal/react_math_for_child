@@ -35,7 +35,6 @@ export const pulseLight = keyframes`
 `;
 
 
-
 export const GlassButtonWrapper = styled.button`
   color: ${(props) => props.color ? props.color : '#fff'};
   background-color: transparent;
@@ -90,7 +89,6 @@ export const GlassButtonWrapper = styled.button`
 //     background-size:300% 100%;
 //     animation: shine 5s infinite;
 // }
-
 
 
 // .pulse-dark {

@@ -1,8 +1,8 @@
 import styled from 'styled-components';
 
 import { white } from 'colors';
-import { borderRadius, borderWidth, transition, border } from "variables";
-import {pulseLight} from "components/Button/styles";
+import { border, borderRadius, borderWidth, transition } from "variables";
+import { pulseLight } from "components/Button/styles";
 
 export const WrapperInputMathOperators = styled.div`
   border: ${borderWidth} solid transparent;

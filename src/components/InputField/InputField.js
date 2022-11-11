@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Input, WrapperInputField, LabelField } from './styles';
+import { Input, LabelField, WrapperInputField } from './styles';
 
 function InputField({title, value, className, placeholder, horizontalLabel, onChange, ...props}) {
     return (
@@ -10,7 +10,7 @@ function InputField({title, value, className, placeholder, horizontalLabel, onCh
                     {...props}
                     {...{value, className, onChange}}
                     type="number"
-                    placeholder={placeholder  || title} />
+                    placeholder={placeholder || title}/>
             </LabelField>
         </WrapperInputField>
     );

@@ -8,12 +8,12 @@ import { useState } from "react";
 import { GroupButtonWrapper } from "components/Button/styles";
 import TasksList from "components/TasksList/TasksList";
 import Header from "components/Header/Header";
-import {createTasks} from "utils/createTasks";
+import { createTasks } from "utils/createTasks";
 
 function App() {
-    const [howManyTasks, setHowManyTasks ] = useState(30);
-    const [howManyValues, setHowManyValues ] = useState(2);
-    const [maximumSingleValue, setMaximumSingleValue ] = useState(10);
+    const [howManyTasks, setHowManyTasks] = useState(30);
+    const [howManyValues, setHowManyValues] = useState(2);
+    const [maximumSingleValue, setMaximumSingleValue] = useState(10);
     const [typeOfMathOperators, setTypeOfMathOperators] = useState([]);
     const [tasks, setTasks] = useState([]);
     const [isCheckTasksActive, setisCheckTasksActive] = useState(false);
@@ -24,7 +24,12 @@ function App() {
 
     const handleMaximumSingleValue = (e) => setMaximumSingleValue(e.target.value);
 
-    const handleGenerateTasks = () => setTasks(createTasks({howManyTasks, howManyValues, maximumSingleValue, typeOfMathOperators }));
+    const handleGenerateTasks = () => setTasks(createTasks({
+        howManyTasks,
+        howManyValues,
+        maximumSingleValue,
+        typeOfMathOperators
+    }));
 
     const handleCheckTask = () => setisCheckTasksActive(!isCheckTasksActive);
 
@@ -43,43 +48,44 @@ function App() {
     const goBackToTop = () => window.scroll({top: 0, behavior: 'smooth'});
 
     return (
-    <Div padding={20} column>
-        <Div column>
-            <Header title="Settings"/>
-            <InputField title="how many tasks?" value={howManyTasks} onChange={handleHowManyTasks}/>
-            <InputField title="how many values to calculate?" value={howManyValues} onChange={handleHowManyValues}/>
-            <InputField title="maximum single value?" value={maximumSingleValue} onChange={handleMaximumSingleValue}/>
-        </Div>
-        <Div column>
-            <Header title="Type of mathematical operations"/>
-            <InputMathOperators type='addition' value='+' onChange={handleMathOperatorChange} />
-            <InputMathOperators type='subtraction' value='-' onChange={handleMathOperatorChange}/>
-            <InputMathOperators type='multiplication' value='*' onChange={handleMathOperatorChange}/>
-            <InputMathOperators type='division' value='/'  onChange={handleMathOperatorChange}/>
-        </Div>
-        <Div column>
-            <Button label='generate task'
+        <Div padding={20} column>
+            <Div column>
+                <Header title="Settings"/>
+                <InputField title="how many tasks?" value={howManyTasks} onChange={handleHowManyTasks}/>
+                <InputField title="how many values to calculate?" value={howManyValues} onChange={handleHowManyValues}/>
+                <InputField title="maximum single value?" value={maximumSingleValue}
+                            onChange={handleMaximumSingleValue}/>
+            </Div>
+            <Div column>
+                <Header title="Type of mathematical operations"/>
+                <InputMathOperators type='addition' value='+' onChange={handleMathOperatorChange}/>
+                <InputMathOperators type='subtraction' value='-' onChange={handleMathOperatorChange}/>
+                <InputMathOperators type='multiplication' value='*' onChange={handleMathOperatorChange}/>
+                <InputMathOperators type='division' value='/' onChange={handleMathOperatorChange}/>
+            </Div>
+            <Div column>
+                <Button label='generate task'
+                        backgroundColor='silver'
+                        onClick={handleGenerateTasks}
+                />
+            </Div>
+
+            <TasksList {...{tasks, isCheckTasksActive}} />
+
+            <GroupButtonWrapper style={{position: 'sticky', bottom: 0}}>
+                <Button label={isCheckTasksActive ? 'go to edit task' : 'check task'}
+                        backgroundColor='silver'
+                        onClick={handleCheckTask}
+                />
+                <Button
+                    onClick={goBackToTop}
+                    label='back to top'
                     backgroundColor='silver'
-                    onClick={handleGenerateTasks}
-            />
+                />
+            </GroupButtonWrapper>
+
         </Div>
-
-        <TasksList {...{tasks, isCheckTasksActive }} />
-
-        <GroupButtonWrapper style={{position: 'sticky', bottom: 0}}>
-            <Button label={isCheckTasksActive ? 'go to edit task' : 'check task'}
-                    backgroundColor='silver'
-                    onClick={handleCheckTask}
-            />
-            <Button
-                onClick={goBackToTop}
-                label='back to top'
-                backgroundColor='silver'
-            />
-        </GroupButtonWrapper>
-
-    </Div>
-  );
+    );
 }
 
 export default App;
