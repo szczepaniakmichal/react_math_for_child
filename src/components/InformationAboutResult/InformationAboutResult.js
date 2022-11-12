@@ -1,13 +1,10 @@
 import React from 'react';
 import { InformationAboutResultWrapper } from "./style";
-import { green, yellow } from "colors";
 
-function InformationAboutResult({isCorrect}) {
-    const color = isCorrect ? green : yellow;
-
+function InformationAboutResult() {
     return (
-        <InformationAboutResultWrapper style={{color}}>
-            {isCorrect ? 'That\'s right! :)' : 'Try again... :('}
+        <InformationAboutResultWrapper>
+            Your result is:
         </InformationAboutResultWrapper>
     );
 }

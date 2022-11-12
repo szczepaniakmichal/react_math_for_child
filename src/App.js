@@ -9,6 +9,8 @@ import { GroupButtonWrapper } from "components/Button/styles";
 import TasksList from "components/TasksList/TasksList";
 import Header from "components/Header/Header";
 import { createTasks } from "utils/createTasks";
+import InformationAboutResult from "./components/InformationAboutResult/InformationAboutResult";
+import { BottomSection } from "./styles";
 
 function App() {
     const [howManyTasks, setHowManyTasks] = useState(30);
@@ -17,6 +19,7 @@ function App() {
     const [typeOfMathOperators, setTypeOfMathOperators] = useState([]);
     const [tasks, setTasks] = useState([]);
     const [isCheckTasksActive, setisCheckTasksActive] = useState(false);
+    const [numberOfCorrectResults, setNumberOfCorrectResults] = useState(0)
 
     const handleHowManyTasks = (e) => setHowManyTasks(e.target.value);
 
@@ -70,19 +73,23 @@ function App() {
                 />
             </Div>
 
-            <TasksList {...{tasks, isCheckTasksActive}} />
+            <TasksList {...{tasks, isCheckTasksActive, setNumberOfCorrectResults}} />
 
-            <GroupButtonWrapper style={{position: 'sticky', bottom: 0}}>
-                <Button label={isCheckTasksActive ? 'go to edit task' : 'check task'}
+            <BottomSection>
+                {isCheckTasksActive && <InformationAboutResult {...{numberOfCorrectResults}}/>}
+                <GroupButtonWrapper >
+                    <Button label={isCheckTasksActive ? 'go to edit task' : 'check task'}
+                            backgroundColor='silver'
+                            onClick={handleCheckTask}
+                    />
+                    <Button
+                        onClick={goBackToTop}
+                        label='back to top'
                         backgroundColor='silver'
-                        onClick={handleCheckTask}
-                />
-                <Button
-                    onClick={goBackToTop}
-                    label='back to top'
-                    backgroundColor='silver'
-                />
-            </GroupButtonWrapper>
+                    />
+                </GroupButtonWrapper>
+            </BottomSection>
+
 
         </Div>
     );
