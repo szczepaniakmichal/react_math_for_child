@@ -39,7 +39,7 @@ export const GlassButtonWrapper = styled.button`
   color: ${(props) => props.color ? props.color : '#fff'};
   background-color: transparent;
   font-weight: 400;
-  font-size: 1.2rem;
+  font-size: .7rem;
   line-height: 1.8rem;
   padding: .3rem 1.9rem;
   flex: 1 1 auto;
