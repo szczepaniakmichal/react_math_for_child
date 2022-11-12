@@ -7,7 +7,7 @@ function TasksList({tasks, isCheckTasksActive}) {
 
     return (
         <TaskListWrapper {...{isCheckTasksActive}}>
-            {tasks.map((task, index) => <ListItem key={task} taskToDo={task} {...{isCheckTasksActive, index}}/>)}
+            {tasks.map((task, index) => <ListItem key={`${task}_${index}`} taskToDo={task} {...{isCheckTasksActive, index}}/>)}
         </TaskListWrapper>
     );
 }
