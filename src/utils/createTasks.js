@@ -14,7 +14,11 @@ export function createTasks({howManyTasks, howManyValues, maximumSingleValue, ty
             return `${number} ${index === numberValue.length - 1 ? '' : `${randomMathOperator} `}`
         }).join('')
 
-        arrOfTasks.push(matchTask);
+       const taskObj = {
+            task: matchTask,
+       }
+
+        arrOfTasks.push(taskObj);
     }
 
     return arrOfTasks;
