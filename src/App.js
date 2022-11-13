@@ -27,12 +27,20 @@ function App() {
 
     const handleMaximumSingleValue = (e) => setMaximumSingleValue(e.target.value);
 
-    const handleGenerateTasks = () => setTasks(createTasks({
-        howManyTasks,
-        howManyValues,
-        maximumSingleValue,
-        typeOfMathOperators
-    }));
+    const handleGenerateTasks = () => {
+        if (tasks.length) {
+            const answer = window.confirm("Got a list, want to create a new one?");
+           if (answer) {
+               setTasks(createTasks({
+                   howManyTasks,
+                   howManyValues,
+                   maximumSingleValue,
+                   typeOfMathOperators
+               }))
+           }
+        }
+        return null;
+    };
 
     const handleCheckTask = () => setisCheckTasksActive(!isCheckTasksActive);
 
