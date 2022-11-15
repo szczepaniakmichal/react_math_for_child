@@ -5,6 +5,6 @@ import { opacity } from 'variables';
 export const HeaderWrapper = styled.h4`
   color: ${white};
   opacity: ${opacity};
-  margin: 12px 0 8px;
+  margin: 0;
   font-weight: 400;
 `;

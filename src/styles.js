@@ -6,3 +6,9 @@ export const BottomSection = styled.div`
   bottom: 0;
   background-color: ${darkGreen};
 `;
+
+export const SectionWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  margin: 10px 0;
+`;

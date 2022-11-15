@@ -10,7 +10,7 @@ import TasksList from "components/TasksList/TasksList";
 import Header from "components/Header/Header";
 import { createTasks } from "utils/createTasks";
 import InformationAboutResult from "./components/InformationAboutResult/InformationAboutResult";
-import { BottomSection } from "./styles";
+import { BottomSection, SectionWrapper } from "./styles";
 
 function App() {
     const [howManyTasks, setHowManyTasks] = useState(30);
@@ -60,28 +60,30 @@ function App() {
 
     return (
         <Div padding={20} column>
-            <Div column>
+            <SectionWrapper column>
                 <Header title="Settings"/>
                 <InputField title="how many tasks?" value={howManyTasks} onChange={handleHowManyTasks}/>
                 <InputField title="how many values to calculate?" value={howManyValues} onChange={handleHowManyValues}/>
                 <InputField title="maximum single value?" value={maximumSingleValue}
                             onChange={handleMaximumSingleValue}/>
-            </Div>
-            <Div column>
+            </SectionWrapper>
+            <SectionWrapper column>
                 <Header title="Type of mathematical operations"/>
                 <InputMathOperators type='addition' value='+' onChange={handleMathOperatorChange}/>
                 <InputMathOperators type='subtraction' value='-' onChange={handleMathOperatorChange}/>
                 <InputMathOperators type='multiplication' value='*' onChange={handleMathOperatorChange}/>
                 <InputMathOperators type='division' value='/' onChange={handleMathOperatorChange}/>
-            </Div>
-            <Div column>
+            </SectionWrapper>
+            <SectionWrapper>
                 <Button label='generate task'
                         backgroundColor='silver'
                         onClick={handleGenerateTasks}
                 />
-            </Div>
+            </SectionWrapper>
 
-            <TasksList {...{tasks, isCheckTasksActive, setNumberOfCorrectResults}} />
+            <SectionWrapper>
+                <TasksList {...{tasks, isCheckTasksActive, setNumberOfCorrectResults}} />
+            </SectionWrapper>
 
             <BottomSection>
                 {isCheckTasksActive && <InformationAboutResult {...{numberOfCorrectResults}}/>}
@@ -97,8 +99,6 @@ function App() {
                     />
                 </GroupButtonWrapper>
             </BottomSection>
-
-
         </Div>
     );
 }
