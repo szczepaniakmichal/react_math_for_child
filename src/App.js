@@ -19,7 +19,8 @@ function App() {
     const [typeOfMathOperators, setTypeOfMathOperators] = useState([]);
     const [tasks, setTasks] = useState([]);
     const [isCheckTasksActive, setisCheckTasksActive] = useState(false);
-    const [numberOfCorrectResults, setNumberOfCorrectResults] = useState(0)
+    const [numberOfCorrectResults, setNumberOfCorrectResults] = useState(0);
+    const [howManyTimesCheckResult, setHowManyTimesCheckResult ] = useState(0);
 
     const handleHowManyTasks = (e) => setHowManyTasks(e.target.value);
 
@@ -37,12 +38,19 @@ function App() {
     const handleGenerateTasks = () => {
         if (tasks.length) {
             const answer = window.confirm("Got a list, want to create a new one?");
-           return answer ? generateTasks() : null;
+          if (answer) {
+              generateTasks()
+              setHowManyTimesCheckResult(0)
+          }
+          return null;
         }
         return generateTasks();
     };
 
-    const handleCheckTask = () => setisCheckTasksActive(!isCheckTasksActive);
+    const handleCheckTask = () => {
+        setisCheckTasksActive(!isCheckTasksActive);
+        if (isCheckTasksActive && tasks.length) setHowManyTimesCheckResult(howManyTimesCheckResult + 1);
+    };
 
     const handleMathOperatorChange = (e) => {
         const mathOperator = e.target.value;
@@ -87,6 +95,7 @@ function App() {
 
             <BottomSection>
                 {isCheckTasksActive && <InformationAboutResult {...{numberOfCorrectResults}}/>}
+                {isCheckTasksActive && <Header title={`How mamy time do You check task? ${howManyTimesCheckResult}`}/>}
                 <GroupButtonWrapper >
                     <Button label={isCheckTasksActive ? 'go to edit task' : 'check task'}
                             backgroundColor='silver'
