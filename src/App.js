@@ -49,7 +49,7 @@ function App() {
 
     const handleCheckTask = () => {
         setisCheckTasksActive(!isCheckTasksActive);
-        if (isCheckTasksActive && tasks.length) setHowManyTimesCheckResult(howManyTimesCheckResult + 1);
+        if (!isCheckTasksActive && tasks.length) setHowManyTimesCheckResult(howManyTimesCheckResult + 1);
     };
 
     const handleMathOperatorChange = (e) => {
