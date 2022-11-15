@@ -2,11 +2,8 @@ import React, { useState } from 'react';
 import InputFieldResult from "components/InputField/InputFieldResult";
 import { CounterItem, LiWrapper } from "./styles";
 
-var stringMath = require('string-math');
-
-function ListItem({taskToDo, isCheckTasksActive, index}) {
+function ListItem({taskToDo, isCheckTasksActive, correctResult, index}) {
     const [value, setValue] = useState(undefined);
-    const correctResult = stringMath(taskToDo)
 
     const isCorrect = Number(value) === correctResult;
 

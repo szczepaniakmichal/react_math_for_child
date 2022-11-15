@@ -1,3 +1,5 @@
+var stringMath = require('string-math');
+
 export function createTasks({howManyTasks, howManyValues, maximumSingleValue, typeOfMathOperators}) {
     const arrOfTasks = [];
 
@@ -16,6 +18,7 @@ export function createTasks({howManyTasks, howManyValues, maximumSingleValue, ty
 
        const taskObj = {
             task: matchTask,
+           correctResult: stringMath(matchTask)
        }
 
         arrOfTasks.push(taskObj);

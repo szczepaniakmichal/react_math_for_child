@@ -8,8 +8,8 @@ function TasksList({tasks, isCheckTasksActive}) {
     return (
         <TaskListWrapper {...{isCheckTasksActive}}>
             {tasks.map((taskObj, index) => {
-                const {task} = taskObj;
-                return <ListItem key={`${task}_${index}`} taskToDo={task} {...{isCheckTasksActive, index}}/>
+                const {task, correctResult} = taskObj;
+                return <ListItem key={`${task}_${index}`} taskToDo={task} {...{isCheckTasksActive, correctResult, index}}/>
             })}
         </TaskListWrapper>
     );
