@@ -5,7 +5,7 @@ import { CounterItem, LiWrapper } from "./styles";
 var stringMath = require('string-math');
 
 function ListItem({taskToDo, isCheckTasksActive, index}) {
-    const [value, setValue] = useState('');
+    const [value, setValue] = useState(undefined);
     const correctResult = stringMath(taskToDo)
 
     const isCorrect = Number(value) === correctResult;
