@@ -10,7 +10,10 @@ function InputField({title, value, className, placeholder, horizontalLabel, onCh
                     {...props}
                     {...{value, className, onChange}}
                     type="number"
-                    placeholder={placeholder || title}/>
+                    placeholder={placeholder || title}
+                    max={5}
+                    min={2}
+                />
             </LabelField>
         </WrapperInputField>
     );
