@@ -1,24 +1,30 @@
+import { useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import Div from 'styled-kit/Div';
+import isEqual from 'lodash.isequal';
 
 import 'App.css';
 import Button from "components/Button/Button";
 import InputField from "components/InputField/InputField";
 import InputMathOperators from "components/InputMathOperators/InputMathOperators";
-import { useState } from "react";
 import { GroupButtonWrapper } from "components/Button/styles";
 import TasksList from "components/TasksList/TasksList";
 import Header from "components/Header/Header";
 import { createTasks } from "utils/createTasks";
 import InformationAboutResult from "./components/InformationAboutResult/InformationAboutResult";
+import { generateTasksReducer } from "./components/TasksList/taskListSlice";
 import { BottomSection, SectionWrapper } from "./styles";
 
 function App() {
+    const dispatch = useDispatch();
+
+    const taskList = useSelector(({taskList}) => ({ tasks: taskList.tasks }), isEqual);
+
     const [howManyTasks, setHowManyTasks] = useState(30);
     const [howManyValues, setHowManyValues] = useState(2);
     const [maximumSingleValue, setMaximumSingleValue] = useState(10);
     const [typeOfMathOperators, setTypeOfMathOperators] = useState([]);
-    const [tasks, setTasks] = useState([]);
-    const [isCheckTasksActive, setisCheckTasksActive] = useState(false);
+    const [isCheckTasksActive, setIsCheckTasksActive] = useState(false);
     const [numberOfCorrectResults, setNumberOfCorrectResults] = useState(0);
     const [howManyTimesCheckResult, setHowManyTimesCheckResult ] = useState(0);
 
@@ -28,15 +34,18 @@ function App() {
 
     const handleMaximumSingleValue = (e) => setMaximumSingleValue(e.target.value);
 
-    const generateTasks = () => setTasks(createTasks({
-        howManyTasks,
-        howManyValues,
-        maximumSingleValue,
-        typeOfMathOperators
-    }))
+    const generateTasks = () => {
+        const newTask = createTasks({
+            howManyTasks,
+            howManyValues,
+            maximumSingleValue,
+            typeOfMathOperators
+        })
+        dispatch(generateTasksReducer(newTask))
+    }
 
     const handleGenerateTasks = () => {
-        if (tasks.length) {
+        if (taskList.tasks.length) {
             const answer = window.confirm("Got a list, want to create a new one?");
           if (answer) {
               generateTasks()
@@ -48,8 +57,8 @@ function App() {
     };
 
     const handleCheckTask = () => {
-        setisCheckTasksActive(!isCheckTasksActive);
-        if (!isCheckTasksActive && tasks.length) setHowManyTimesCheckResult(howManyTimesCheckResult + 1);
+        setIsCheckTasksActive(!isCheckTasksActive);
+        if (!isCheckTasksActive && taskList.tasks.length) setHowManyTimesCheckResult(howManyTimesCheckResult + 1);
     };
 
     const handleMathOperatorChange = (e) => {
@@ -90,7 +99,7 @@ function App() {
             </SectionWrapper>
 
             <SectionWrapper>
-                <TasksList {...{tasks, isCheckTasksActive, setNumberOfCorrectResults}} />
+                <TasksList {...{isCheckTasksActive, setNumberOfCorrectResults}} tasks={taskList.tasks} />
             </SectionWrapper>
 
             <BottomSection>

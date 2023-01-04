@@ -3,11 +3,15 @@ import { createSlice } from '@reduxjs/toolkit'
 export const taskListSlice = createSlice({
     name: 'taskList',
     initialState: {
-        taskList: [],
+        tasks: [],
     },
-    reducers: {}
+    reducers: {
+        generateTasksReducer: (state, action) => {
+            state.tasks = action.payload
+        }
+    }
 });
 
-export const { } = taskListSlice.actions;
+export const { generateTasksReducer } = taskListSlice.actions;
 
 export default taskListSlice.reducer
