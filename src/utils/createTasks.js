@@ -3,7 +3,7 @@ var stringMath = require('string-math');
 export function createTasks({howManyTasks, howManyValues, maximumSingleValue, typeOfMathOperators}) {
     const arrOfTasks = [];
 
-    for (let i = 1; i <= howManyTasks; i++) {
+    for (let i = 0; i < howManyTasks; i++) {
         const numberValue = [];
 
         for (let j = 0; j < howManyValues; j++) {
@@ -16,10 +16,12 @@ export function createTasks({howManyTasks, howManyValues, maximumSingleValue, ty
             return `${number} ${index === numberValue.length - 1 ? '' : `${randomMathOperator} `}`
         }).join('')
 
-       const taskObj = {
+        const taskObj = {
+            id: i,
             task: matchTask,
-           correctResult: stringMath(matchTask)
-       }
+            correctResult: stringMath(matchTask),
+            userAnswer: '',
+        }
 
         arrOfTasks.push(taskObj);
     }

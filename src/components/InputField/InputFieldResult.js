@@ -4,7 +4,6 @@ import { Input, LabelResult, WrapperInputField, labelStyles, LabelTask } from '.
 
 function InputFieldResult({
                               taskToDo,
-                              value,
                               className,
                               placeholder,
                               horizontalLabel,
@@ -19,7 +18,7 @@ function InputFieldResult({
                 <LabelTask style={labelStyles({isCorrect, isCheckTasksActive})}>{taskToDo}</LabelTask>
                 <Input
                     {...props}
-                    {...{value, className, onChange}}
+                    {...{className, onChange}}
                     type="number"
                     placeholder={placeholder || taskToDo}
                     disabled={isCheckTasksActive}
