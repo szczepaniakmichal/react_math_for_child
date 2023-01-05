@@ -79,10 +79,11 @@ function App() {
         <Div padding={20} column>
             <SectionWrapper column>
                 <Header title="Settings"/>
-                <InputField title="how many tasks?" value={howManyTasks} onChange={handleHowManyTasks}/>
-                <InputField title="how many values to calculate?" value={howManyValues} onChange={handleHowManyValues}/>
+                <InputField title="how many tasks?" value={howManyTasks} onChange={handleHowManyTasks} max={100} />
+                <InputField title="how many values to calculate?" value={howManyValues} onChange={handleHowManyValues} max={5} min={2}/>
                 <InputField title="maximum single value?" value={maximumSingleValue}
-                            onChange={handleMaximumSingleValue}/>
+                            onChange={handleMaximumSingleValue}
+                            max={10000}/>
             </SectionWrapper>
             <SectionWrapper column>
                 <Header title="Type of mathematical operations"/>
