@@ -10,9 +10,10 @@ import InputMathOperators from "components/InputMathOperators/InputMathOperators
 import { GroupButtonWrapper } from "components/Button/styles";
 import TasksList from "components/TasksList/TasksList";
 import Header from "components/Header/Header";
-import { createTasks } from "utils/createTasks";
-import InformationAboutResult from "./components/InformationAboutResult/InformationAboutResult";
+import { createTasks, calculateCorrectDone } from "utils";
+import Statistics from "./components/Statistics/Statistics";
 import { generateTasksReducer } from "./components/TasksList/taskListSlice";
+import { updateChecks, resetChecks, updateCorrectDone } from "components/Statistics/statisticsSlice";
 import { BottomSection, SectionWrapper } from "./styles";
 
 function App() {
@@ -20,13 +21,11 @@ function App() {
 
     const taskList = useSelector(({taskList}) => ({ tasks: taskList.tasks }), isEqual);
 
-    const [howManyTasks, setHowManyTasks] = useState(30);
+    const [howManyTasks, setHowManyTasks] = useState(5);
     const [howManyValues, setHowManyValues] = useState(2);
     const [maximumSingleValue, setMaximumSingleValue] = useState(10);
     const [typeOfMathOperators, setTypeOfMathOperators] = useState([]);
     const [isCheckTasksActive, setIsCheckTasksActive] = useState(false);
-    const [numberOfCorrectResults, setNumberOfCorrectResults] = useState(0);
-    const [howManyTimesCheckResult, setHowManyTimesCheckResult ] = useState(0);
 
     const handleHowManyTasks = (e) => setHowManyTasks(e.target.value);
 
@@ -48,8 +47,8 @@ function App() {
         if (taskList.tasks.length) {
             const answer = window.confirm("Got a list, want to create a new one?");
           if (answer) {
-              generateTasks()
-              setHowManyTimesCheckResult(0)
+              generateTasks();
+              dispatch(resetChecks(0))
           }
           return null;
         }
@@ -58,7 +57,10 @@ function App() {
 
     const handleCheckTask = () => {
         setIsCheckTasksActive(!isCheckTasksActive);
-        if (!isCheckTasksActive && taskList.tasks.length) setHowManyTimesCheckResult(howManyTimesCheckResult + 1);
+        if (!isCheckTasksActive && taskList.tasks.length) {
+            dispatch(updateChecks())
+          dispatch(updateCorrectDone(calculateCorrectDone(taskList.tasks)))
+        }
     };
 
     const handleMathOperatorChange = (e) => {
@@ -100,12 +102,11 @@ function App() {
             </SectionWrapper>
 
             <SectionWrapper>
-                <TasksList {...{isCheckTasksActive, setNumberOfCorrectResults}} tasks={taskList.tasks} />
+                <TasksList {...{isCheckTasksActive}} tasks={taskList.tasks} />
             </SectionWrapper>
 
             <BottomSection>
-                {isCheckTasksActive && <InformationAboutResult {...{numberOfCorrectResults}}/>}
-                {isCheckTasksActive && <Header title={`How mamy time do You check task? ${howManyTimesCheckResult}`}/>}
+                {isCheckTasksActive && <Statistics />}
                 <GroupButtonWrapper >
                     <Button label={isCheckTasksActive ? 'go to edit task' : 'check task'}
                             backgroundColor='silver'

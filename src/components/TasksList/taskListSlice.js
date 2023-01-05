@@ -1,4 +1,4 @@
-import { createSlice } from '@reduxjs/toolkit'
+import { createSlice } from '@reduxjs/toolkit';
 
 export const taskListSlice = createSlice({
     name: 'taskList',
@@ -17,9 +17,11 @@ export const taskListSlice = createSlice({
 
 const updateTask = (tasks, actionPayload) => {
     const {id, value} = actionPayload;
-    return tasks.map(el => el.id === id ? {...el, userAnswer: value} : {...el})
+    return tasks.map(el => el.id === id ?
+        {...el, userAnswer: value, done: el.correctResult === value} :
+        {...el})
 }
 
-export const {generateTasksReducer, updateUserAnswer} = taskListSlice.actions;
+export const { generateTasksReducer, updateUserAnswer } = taskListSlice.actions;
 
 export default taskListSlice.reducer

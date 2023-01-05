@@ -4,10 +4,8 @@ import InputFieldResult from "components/InputField/InputFieldResult";
 import { CounterItem, LiWrapper } from "./styles";
 import { updateUserAnswer } from 'components/TasksList/taskListSlice'
 
-function ListItem({taskToDo, isCheckTasksActive, id, correctResult, userAnswer}) {
+function ListItem({taskToDo, isCheckTasksActive, id, userAnswer, done}) {
     const dispatch = useDispatch();
-
-    const isCorrect = userAnswer === correctResult;
 
     const handleValueChange = (e) => {
         dispatch(updateUserAnswer({id, value: e.target.value}))
@@ -16,8 +14,9 @@ function ListItem({taskToDo, isCheckTasksActive, id, correctResult, userAnswer})
     return (
         <LiWrapper>
             <CounterItem>{id + 1}.</CounterItem>
-            <InputFieldResult {...{isCheckTasksActive, taskToDo, isCorrect}}
+            <InputFieldResult {...{isCheckTasksActive, taskToDo}}
                               value={userAnswer}
+                              isCorrect={done}
                               placeholder='Enter the result'
                               style={{marginLeft: '10px'}}
                               horizontalLabel

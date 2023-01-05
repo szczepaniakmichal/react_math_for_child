@@ -1,6 +1,6 @@
 var stringMath = require('string-math');
 
-export function createTasks({howManyTasks, howManyValues, maximumSingleValue, typeOfMathOperators}) {
+function createTasks({howManyTasks, howManyValues, maximumSingleValue, typeOfMathOperators}) {
     const arrOfTasks = [];
 
     for (let i = 0; i < howManyTasks; i++) {
@@ -21,6 +21,7 @@ export function createTasks({howManyTasks, howManyValues, maximumSingleValue, ty
             task: matchTask,
             correctResult: String(stringMath(matchTask)),
             userAnswer: '',
+            done: false,
         }
 
         arrOfTasks.push(taskObj);
@@ -28,3 +29,5 @@ export function createTasks({howManyTasks, howManyValues, maximumSingleValue, ty
 
     return arrOfTasks;
 }
+
+export default createTasks;
