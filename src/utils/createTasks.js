@@ -19,7 +19,7 @@ export function createTasks({howManyTasks, howManyValues, maximumSingleValue, ty
         const taskObj = {
             id: i,
             task: matchTask,
-            correctResult: stringMath(matchTask),
+            correctResult: String(stringMath(matchTask)),
             userAnswer: '',
         }
 

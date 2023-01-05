@@ -16,9 +16,8 @@ export const taskListSlice = createSlice({
 });
 
 const updateTask = (tasks, actionPayload) => {
-    console.log('findTask', tasks, actionPayload)
     const {id, value} = actionPayload;
-    return tasks.map(el => el.id === id ? {...el, userAnswer: Number(value)} : {...el})
+    return tasks.map(el => el.id === id ? {...el, userAnswer: value} : {...el})
 }
 
 export const {generateTasksReducer, updateUserAnswer} = taskListSlice.actions;
