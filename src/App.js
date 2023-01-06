@@ -26,6 +26,7 @@ function App() {
     const [maximumSingleValue, setMaximumSingleValue] = useState(10);
     const [typeOfMathOperators, setTypeOfMathOperators] = useState([]);
     const [isCheckTasksActive, setIsCheckTasksActive] = useState(false);
+    const [isPositiveResults, setIsPositiveResults] = useState(false);
 
     const handleHowManyTasks = (e) => setHowManyTasks(e.target.value);
 
@@ -38,7 +39,8 @@ function App() {
             howManyTasks,
             howManyValues,
             maximumSingleValue,
-            typeOfMathOperators
+            typeOfMathOperators,
+            isPositiveResults,
         })
         dispatch(generateTasksReducer(newTask))
     }
@@ -49,6 +51,7 @@ function App() {
           if (answer) {
               generateTasks();
               dispatch(resetChecks(0))
+              setIsCheckTasksActive(false);
           }
           return null;
         }
@@ -73,7 +76,10 @@ function App() {
             const newArr = typeOfMathOperators.filter(el => el !== mathOperator)
             setTypeOfMathOperators(newArr);
         }
+        if (mathOperator === '-') setIsPositiveResults(false);
     }
+
+    const handlePositiveResultsChange = () => setIsPositiveResults(!isPositiveResults);
 
     const goBackToTop = () => window.scroll({top: 0, behavior: 'smooth'});
 
@@ -93,6 +99,7 @@ function App() {
                 <InputMathOperators type='subtraction' value='-' onChange={handleMathOperatorChange}/>
                 <InputMathOperators type='multiplication' value='*' onChange={handleMathOperatorChange}/>
                 <InputMathOperators type='division' value='/' onChange={handleMathOperatorChange}/>
+                <InputMathOperators type='positive-results' value={isPositiveResults} onChange={handlePositiveResultsChange} disabled={!typeOfMathOperators.includes('-')} checked={isPositiveResults} />
             </SectionWrapper>
             <SectionWrapper>
                 <Button label='generate task'

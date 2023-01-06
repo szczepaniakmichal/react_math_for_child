@@ -1,6 +1,6 @@
 var stringMath = require('string-math');
 
-function createTasks({howManyTasks, howManyValues, maximumSingleValue, typeOfMathOperators}) {
+function createTasks({ howManyTasks, howManyValues, maximumSingleValue, typeOfMathOperators, isPositiveResults }) {
     const arrOfTasks = [];
 
     for (let i = 0; i < howManyTasks; i++) {
@@ -10,6 +10,8 @@ function createTasks({howManyTasks, howManyValues, maximumSingleValue, typeOfMat
             const number = Math.floor(Math.random() * maximumSingleValue + 1);
             numberValue.push(number);
         }
+
+        if (isPositiveResults) numberValue.sort((a,b) => b - a);
 
         const matchTask = numberValue.map((number, index) => {
             const randomMathOperator = typeOfMathOperators[Math.floor(Math.random() * typeOfMathOperators.length)] || '+';
@@ -32,3 +34,4 @@ function createTasks({howManyTasks, howManyValues, maximumSingleValue, typeOfMat
 }
 
 export default createTasks;
+

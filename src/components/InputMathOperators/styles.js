@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 import { white } from 'colors';
-import { border, borderRadius, borderWidth, transition } from "variables";
+import { border, borderRadius, borderWidth, transition, opacity } from "variables";
 import { pulseLight } from "components/Button/styles";
 
 export const WrapperInputMathOperators = styled.div`
@@ -33,3 +33,11 @@ export const Input = styled.input`
   width: 20px;
   height: 20px;
 `;
+
+export const disabledStyles = (options = {}) => {
+    const { disabled } = options;
+    return {
+        cursor: disabled && 'not-allowed',
+        // opacity: `${opacity}`,
+    }
+}

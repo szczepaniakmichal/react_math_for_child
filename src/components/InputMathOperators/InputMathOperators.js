@@ -1,16 +1,18 @@
 import React from 'react';
 
-import { Input, Label, WrapperInputMathOperators } from './styles'
+import { Input, Label, WrapperInputMathOperators, disabledStyles } from './styles'
 
-function InputMathOperators({type, value, onChange}) {
+function InputMathOperators({type, value, disabled, checked, onChange}) {
+
     return (
         <WrapperInputMathOperators>
-            <Label htmlFor={type}>
+            <Label htmlFor={type} style={disabledStyles({disabled})}>
                 {type}
-                <Input type="checkbox"
-                       value={value}
+                <Input {...{value, disabled, checked}}
+                       type="checkbox"
                        id={type}
                        onChange={onChange}
+                       style={disabledStyles({disabled})}
                 />
             </Label>
         </WrapperInputMathOperators>
