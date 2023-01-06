@@ -18,7 +18,7 @@ export const taskListSlice = createSlice({
 const updateTask = (tasks, actionPayload) => {
     const {id, value} = actionPayload;
     return tasks.map(el => el.id === id ?
-        {...el, userAnswer: value, done: el.correctResult === value} :
+        {...el, userAnswer: value, correctDone: el.correctResult === value, done: value !== ''} :
         {...el})
 }
 

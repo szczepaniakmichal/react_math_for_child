@@ -10,7 +10,7 @@ import InputMathOperators from "components/InputMathOperators/InputMathOperators
 import { GroupButtonWrapper } from "components/Button/styles";
 import TasksList from "components/TasksList/TasksList";
 import Header from "components/Header/Header";
-import { createTasks, calculateCorrectDone } from "utils";
+import { createTasks, calculateDoneTasks } from "utils";
 import Statistics from "./components/Statistics/Statistics";
 import { generateTasksReducer } from "./components/TasksList/taskListSlice";
 import { updateChecks, resetChecks, updateCorrectDone } from "components/Statistics/statisticsSlice";
@@ -59,7 +59,7 @@ function App() {
         setIsCheckTasksActive(!isCheckTasksActive);
         if (!isCheckTasksActive && taskList.tasks.length) {
             dispatch(updateChecks())
-          dispatch(updateCorrectDone(calculateCorrectDone(taskList.tasks)))
+          dispatch(updateCorrectDone(calculateDoneTasks(taskList.tasks)))
         }
     };
 

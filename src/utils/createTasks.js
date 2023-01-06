@@ -22,6 +22,7 @@ function createTasks({howManyTasks, howManyValues, maximumSingleValue, typeOfMat
             correctResult: String(stringMath(matchTask)),
             userAnswer: '',
             done: false,
+            correctDone: false,
         }
 
         arrOfTasks.push(taskObj);

@@ -6,12 +6,12 @@ import Header from "../Header/Header";
 
 function Statistics() {
     const statistics = useSelector(({statistics}) => statistics, isEqual)
-    console.log(statistics)
 
     return (
         <InformationAboutResultWrapper>
             <p>Your result is:</p>
             <Header title='How mamy time do You check task?' value={statistics.checks} />
+            <Header title='Done' value={statistics.done} />
             <Header title='Correctly done' value={statistics.correctDone} />
         </InformationAboutResultWrapper>
     );

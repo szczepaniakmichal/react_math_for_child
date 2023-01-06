@@ -4,6 +4,7 @@ export const statisticsSlice = createSlice({
     name: 'statistics',
     initialState: {
         checks: 0,
+        done: 0,
         correctDone: 0,
     },
     reducers: {
@@ -14,7 +15,8 @@ export const statisticsSlice = createSlice({
             state.checks = 0;
         },
         updateCorrectDone: (state, action) => {
-            state.correctDone = action.payload;
+            state.correctDone = action.payload.correctDone;
+            state.done = action.payload.done;
         },
     }
 });
