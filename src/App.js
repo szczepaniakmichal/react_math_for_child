@@ -21,6 +21,10 @@ function App() {
 
     const taskList = useSelector(({taskList}) => ({ tasks: taskList.tasks }), isEqual);
 
+    // taskList.tasks.forEach(task => {
+    //     console.log(task.correctResult);
+    // })
+
     const [howManyTasks, setHowManyTasks] = useState(5);
     const [howManyValues, setHowManyValues] = useState(2);
     const [maximumSingleValue, setMaximumSingleValue] = useState(10);

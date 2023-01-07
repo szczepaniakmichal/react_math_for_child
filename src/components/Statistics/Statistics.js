@@ -13,6 +13,8 @@ function Statistics() {
             <Header title='How mamy time do You check task?' value={statistics.checks} />
             <Header title='Done' value={statistics.done} />
             <Header title='Correctly done' value={statistics.correctDone} />
+            <Header title='Left to do' value={statistics.leftToDo} />
+            <Header title='Correct left to do' value={statistics.correctToDo} />
         </InformationAboutResultWrapper>
     );
 }

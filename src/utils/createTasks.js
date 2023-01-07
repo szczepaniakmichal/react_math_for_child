@@ -11,7 +11,9 @@ function createTasks({ howManyTasks, howManyValues, maximumSingleValue, typeOfMa
             numberValue.push(number);
         }
 
-        if (isPositiveResults) numberValue.sort((a,b) => b - a);
+        if (isPositiveResults) {
+            numberValue.sort((a,b) => b - a);
+        }
 
         const matchTask = numberValue.map((number, index) => {
             const randomMathOperator = typeOfMathOperators[Math.floor(Math.random() * typeOfMathOperators.length)] || '+';
