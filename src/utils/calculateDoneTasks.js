@@ -4,8 +4,8 @@ const calculateDoneTasks = (tasksArray) => {
     const correctAnswer = tasksArray.filter(el => el.correctDone).length;
 
     return {
-        done: `${done / tasksLength * 100}% (${done}/${tasksLength})`,
-        correctDone: `${correctAnswer / tasksLength * 100}% (${correctAnswer}/${tasksLength})`,
+        done: `${(done / tasksLength * 100).toFixed(2)}% (${done}/${tasksLength})`,
+        correctDone: `${(correctAnswer / tasksLength * 100).toFixed(2)}% (${correctAnswer}/${tasksLength})`,
         leftToDo: `${tasksLength-done}`,
         correctToDo: `${tasksLength-correctAnswer}`,
     };
