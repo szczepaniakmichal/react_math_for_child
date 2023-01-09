@@ -1,6 +1,6 @@
 import styled, { keyframes } from "styled-components";
 
-import { darkGreen } from "colors";
+import { darkerGreen } from "colors";
 import { border, borderRadius } from "variables";
 
 export const GroupButtonWrapper = styled.div`
@@ -8,7 +8,7 @@ export const GroupButtonWrapper = styled.div`
   flex-wrap: wrap;
   flex-direction: row;
   gap: 10px;
-  background-color: ${darkGreen};
+  background-color: ${darkerGreen};
 `;
 
 export const pulseLight = keyframes`
