@@ -19,7 +19,7 @@ function InputFieldResult({
                 <Input
                     {...props}
                     {...{className, onChange}}
-                    type="text"
+                    type="number"
                     placeholder={placeholder || taskToDo}
                     disabled={isCheckTasksActive}
                 />
