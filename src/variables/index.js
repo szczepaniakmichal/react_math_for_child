@@ -10,7 +10,7 @@ export const border = `${borderWidth} ${white} solid`;
 export const transition = '.5s';
 export const outlineColor = `${white}`;
 
-export const opacity = .6;
+export const opacity = .5;
 
 // RWD
 

@@ -1,17 +1,28 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import { Input, Label, WrapperInputMathOperators, disabledStyles } from './styles'
 
-function InputMathOperators({type, value, disabled, checked, onChange}) {
+InputMathOperators.prototype = {
+    type: PropTypes.string,
+    disabled: PropTypes.bool,
+};
+
+InputMathOperators.defaultProps = {
+    type: undefined,
+    disabled: false,
+}
+
+function InputMathOperators({type, disabled, ...props}) {
 
     return (
         <WrapperInputMathOperators>
             <Label htmlFor={type} style={disabledStyles({disabled})}>
                 {type}
-                <Input {...{value, disabled, checked}}
+                <Input {...props}
+                    {...{disabled}}
                        type="checkbox"
                        id={type}
-                       onChange={onChange}
                        style={disabledStyles({disabled})}
                 />
             </Label>

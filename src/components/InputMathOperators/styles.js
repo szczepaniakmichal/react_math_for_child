@@ -38,6 +38,6 @@ export const disabledStyles = (options = {}) => {
     const { disabled } = options;
     return {
         cursor: disabled && 'not-allowed',
-        // opacity: `${opacity}`,
+        opacity: disabled && `${opacity}`,
     }
 }
