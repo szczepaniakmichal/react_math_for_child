@@ -3,9 +3,11 @@ import { useDispatch } from "react-redux";
 import InputFieldResult from "components/InputField/InputFieldResult";
 import { CounterItem, LiWrapper } from "./styles";
 import { updateUserAnswer } from 'components/TasksList/taskListSlice'
+import { useTranslation } from "react-i18next";
 
 function ListItem({ id, userAnswer, correctDone, ...props}) {
     const dispatch = useDispatch();
+    const { t } = useTranslation();
 
     const handleValueChange = (e) => {
         dispatch(updateUserAnswer({id, value: e.target.value}))
@@ -17,7 +19,7 @@ function ListItem({ id, userAnswer, correctDone, ...props}) {
             <InputFieldResult {...props}
                               value={userAnswer}
                               isCorrect={correctDone}
-                              placeholder='Enter the result'
+                              placeholder={t('enterTheResult')}
                               style={{marginLeft: '10px'}}
                               horizontalLabel
                               onChange={handleValueChange}
