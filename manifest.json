@@ -1,11 +1,11 @@
 {
-  "short_name": "React App",
-  "name": "Please wait...",
+  "short_name": "Math App",
+  "name": "Math for child",
   "start_url": ".",
   "display": "standalone",
-  "theme_color": "#db399d",
+  "theme_color": "#006400",
   "background_color": "#006400",
-  "color": "#396fdb",
+  "color": "#ffffff",
   "icons": [
     {
       "src": "logo192.png",
