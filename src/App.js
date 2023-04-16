@@ -22,8 +22,6 @@ import { en, pl } from 'translations';
 import Select from "components/Select/Select";
 import { languageOptions } from "./translations/options";
 
-console.log("pl", pl)
-
 i18n.use(initReactI18next).init({
     resources: {
         en: {translation: en},
