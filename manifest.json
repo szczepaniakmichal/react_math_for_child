@@ -1,17 +1,8 @@
 {
-  "short_name": "Math App",
-  "name": "Math for child",
+  "short_name": "React App",
+  "name": "Create React App Sample",
   "start_url": ".",
   "display": "standalone",
-  "theme_color": "#006400",
-  "background_color": "#006400",
-  "color": "#ffffff",
-  "icons": [
-    {
-      "src": "abacus192.png",
-      "sizes": "192x192",
-      "type": "image/png",
-      "purpose": "any"
-    }
-  ]
+  "theme_color": "#000000",
+  "background_color": "#ffffff"
 }
