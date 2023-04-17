@@ -16,11 +16,16 @@ import Header from "components/Header/Header";
 import { createTasks, calculateDoneTasks } from "utils";
 import Statistics from "components/Statistics/Statistics";
 import { generateTasksReducer } from "components/TasksList/taskListSlice";
-import { updateChecks, resetChecks, updateCorrectDone } from "components/Statistics/statisticsSlice";
-import { BottomSection, SectionWrapper } from "./styles";
+import {
+    updateChecks,
+    resetChecks,
+    updateCorrectDone,
+    updateStartTime,
+} from "components/Statistics/statisticsSlice";
+import { BottomSection, SectionWrapper } from "styles";
 import { en, pl } from 'translations';
 import Select from "components/Select/Select";
-import { languageOptions } from "./translations/options";
+import { languageOptions } from "translations/options";
 
 i18n.use(initReactI18next).init({
     resources: {
@@ -72,14 +77,15 @@ function App() {
           }
           return null;
         }
+        dispatch(updateStartTime(new Date().getTime()));
         return generateTasks();
     };
 
     const handleCheckTask = () => {
-        setIsCheckTasksActive(!isCheckTasksActive);
+        setIsCheckTasksActive(isCheckTasksActive => !isCheckTasksActive);
         if (!isCheckTasksActive && taskList.tasks.length) {
-            dispatch(updateChecks())
-          dispatch(updateCorrectDone(calculateDoneTasks(taskList.tasks)))
+            dispatch(updateChecks());
+            dispatch(updateCorrectDone(calculateDoneTasks(taskList.tasks)));
         }
     };
 
