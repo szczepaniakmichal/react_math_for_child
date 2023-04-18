@@ -1,7 +1,7 @@
  const pl = {
-     howManyTasks: 'ile zadań?',
-     howManyValuesToCalculate: 'ile liczb w jednym działaniu?',
-     maximumSingleValue: "największa dostępna cyfra?",
+     howManyTasks: 'Ile zadań?',
+     howManyValuesToCalculate: 'Ile liczb w jednym działaniu?',
+     maximumSingleValue: "Największa dostępna cyfra?",
      typeOperations: "dostępne działania matematyczne:",
      addition: "dodawanie",
      subtraction: "odejmowanie",

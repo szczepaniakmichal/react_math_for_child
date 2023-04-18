@@ -56,10 +56,17 @@ export const LabelTask = styled.span`
 `;
 
 export const labelStyles = (options = {}) => {
-    const {isCorrect, isCheckTasksActive} = options;
-    if (!isCheckTasksActive) return;
+    const {isCorrect, isCheckTasksActive, ref} = options;
+
+    if (!ref.current) return {};
+
+    if (!isCheckTasksActive) {
+        return {
+            color: ref.current.style.color,
+        }
+    }
+
     return {
         color: `${isCorrect ? white : red}`
     }
-
 }
