@@ -3,7 +3,7 @@ import { createSlice } from '@reduxjs/toolkit';
 export const statisticsSlice = createSlice({
     name: 'statistics',
     initialState: {
-        checks: '0',
+        checks: 0,
         done: '0',
         correctDone: '0',
         leftToDo: '0',

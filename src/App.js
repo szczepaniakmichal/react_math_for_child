@@ -20,7 +20,7 @@ import {
     updateChecks,
     resetChecks,
     updateCorrectDone,
-    updateStartTime,
+    updateStartTime, updateEndTime,
 } from "components/Statistics/statisticsSlice";
 import { BottomSection, SectionWrapper } from "styles";
 import { en, pl } from 'translations';
@@ -43,9 +43,9 @@ function App() {
 
     const taskList = useSelector(({taskList}) => ({ tasks: taskList.tasks }), isEqual);
 
-    const [howManyTasks, setHowManyTasks] = useState(30);
+    const [howManyTasks, setHowManyTasks] = useState(2);
     const [howManyValues, setHowManyValues] = useState(2);
-    const [maximumSingleValue, setMaximumSingleValue] = useState(30);
+    const [maximumSingleValue, setMaximumSingleValue] = useState(2);
     const [typeOfMathOperators, setTypeOfMathOperators] = useState([]);
     const [isCheckTasksActive, setIsCheckTasksActive] = useState(false);
     const [isPositiveResults, setIsPositiveResults] = useState(false);
@@ -64,7 +64,7 @@ function App() {
             typeOfMathOperators,
             isPositiveResults,
         })
-        dispatch(generateTasksReducer(newTask))
+        dispatch(generateTasksReducer(newTask));
     }
 
     const handleGenerateTasks = () => {
@@ -72,7 +72,9 @@ function App() {
             const answer = window.confirm("Got a list, want to create a new one?");
           if (answer) {
               generateTasks();
-              dispatch(resetChecks(0))
+              dispatch(resetChecks(0));
+              dispatch(updateStartTime(new Date().getTime()));
+              dispatch(updateEndTime(0));
               setIsCheckTasksActive(false);
           }
           return null;
