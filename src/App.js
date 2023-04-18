@@ -43,9 +43,9 @@ function App() {
 
     const taskList = useSelector(({taskList}) => ({ tasks: taskList.tasks }), isEqual);
 
-    const [howManyTasks, setHowManyTasks] = useState(2);
+    const [howManyTasks, setHowManyTasks] = useState(30);
     const [howManyValues, setHowManyValues] = useState(2);
-    const [maximumSingleValue, setMaximumSingleValue] = useState(2);
+    const [maximumSingleValue, setMaximumSingleValue] = useState(30);
     const [typeOfMathOperators, setTypeOfMathOperators] = useState([]);
     const [isCheckTasksActive, setIsCheckTasksActive] = useState(false);
     const [isPositiveResults, setIsPositiveResults] = useState(false);
