@@ -14,6 +14,12 @@
      backToTop: "wróć na góre strony",
      enterTheResult: "Wprowadź wynik",
      chooseLanguage: "wybierz język",
+     checkCounter: "Ilość sprawdzeń?",
+     done: "Wykonane",
+     correctlyDone: 'Wykonane poprawnie',
+     leftToDo: "Pozostałe do zrobienia",
+     correctLeftToDo: "Do poprawy",
+     yourTime: "Twój czas",
 }
 
  export default pl;

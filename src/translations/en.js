@@ -14,6 +14,12 @@ const en = {
     backToTop: "back to top",
     enterTheResult: "Enter the result",
     chooseLanguage: "Choose a language",
+    checkCounter: "How mamy time do You check task?",
+    done: "Done",
+    correctlyDone: 'Correctly done',
+    leftToDo: "Left to do",
+    correctLeftToDo: "Correct left to do",
+    yourTime: "Your time",
 }
 
 export default en;
