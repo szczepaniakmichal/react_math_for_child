@@ -1,6 +1,6 @@
 import React, { useRef } from 'react';
 
-import { Input, LabelResult, WrapperInputField, LabelTask, inputStyles } from './styles';
+import { Input, inputStyles, LabelResult, LabelTask, WrapperInputField } from './styles';
 
 function InputFieldResult({
                               taskToDo,
@@ -20,11 +20,11 @@ function InputFieldResult({
                 <LabelTask>{taskToDo}</LabelTask>
                 <Input
                     {...props}
-                    {...{className, onChange, ref}}
+                    {...{ className, onChange, ref }}
                     type="number"
                     placeholder={placeholder || taskToDo}
                     disabled={isCheckTasksActive}
-                    style={inputStyles({isCorrect, isCheckTasksActive, ref})}
+                    style={inputStyles({ isCorrect, isCheckTasksActive, ref })}
                 />
             </LabelResult>
         </WrapperInputField>

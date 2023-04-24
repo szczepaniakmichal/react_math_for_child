@@ -6,8 +6,8 @@ const calculateDoneTasks = (tasksArray) => {
     return {
         done: `${(done / tasksLength * 100).toFixed(2)}% (${done}/${tasksLength})`,
         correctDone: `${(correctAnswer / tasksLength * 100).toFixed(2)}% (${correctAnswer}/${tasksLength})`,
-        leftToDo: `${tasksLength-done}`,
-        correctToDo: `${tasksLength-correctAnswer}`,
+        leftToDo: `${tasksLength - done}`,
+        correctToDo: `${tasksLength - correctAnswer}`,
         endTime: done / tasksLength * 100 === 100 ? new Date().getTime() : 0,
     };
 }

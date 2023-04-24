@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import { Input, Label, WrapperInputMathOperators, disabledStyles } from './styles'
+import { disabledStyles, Input, Label, WrapperInputMathOperators } from './styles'
 
 InputMathOperators.prototype = {
     type: PropTypes.string,
@@ -13,17 +13,17 @@ InputMathOperators.defaultProps = {
     disabled: false,
 }
 
-function InputMathOperators({type, disabled, ...props}) {
+function InputMathOperators({ type, disabled, ...props }) {
 
     return (
         <WrapperInputMathOperators>
-            <Label htmlFor={type} style={disabledStyles({disabled})}>
+            <Label htmlFor={type} style={disabledStyles({ disabled })}>
                 {type}
                 <Input {...props}
-                    {...{disabled}}
+                       {...{ disabled }}
                        type="checkbox"
                        id={type}
-                       style={disabledStyles({disabled})}
+                       style={disabledStyles({ disabled })}
                 />
             </Label>
         </WrapperInputMathOperators>

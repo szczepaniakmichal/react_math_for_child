@@ -3,16 +3,16 @@ var stringMath = require('string-math');
 function createTasks({ howManyTasks, howManyValues, maximumSingleValue, typeOfMathOperators, isPositiveResults }) {
     const arrOfTasks = [];
 
-    for (let i = 0; i < howManyTasks; i++) {
+    for ( let i = 0; i < howManyTasks; i++ ) {
         const numberValue = [];
 
-        for (let j = 0; j < howManyValues; j++) {
+        for ( let j = 0; j < howManyValues; j++ ) {
             const number = Math.floor(Math.random() * maximumSingleValue + 1);
             numberValue.push(number);
         }
 
-        if (isPositiveResults) {
-            numberValue.sort((a,b) => b - a);
+        if ( isPositiveResults ) {
+            numberValue.sort((a, b) => b - a);
         }
 
         const matchTask = numberValue.map((number, index) => {

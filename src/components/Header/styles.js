@@ -8,7 +8,7 @@ export const HeaderWrapper = styled.h4`
   margin: 0;
   font-weight: 400;
   margin-bottom: 2px;
-  
+
   &:first-letter {
     text-transform: capitalize;
   }

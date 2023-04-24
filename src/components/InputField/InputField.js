@@ -13,13 +13,13 @@ InputField.defaultProps = {
     min: 1,
 };
 
-function InputField({title, value, className, placeholder, horizontalLabel, onChange, max, min, ...props}) {
+function InputField({ title, value, className, placeholder, horizontalLabel, onChange, max, min, ...props }) {
     return (
         <WrapperInputField>
-            <LabelField {...{horizontalLabel}}>{title}
+            <LabelField {...{ horizontalLabel }}>{title}
                 <Input
                     {...props}
-                    {...{value, className, onChange, max, min}}
+                    {...{ value, className, onChange, max, min }}
                     type="number"
                     placeholder={placeholder || title}
                 />

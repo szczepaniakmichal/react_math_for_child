@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { border, borderRadius, opacity, paddingTopBottom } from "variables";
 import { darkGreen, red, white } from "colors";
-import { GlassButtonWrapper, pulseLight } from "components/Button/styles";
+import { pulseLight } from "components/Button/styles";
 
 export const WrapperInputField = styled.div`
   padding: ${paddingTopBottom};
@@ -11,7 +11,7 @@ export const WrapperInputField = styled.div`
 export const Label = styled.label`
   width: 100%;
   display: flex;
-  flex-direction: ${({horizontalLabel}) => horizontalLabel ? 'row' : 'column'};
+  flex-direction: ${({ horizontalLabel }) => horizontalLabel ? 'row' : 'column'};
   color: ${white};
 `;
 
@@ -56,11 +56,11 @@ export const LabelTask = styled.span`
 `;
 
 export const inputStyles = (options = {}) => {
-    const {isCorrect, isCheckTasksActive, ref} = options;
+    const { isCorrect, isCheckTasksActive, ref } = options;
 
-    if (!ref.current) return {};
+    if ( !ref.current ) return {};
 
-    if (!isCheckTasksActive) {
+    if ( !isCheckTasksActive ) {
         return {
             borderColor: ref.current.style.borderColor,
         }

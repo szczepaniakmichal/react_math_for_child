@@ -16,10 +16,10 @@ export const taskListSlice = createSlice({
 });
 
 const updateTask = (tasks, actionPayload) => {
-    const {id, value} = actionPayload;
+    const { id, value } = actionPayload;
     return tasks.map(el => el.id === id ?
-        {...el, userAnswer: value, correctDone: el.correctResult === value, done: value !== ''} :
-        {...el})
+        { ...el, userAnswer: value, correctDone: el.correctResult === value, done: value !== '' } :
+        { ...el })
 }
 
 export const { generateTasksReducer, updateUserAnswer } = taskListSlice.actions;

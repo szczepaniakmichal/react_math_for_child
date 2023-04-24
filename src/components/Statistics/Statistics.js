@@ -11,7 +11,7 @@ import { InformationAboutResultWrapper } from "./style";
 function Statistics() {
     const { t } = useTranslation();
 
-    const statistics = useSelector(({statistics}) => statistics, isEqual);
+    const statistics = useSelector(({ statistics }) => statistics, isEqual);
     const { checks, done, correctDone, leftToDo, correctToDo, startTime, endTime } = statistics;
 
     const isTaskFinish = startTime && endTime;
@@ -19,12 +19,12 @@ function Statistics() {
     return (
         <InformationAboutResultWrapper>
             <p>Your result is:</p>
-            <Header title={t('checkCounter')} value={checks} />
-            <Header title={t('done')} value={done} />
-            <Header title={t('correctlyDone')} value={correctDone} />
-            <Header title={t('leftToDo')} value={leftToDo} />
-            <Header title={t('correctLeftToDo')} value={correctToDo} />
-            {isTaskFinish ? <Header title={t('yourTime')} value={msToTime(endTime - startTime)} /> : null}
+            <Header title={t('checkCounter')} value={checks}/>
+            <Header title={t('done')} value={done}/>
+            <Header title={t('correctlyDone')} value={correctDone}/>
+            <Header title={t('leftToDo')} value={leftToDo}/>
+            <Header title={t('correctLeftToDo')} value={correctToDo}/>
+            {isTaskFinish ? <Header title={t('yourTime')} value={msToTime(endTime - startTime)}/> : null}
         </InformationAboutResultWrapper>
     );
 }

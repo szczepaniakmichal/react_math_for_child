@@ -12,12 +12,12 @@ InputRange.defaultProps = {
     max: 10000,
 }
 
-function InputRange({name, min, max, onChange}) {
+function InputRange({ name, min, max, onChange }) {
 
     return (
         <div>
             <label htmlFor="volume">{name}</label>
-            <input {...{ name, min, max, onChange}} type="range" id={name} value='5'/>
+            <input {...{ name, min, max, onChange }} type="range" id={name} value='5'/>
         </div>
     );
 }

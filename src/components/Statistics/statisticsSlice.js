@@ -35,6 +35,6 @@ export const statisticsSlice = createSlice({
 });
 
 
-export const { updateChecks, resetChecks, updateCorrectDone,updateStartTime, updateEndTime } = statisticsSlice.actions;
+export const { updateChecks, resetChecks, updateCorrectDone, updateStartTime, updateEndTime } = statisticsSlice.actions;
 
 export default statisticsSlice.reducer

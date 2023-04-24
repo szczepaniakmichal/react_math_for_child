@@ -13,24 +13,20 @@ export const GroupButtonWrapper = styled.div`
 
 export const pulseLight = keyframes`
   0% {
-    background-image: linear-gradient(
-               to right,
-               transparent 33%,
-               rgba(255,255,255,0.4) 50%,
-               transparent 66%
-       );
-           background-size:300% 100%;
-	  
+    background-image: linear-gradient(to right,
+    transparent 33%,
+    rgba(255, 255, 255, 0.4) 50%,
+    transparent 66%);
+    background-size: 300% 100%;
+
   }
   100% {
     background-position: right;
-    background-image: linear-gradient(
-            to right,
-            transparent 33%,
-            rgba(255,255,255,0.4) 50%,
-            transparent 66%
-    );
-    background-size:300% 100%;
+    background-image: linear-gradient(to right,
+    transparent 33%,
+    rgba(255, 255, 255, 0.4) 50%,
+    transparent 66%);
+    background-size: 300% 100%;
   }
 `;
 
@@ -48,11 +44,11 @@ export const GlassButtonWrapper = styled.button`
   text-decoration: none;
   text-transform: uppercase;
   box-sizing: border-box;
-  
+
   border: ${border};
   border-radius: ${borderRadius};
   transition: 0.3s;
-  
+
   &:hover {
     animation-name: ${pulseLight};
     animation-duration: 3s;

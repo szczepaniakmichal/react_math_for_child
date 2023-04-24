@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import {darkerGreen} from "colors";
+import { darkerGreen } from "colors";
 
 export const BottomSection = styled.div`
   background-color: ${darkerGreen};

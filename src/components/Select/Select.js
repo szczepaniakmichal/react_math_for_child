@@ -20,7 +20,7 @@ Select.defaultProps = {
     onChange: () => {},
 }
 
-function Select({options, style, title, onChange}) {
+function Select({ options, style, title, onChange }) {
     const { t } = useTranslation();
 
     const [open, setOpen] = useState(false);
@@ -38,20 +38,19 @@ function Select({options, style, title, onChange}) {
 
     return (
         <>
-            {title && <Header title={t(title)} />}
+            {title && <Header title={t(title)}/>}
             <SelectWrapper>
-                <Trigger onClick={handleTrigger}><div>{userChoice}</div></Trigger>
+                <Trigger onClick={handleTrigger}>
+                    <div>{userChoice}</div>
+                </Trigger>
                 {open && (
                     <OptionsWrapper className="OptionsWrapper">
-                        {options.map(el => <Option key={el.value} {...{el}} onClick={handleOption} />)}
+                        {options.map(el => <Option key={el.value} {...{ el }} onClick={handleOption}/>)}
                     </OptionsWrapper>
-                    )}
+                )}
 
             </SelectWrapper>
         </>
-
-
-
     );
 }
 

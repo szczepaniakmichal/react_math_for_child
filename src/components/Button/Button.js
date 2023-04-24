@@ -1,7 +1,7 @@
 import React from 'react';
 import { GlassButtonWrapper } from "./styles";
 
-function Button({label, ...props}) {
+function Button({ label, ...props }) {
     return (
         <GlassButtonWrapper {...props}>
             {label}

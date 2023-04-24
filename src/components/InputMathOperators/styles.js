@@ -1,15 +1,14 @@
 import styled from 'styled-components';
 
 import { white } from 'colors';
-import { border, borderRadius, borderWidth, transition, opacity } from "variables";
+import { border, borderRadius, borderWidth, opacity, transition } from "variables";
 import { pulseLight } from "components/Button/styles";
-import { LabelTask } from "../InputField/styles";
 
 export const WrapperInputMathOperators = styled.div`
   border: ${borderWidth} solid transparent;
   border-radius: ${borderRadius};
   transition: ${transition};
-  
+
   &:hover {
     border: ${border};
   }
@@ -19,7 +18,7 @@ export const Label = styled.label`
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  padding: 0 5px ;
+  padding: 0 5px;
   color: ${white};
 
   &:hover {

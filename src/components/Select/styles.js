@@ -1,7 +1,6 @@
 import styled from "styled-components";
 import { darkerGreen, darkGreen, white } from "colors";
 import { border, transition } from "variables";
-import { CounterItem } from "../ListItem/styles";
 
 export const SelectWrapper = styled.div`
   position: relative;
@@ -16,7 +15,7 @@ export const Trigger = styled.div`
   height: 30px;
   border: ${border};
   color: ${white};
-  
+
   div {
     padding: 5px 10px;
   }
@@ -34,7 +33,7 @@ export const OptionWrapper = styled.div`
   background-color: ${darkGreen};
   color: ${white};
   transition: ${transition};
-  
+
   &:hover {
     background-color: ${darkerGreen};
   }
