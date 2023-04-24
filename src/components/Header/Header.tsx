@@ -3,7 +3,7 @@ import { HeaderWrapper } from "./styles";
 
 type Props = {
     title: string,
-    value: any,
+    value: string,
 }
 
 const Header: React.FC<Props> = ({title = '', value = ''}) => {
