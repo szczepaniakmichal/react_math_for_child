@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import { white } from 'colors';
 import { border, borderRadius, borderWidth, transition, opacity } from "variables";
 import { pulseLight } from "components/Button/styles";
+import { LabelTask } from "../InputField/styles";
 
 export const WrapperInputMathOperators = styled.div`
   border: ${borderWidth} solid transparent;
@@ -41,3 +42,7 @@ export const disabledStyles = (options = {}) => {
         opacity: disabled && `${opacity}`,
     }
 }
+
+WrapperInputMathOperators.displayName = "WrapperInputMathOperators";
+Label.displayName = "Label";
+Input.displayName = "Input";

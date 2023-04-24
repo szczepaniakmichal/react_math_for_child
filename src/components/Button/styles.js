@@ -102,4 +102,7 @@ export const GlassButtonWrapper = styled.button`
 //     animation: shine 5s infinite;
 // }
 
+GroupButtonWrapper.displayName = "GroupButtonWrapper";
+GlassButtonWrapper.displayName = "GlassButtonWrapper";
+
 

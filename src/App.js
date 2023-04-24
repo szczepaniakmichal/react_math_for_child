@@ -32,8 +32,8 @@ i18n.use(initReactI18next).init({
         en: {translation: en},
         pl: {translation: pl},
     },
-    lng: 'pl',
-    fallbackLng: 'pl',
+    lng: 'en',
+    fallbackLng: 'en',
     interpolation: { escapeValue: false },
 })
 
@@ -113,7 +113,7 @@ function App() {
     return (
        <Suspense fallback="Loading...">
            <Div padding={20} column>
-               <Select options={languageOptions} onChange={handleChangeLanguage} title={t('chooseLanguage')}/>
+               <Select options={languageOptions} onChange={handleChangeLanguage} title={t('chooseLanguage')} />
                <SectionWrapper column>
                    <Header title="Settings"/>
                    <InputField title={t('howManyTasks')} value={howManyTasks} onChange={handleHowManyTasks} max={100} />

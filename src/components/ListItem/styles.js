@@ -15,5 +15,6 @@ export const CounterItem = styled.span`
   opacity: ${opacity};
 `;
 
-CounterItem.displayName = 'ListItem_CounterItem'
+LiWrapper.displayName = 'LiWrapper';
+CounterItem.displayName = 'CounterItem';
 

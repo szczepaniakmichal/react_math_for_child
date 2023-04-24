@@ -1,13 +1,14 @@
 import styled from "styled-components";
 import { darkerGreen, darkGreen, white } from "colors";
 import { border, transition } from "variables";
+import { CounterItem } from "../ListItem/styles";
 
 export const SelectWrapper = styled.div`
   position: relative;
   z-index: 2;
   width: 150px;
   box-sizing: content-box;
-`
+`;
 
 export const Trigger = styled.div`
   width: 100%;
@@ -19,7 +20,7 @@ export const Trigger = styled.div`
   div {
     padding: 5px 10px;
   }
-`
+`;
 
 export const OptionsWrapper = styled.div`
   border: ${border};
@@ -37,4 +38,9 @@ export const OptionWrapper = styled.div`
   &:hover {
     background-color: ${darkerGreen};
   }
-`
+`;
+
+SelectWrapper.displayName = 'SelectWrapper';
+Trigger.displayName = 'Trigger';
+OptionsWrapper.displayName = 'OptionsWrapper';
+OptionWrapper.displayName = 'OptionWrapper';
