@@ -6,17 +6,19 @@ import { pulseLight } from "components/Button/styles";
 export const WrapperInputField = styled.div`
   padding: ${paddingTopBottom};
   flex: 1 0 auto;
+  color: inherit;
 `;
 
 export const Label = styled.label`
   width: 100%;
   display: flex;
   flex-direction: ${({ horizontalLabel }) => horizontalLabel ? 'row' : 'column'};
-  color: ${white};
+  color: inherit;
 `;
 
 export const LabelField = styled(Label)`
   flex-direction: column;
+  color: inherit;
 `;
 
 export const LabelResult = styled(Label)`
@@ -29,7 +31,7 @@ export const Input = styled.input`
   padding: 5px;
   outline: none;
   background-color: ${darkGreen};
-  color: ${white};
+  color: inherit;
   border: ${border};
   border-radius: ${borderRadius};
   flex: 0 0 auto;
@@ -53,6 +55,7 @@ export const Input = styled.input`
 
 export const LabelTask = styled.span`
   flex: 1 0 auto;
+  color: inherit;
 `;
 
 export const inputStyles = (options = {}) => {
