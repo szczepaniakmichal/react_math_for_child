@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { darkerGreen } from "colors";
+import { darkerGreen,white } from "colors";
 
 export const BottomSection = styled.div`
   background-color: ${darkerGreen};
@@ -10,6 +10,8 @@ export const SectionWrapper = styled.div`
   display: flex;
   flex-direction: column;
   margin: 10px 0;
+  color: ${white};
+  gap: 15px;
 `;
 
 BottomSection.displayName = "BottomSection";

@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { darkerGreen, darkGreen, white } from "colors";
-import { border, transition } from "variables";
+import { border, borderRadius, transition } from "variables";
 
 export const SelectWrapper = styled.div`
   position: relative;
@@ -15,6 +15,7 @@ export const Trigger = styled.div`
   height: 30px;
   border: ${border};
   color: ${white};
+  border-radius: ${borderRadius};
 
   div {
     padding: 5px 10px;
@@ -22,10 +23,11 @@ export const Trigger = styled.div`
 `;
 
 export const OptionsWrapper = styled.div`
-  border: ${border};
   position: absolute;
   top: 32px;
   width: 150px;
+  border: ${border};
+  border-radius: ${borderRadius};
 `;
 
 export const OptionWrapper = styled.div`

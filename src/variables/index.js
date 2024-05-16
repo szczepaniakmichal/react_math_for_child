@@ -1,11 +1,11 @@
-import { white } from "../colors";
+import { white, yellow } from "colors";
 
 export const paddingButton = '10px 30px';
-export const paddingTopBottom = '3px 0';
+export const paddingTopBottom = '5px';
 
 export const borderWidth = '2px';
 export const borderRadius = '4px';
-export const border = `${borderWidth} ${white} solid`;
+export const border = `${borderWidth} ${yellow}90 solid`;
 
 export const transition = '.5s';
 export const outlineColor = `${white}`;

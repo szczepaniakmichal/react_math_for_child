@@ -15,16 +15,16 @@ InputField.defaultProps = {
 
 function InputField({ title, value, className, placeholder, horizontalLabel, onChange, max, min, ...props }) {
     return (
-        <WrapperInputField>
-            <LabelField {...{ horizontalLabel }}>{title}
-                <Input
-                    {...props}
-                    {...{ value, className, onChange, max, min }}
-                    type="number"
-                    placeholder={placeholder || title}
-                />
-            </LabelField>
-        </WrapperInputField>
+            <WrapperInputField>
+                <LabelField {...{ horizontalLabel }}>{title}
+                    <Input
+                        {...props}
+                        {...{ value, className, onChange, max, min }}
+                        type="number"
+                        placeholder={placeholder || title}
+                    />
+                </LabelField>
+            </WrapperInputField>
     );
 }
 

@@ -1,6 +1,11 @@
 import styled from "styled-components";
-import { border, borderRadius, opacity, paddingTopBottom } from "variables";
-import { darkGreen, red, white } from "colors";
+import {
+    border,
+    borderRadius,
+    opacity,
+    paddingTopBottom
+} from "variables";
+import { darkGreen, green, red, white } from "colors";
 import { pulseLight } from "components/Button/styles";
 
 export const WrapperInputField = styled.div`
@@ -70,7 +75,7 @@ export const inputStyles = (options = {}) => {
     }
 
     return {
-        borderColor: `${isCorrect ? white : red}`
+        borderColor: `${isCorrect ? green : red}`
     }
 };
 
