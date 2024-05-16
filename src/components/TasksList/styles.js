@@ -7,6 +7,7 @@ export const TaskListWrapper = styled.ul`
   list-style: none;
   margin: 0;
   gap: 15px;
+  padding: 0;
 
   li input {
     opacity: ${({ isCheckTasksActive }) => isCheckTasksActive ? `${opacity}` : 1};
