@@ -1,3 +1,6 @@
+# Project available at:
+https://szczepaniakmichal.github.io/react_math_for_child/
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
