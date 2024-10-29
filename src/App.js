@@ -26,6 +26,7 @@ import { BottomSection, SectionWrapper } from "styles";
 import { en, pl } from 'translations';
 import Select from "components/Select/Select";
 import { languageOptions } from "translations/options";
+// import Chart from "components/highcharts/Chart";
 
 i18n.use(initReactI18next).init({
     resources: {
@@ -36,6 +37,42 @@ i18n.use(initReactI18next).init({
     fallbackLng: 'en',
     interpolation: { escapeValue: false },
 })
+
+
+// const options = {
+//     chart: {
+//         type: 'pie',
+//     },
+//     title: {
+//         text: 'You result',
+//             align: 'left'
+//     },
+//     xAxis: {
+//         categories: ['good', 'wrong'],
+//     },
+//     yAxis: {
+//         min: 0,
+//     },
+//     plotOptions: {
+//         series: {
+//             animation: {
+//                 duration: 3000
+//             }
+//         }
+//     },
+//     series: [{
+//         name: 'Registrations',
+//         colorByPoint: true,
+//         innerSize: '75%',
+//         data: [{
+//             name: 'good',
+//             y: 100
+//         }, {
+//             name: 'wrong',
+//             y: 10
+//         }]
+//     }]
+// }
 
 function App() {
     const dispatch = useDispatch();
@@ -112,6 +149,7 @@ function App() {
 
     return (
         <Suspense fallback="Loading...">
+            {/*<Chart {...{options}}/>*/}
             <Div padding={20} column>
                 <Select options={languageOptions} onChange={handleChangeLanguage} title={t('chooseLanguage')}/>
                 <SectionWrapper column>
