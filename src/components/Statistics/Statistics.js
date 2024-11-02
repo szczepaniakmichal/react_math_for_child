@@ -6,6 +6,7 @@ import { useTranslation } from "react-i18next";
 import Header from "components/Header/Header";
 import { msToTime } from "utils";
 import { InformationAboutResultWrapper } from "./style";
+import ResultOnChart from "components/Statistics/ResultOnChart";
 
 
 function Statistics() {
@@ -16,15 +17,19 @@ function Statistics() {
 
     const isTaskFinish = startTime && endTime;
 
+    const doneValue = `${done.inPercentage} (${done.inDecimals})`
+    const correctDoneValue = `${correctDone.inPercentage} (${correctDone.inDecimals})`
+
     return (
         <InformationAboutResultWrapper>
             <p>Your result is:</p>
             <Header title={t('checkCounter')} value={checks}/>
-            <Header title={t('done')} value={done}/>
-            <Header title={t('correctlyDone')} value={correctDone}/>
+            <Header title={t('done')} value={doneValue}/>
+            <Header title={t('correctlyDone')} value={correctDoneValue}/>
             <Header title={t('leftToDo')} value={leftToDo}/>
             <Header title={t('correctLeftToDo')} value={correctToDo}/>
             {isTaskFinish ? <Header title={t('yourTime')} value={msToTime(endTime - startTime)}/> : null}
+            <ResultOnChart />
         </InformationAboutResultWrapper>
     );
 }

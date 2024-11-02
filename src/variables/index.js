@@ -12,8 +12,9 @@ export const outlineColor = `${white}`;
 
 export const opacity = .5;
 
-
 export const boxShadow = `0 0 10px -3px rgba(255, 255, 255, 1)`;
+
+export const fontSize = '1rem'
 // RWD
 
 export const rwdExtraSmallDevices = 'max-width: 600px';
