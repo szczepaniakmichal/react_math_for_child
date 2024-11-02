@@ -12,8 +12,6 @@ function ResultOnChart() {
         notDone: statistics.leftToDo,
     }), isEqual);
 
-    console.log("correctDone, notDone, inCorrectDone", correctDone, notDone, inCorrectDone)
-
     const categories = ['Correct', 'In correct', 'Not done'];
 
     const seriesData = [correctDone, inCorrectDone, notDone].map((el, i) => {
@@ -27,6 +25,9 @@ function ResultOnChart() {
         chart: {
             type: 'pie',
             backgroundColor: 'transparent',
+        },
+        credits: {
+            enabled: false
         },
         title: {
             text: null,
