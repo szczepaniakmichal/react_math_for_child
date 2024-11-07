@@ -20,6 +20,8 @@ function Statistics() {
     const doneValue = `${done.inPercentage} (${done.inDecimals})`
     const correctDoneValue = `${correctDone.inPercentage} (${correctDone.inDecimals})`
 
+   window.scrollTo({top: document.body.scrollHeight, behavior: "smooth"});
+
     return (
         <InformationAboutResultWrapper>
             <p>Your result is:</p>
