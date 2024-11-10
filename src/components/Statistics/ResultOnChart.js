@@ -1,5 +1,5 @@
 import React from 'react';
-import Chart from "components/highcharts/Chart";
+import Chart from "components";
 import { useSelector } from "react-redux";
 import isEqual from "lodash.isequal";
 import { fontSize } from "variables";

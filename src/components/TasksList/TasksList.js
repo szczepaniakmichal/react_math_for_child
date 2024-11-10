@@ -1,9 +1,29 @@
 import React from 'react';
-import { TaskListWrapper } from "./styles";
+import { useSelector } from "react-redux";
+import isEqual from "lodash.isequal";
+import isEmpty from "lodash.isempty";
 import ListItem from 'components/ListItem/ListItem';
+import { TaskListWrapper } from "./styles";
+import { SectionWrapper } from "styles";
 
-function TasksList({ tasks, isCheckTasksActive }) {
-    if ( !tasks ) return null;
+function TasksList() {
+    const { tasks } = useSelector(({ taskList }) => ({ tasks: taskList.tasks }), isEqual);
+
+    if ( isEmpty(tasks) ) return null;
+
+    return (
+        <SectionWrapper>
+            <TaskListPresenter />
+        </SectionWrapper>
+    );
+}
+
+export default TasksList;
+
+function TaskListPresenter() {
+    const { tasks } = useSelector(({ taskList }) => ({ tasks: taskList.tasks }), isEqual);
+
+    const isCheckTasksActive = true;
 
     return (
         <TaskListWrapper {...{ isCheckTasksActive }}>
@@ -18,7 +38,5 @@ function TasksList({ tasks, isCheckTasksActive }) {
                 }} />
             })}
         </TaskListWrapper>
-    );
+    )
 }
-
-export default TasksList;
