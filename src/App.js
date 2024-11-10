@@ -5,29 +5,18 @@ import isEqual from 'lodash.isequal';
 import i18n from 'i18next'
 import { initReactI18next, useTranslation } from "react-i18next";
 import 'App.css';
-import TasksList from "components/TasksList/TasksList";
-import { en, pl } from 'translations';
+import { TasksList } from "components";
+import i18nConfig from 'translations/i18nConfig'
 import Select from "components/Select/Select";
 import { languageOptions } from "translations/options";
 import { Settings } from "sections";
+import { GoToTop } from "sections";
 
-i18n.use(initReactI18next).init({
-    resources: {
-        en: { translation: en },
-        pl: { translation: pl },
-    },
-    lng: 'en',
-    fallbackLng: 'en',
-    interpolation: { escapeValue: false },
-})
+i18n.use(initReactI18next).init(i18nConfig)
 
 function App() {
     // const dispatch = useDispatch();
     const { t } = useTranslation();
-    //
-    const taskList = useSelector(({ taskList }) => ({ tasks: taskList.tasks }), isEqual);
-
-
 
     // const handleCheckTask = () => {
     //     setIsCheckTasksActive(isCheckTasksActive => !isCheckTasksActive);
@@ -37,8 +26,6 @@ function App() {
     //     }
     // };
 
-    const goBackToTop = () => window.scroll({ top: 0, behavior: 'smooth' });
-
     const handleChangeLanguage = (value) => i18n.changeLanguage(value);
 
     return (
@@ -46,11 +33,7 @@ function App() {
             <Div padding={20} column>
                 <Select options={languageOptions} onChange={handleChangeLanguage} title={t('chooseLanguage')}/>
                 <Settings />
-
-                {/*<SectionWrapper>*/}
-                    <TasksList isCheckTasksActive tasks={taskList.tasks}/>
-                {/*</SectionWrapper>*/}
-
+                <TasksList/>
                 {/*<BottomSection>*/}
                 {/*    {isCheckTasksActive && <Statistics/>}*/}
                 {/*    <GroupButtonWrapper>*/}
@@ -58,11 +41,7 @@ function App() {
                 {/*                backgroundColor='silver'*/}
                 {/*                onClick={handleCheckTask}*/}
                 {/*        />*/}
-                {/*        <Button*/}
-                {/*            onClick={goBackToTop}*/}
-                {/*            label={t('backToTop')}*/}
-                {/*            backgroundColor='silver'*/}
-                {/*        />*/}
+                <GoToTop />
                 {/*    </GroupButtonWrapper>*/}
                 {/*</BottomSection>*/}
             </Div>

@@ -10,6 +10,7 @@ export const statisticsSlice = createSlice({
         correctToDo: '0',
         startTime: 0,
         endTime: 0,
+        isCheckTasksActive: false,
     },
     reducers: {
         updateChecks: state => {
@@ -30,6 +31,9 @@ export const statisticsSlice = createSlice({
         },
         updateEndTime: (state, action) => {
             state.endTime = action.payload;
+        },
+        updateIsCheckTasksActive: (state, action) => {
+            state.isCheckTasksActive = action.payload;
         }
     }
 });
@@ -40,6 +44,8 @@ export const {
     resetChecks,
     updateCorrectDone,
     updateStartTime,
-    updateEndTime } = statisticsSlice.actions;
+    updateEndTime,
+    updateIsCheckTasksActive
+} = statisticsSlice.actions;
 
 export default statisticsSlice.reducer

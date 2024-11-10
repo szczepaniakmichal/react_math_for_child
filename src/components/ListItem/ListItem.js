@@ -28,4 +28,4 @@ function ListItem({ id, userAnswer, correctDone, ...props }) {
     );
 }
 
-export default ListItem;
+export default React.memo(ListItem);

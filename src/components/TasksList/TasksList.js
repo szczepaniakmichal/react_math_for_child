@@ -7,7 +7,7 @@ import { TaskListWrapper } from "./styles";
 import { SectionWrapper } from "styles";
 
 function TasksList() {
-    const { tasks } = useSelector(({ taskList }) => ({ tasks: taskList.tasks }), isEqual);
+    const { tasks } = useSelector(({ taskList, statistic }) => ({ tasks: taskList.tasks, }), isEqual);
 
     if ( isEmpty(tasks) ) return null;
 
@@ -21,9 +21,10 @@ function TasksList() {
 export default TasksList;
 
 function TaskListPresenter() {
-    const { tasks } = useSelector(({ taskList }) => ({ tasks: taskList.tasks }), isEqual);
-
-    const isCheckTasksActive = true;
+    const { tasks, isCheckTasksActive } = useSelector(({ taskList, statistics }) => ({
+        tasks: taskList.tasks,
+        isCheckTasksActive: statistics.isCheckTasksActive,
+    }), isEqual);
 
     return (
         <TaskListWrapper {...{ isCheckTasksActive }}>
