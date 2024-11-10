@@ -1,7 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit';
 
 export const settingsSlice = createSlice({
-    name: 'statistics',
+    name: 'settings',
     initialState: {
         howManyTasks: 30,
         howManyValues: 2,
