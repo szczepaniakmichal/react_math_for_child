@@ -21,7 +21,6 @@ function ListItem({ id, userAnswer, correctDone, ...props }) {
                               isCorrect={correctDone}
                               placeholder={t('enterTheResult')}
                               style={{ marginLeft: '10px' }}
-                              horizontalLabel
                               onChange={handleValueChange}
             />
         </LiWrapper>

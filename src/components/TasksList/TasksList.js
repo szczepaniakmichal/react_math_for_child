@@ -21,17 +21,13 @@ function TasksList() {
 export default TasksList;
 
 function TaskListPresenter() {
-    const { tasks, isCheckTasksActive } = useSelector(({ taskList, statistics }) => ({
-        tasks: taskList.tasks,
-        isCheckTasksActive: statistics.isCheckTasksActive,
-    }), isEqual);
+    const tasks = useSelector(({ taskList }) => taskList.tasks, isEqual);
 
     return (
-        <TaskListWrapper {...{ isCheckTasksActive }}>
+        <TaskListWrapper>
             {tasks.map((taskObj) => {
                 const { id, task, correctResult, userAnswer, correctDone } = taskObj;
                 return <ListItem key={id} taskToDo={task} {...{
-                    isCheckTasksActive,
                     id,
                     correctResult,
                     userAnswer,

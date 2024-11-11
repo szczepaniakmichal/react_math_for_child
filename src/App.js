@@ -9,8 +9,7 @@ import { TasksList } from "components";
 import i18nConfig from 'translations/i18nConfig'
 import Select from "components/Select/Select";
 import { languageOptions } from "translations/options";
-import { Settings } from "sections";
-import { GoToTop } from "sections";
+import { Settings, Statistics } from "sections";
 
 i18n.use(initReactI18next).init(i18nConfig)
 
@@ -34,16 +33,7 @@ function App() {
                 <Select options={languageOptions} onChange={handleChangeLanguage} title={t('chooseLanguage')}/>
                 <Settings />
                 <TasksList/>
-                {/*<BottomSection>*/}
-                {/*    {isCheckTasksActive && <Statistics/>}*/}
-                {/*    <GroupButtonWrapper>*/}
-                {/*        <Button label={isCheckTasksActive ? t('editTask') : t('checkTask')}*/}
-                {/*                backgroundColor='silver'*/}
-                {/*                onClick={handleCheckTask}*/}
-                {/*        />*/}
-                <GoToTop />
-                {/*    </GroupButtonWrapper>*/}
-                {/*</BottomSection>*/}
+                <Statistics />
             </Div>
         </Suspense>
     );

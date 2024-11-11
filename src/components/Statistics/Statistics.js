@@ -2,18 +2,17 @@ import React from 'react';
 import { useSelector } from "react-redux";
 import isEqual from "lodash.isequal";
 import { useTranslation } from "react-i18next";
-
-import Header from "components/Header/Header";
+import { Header, ResultOnChart } from "components";
 import { msToTime } from "utils";
 import { InformationAboutResultWrapper } from "./style";
-import ResultOnChart from "components/Statistics/ResultOnChart";
-
 
 function Statistics() {
     const { t } = useTranslation();
 
     const statistics = useSelector(({ statistics }) => statistics, isEqual);
-    const { checks, done, correctDone, leftToDo, correctToDo, startTime, endTime } = statistics;
+    const { checks, done, correctDone, leftToDo, correctToDo, startTime, endTime, isCheckTasksActive } = statistics;
+
+    if (!isCheckTasksActive) return null;
 
     const isTaskFinish = startTime && endTime;
 

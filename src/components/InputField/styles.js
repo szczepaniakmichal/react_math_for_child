@@ -71,11 +71,13 @@ export const inputStyles = (options = {}) => {
     if ( !isCheckTasksActive ) {
         return {
             borderColor: ref.current.style.borderColor,
+            opacity: 1,
         }
     }
 
     return {
-        borderColor: `${isCorrect ? green : red}`
+        borderColor: `${isCorrect ? green : red}`,
+        opacity: `${opacity}`,
     }
 };
 
