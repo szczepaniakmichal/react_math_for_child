@@ -46,7 +46,6 @@ function ButtonPresenter() {
 
     return (
         <Button label={isCheckTasksActive ? t('editTask') : t('checkTask')}
-                backgroundColor='silver'
                 onClick={handleCheckTask}
         />
     )

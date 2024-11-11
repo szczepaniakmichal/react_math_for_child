@@ -20,7 +20,6 @@ function GenerateButton() {
     return (
         <SectionWrapper>
             <Button label={t('generateTask')}
-                    backgroundColor='silver'
                     onClick={handleGenerateTasks}
             />
         </SectionWrapper>

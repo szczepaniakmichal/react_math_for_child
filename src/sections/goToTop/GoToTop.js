@@ -10,7 +10,6 @@ function GoToTop() {
         <Button
             onClick={goBackToTop}
             label={t('backToTop')}
-            backgroundColor='silver'
         />
     );
 }
