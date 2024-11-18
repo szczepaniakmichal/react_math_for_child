@@ -3,9 +3,9 @@ import { createSlice } from '@reduxjs/toolkit';
 export const settingsSlice = createSlice({
     name: 'settings',
     initialState: {
-        howManyTasks: 2,
+        howManyTasks: 30,
         howManyValues: 2,
-        maximumSingleValue: 1,
+        maximumSingleValue: 30,
         typeOfMathOperators: [],
         isPositiveResults: false,
     },

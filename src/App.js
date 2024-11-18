@@ -8,7 +8,7 @@ import { Settings, Statistics } from "sections";
 import i18nConfig from 'translations/i18nConfig'
 import { LanguageSelector } from "sections";
 
-i18n.use(initReactI18next).init(i18nConfig)
+i18n.use(initReactI18next).init(i18nConfig);
 
 function App() {
     return (
