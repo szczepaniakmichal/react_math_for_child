@@ -1,3 +1,9 @@
+html,
+body {
+    /*overscroll-behavior-y: contain;*/
+    overscroll-behavior: none;
+}
+
 body {
     background-color: darkgreen;
 }
