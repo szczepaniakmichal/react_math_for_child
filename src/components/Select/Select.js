@@ -17,7 +17,8 @@ Select.defaultProps = {
     options: [],
     style: {},
     title: '',
-    onChange: () => {},
+    onChange: () => {
+    },
 }
 
 function Select({ options, style, title, onChange }) {
@@ -45,7 +46,8 @@ function Select({ options, style, title, onChange }) {
                 </Trigger>
                 {open && (
                     <OptionsWrapper className="OptionsWrapper">
-                        {options.map(el => <Option key={el.value} {...{ el }} onClick={handleOption}/>)}
+                        {options.map(el => <Option key={el.value} {...{ el }}
+                                                   onClick={handleOption}/>)}
                     </OptionsWrapper>
                 )}
 

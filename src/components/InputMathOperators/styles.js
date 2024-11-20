@@ -1,7 +1,13 @@
 import styled from 'styled-components';
 
 import { white } from 'colors';
-import { border, borderRadius, borderWidth, opacity, transition } from "variables";
+import {
+    border,
+    borderRadius,
+    borderWidth,
+    opacity,
+    transition
+} from "variables";
 import { pulseLight } from "components/Button/styles";
 
 export const WrapperInputMathOperators = styled.div`

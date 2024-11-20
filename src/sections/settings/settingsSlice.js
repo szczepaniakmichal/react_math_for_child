@@ -10,8 +10,11 @@ export const settingsSlice = createSlice({
         isPositiveResults: false,
     },
     reducers: {
-        updateSettings: (state, action ) => {
-            return  {...state, [action.payload.fieldName]: action.payload.value};
+        updateSettings: (state, action) => {
+            return {
+                ...state,
+                [action.payload.fieldName]: action.payload.value
+            };
         },
     }
 });

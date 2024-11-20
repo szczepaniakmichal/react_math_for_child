@@ -29,13 +29,19 @@ function OperationsTypes() {
     return (
         <SectionWrapper>
             <Header title={t('typeOperations')}/>
-            <InputMathOperators type={t('addition')} value='+' onChange={handleMathOperatorChange}/>
-            <InputMathOperators type={t('subtraction')} value='-' onChange={handleMathOperatorChange}/>
-            <InputMathOperators type={t('multiplication')} value='*' onChange={handleMathOperatorChange}/>
-            <InputMathOperators type={t('division')} value='/' onChange={handleMathOperatorChange}/>
-            <InputMathOperators type={t('positiveResults')} value={isPositiveResults}
+            <InputMathOperators type={t('addition')} value='+'
+                                onChange={handleMathOperatorChange}/>
+            <InputMathOperators type={t('subtraction')} value='-'
+                                onChange={handleMathOperatorChange}/>
+            <InputMathOperators type={t('multiplication')} value='*'
+                                onChange={handleMathOperatorChange}/>
+            <InputMathOperators type={t('division')} value='/'
+                                onChange={handleMathOperatorChange}/>
+            <InputMathOperators type={t('positiveResults')}
+                                value={isPositiveResults}
                                 onChange={handlePositiveResultsChange}
-                                disabled={ !typeOfMathOperators.includes('-')} checked={isPositiveResults}/>
+                                disabled={ !typeOfMathOperators.includes('-')}
+                                checked={isPositiveResults}/>
         </SectionWrapper>
     );
 }

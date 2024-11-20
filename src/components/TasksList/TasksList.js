@@ -7,13 +7,16 @@ import { TaskListWrapper } from "./styles";
 import { SectionWrapper } from "styles";
 
 function TasksList() {
-    const { tasks } = useSelector(({ taskList, statistic }) => ({ tasks: taskList.tasks, }), isEqual);
+    const { tasks } = useSelector(({
+                                       taskList,
+                                       statistic
+                                   }) => ({ tasks: taskList.tasks, }), isEqual);
 
     if ( isEmpty(tasks) ) return null;
 
     return (
         <SectionWrapper>
-            <TaskListPresenter />
+            <TaskListPresenter/>
         </SectionWrapper>
     );
 }
@@ -26,7 +29,13 @@ function TaskListPresenter() {
     return (
         <TaskListWrapper>
             {tasks.map((taskObj) => {
-                const { id, task, correctResult, userAnswer, correctDone } = taskObj;
+                const {
+                    id,
+                    task,
+                    correctResult,
+                    userAnswer,
+                    correctDone
+                } = taskObj;
                 return <ListItem key={id} taskToDo={task} {...{
                     id,
                     correctResult,

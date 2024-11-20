@@ -1,6 +1,12 @@
 var stringMath = require('string-math');
 
-function createTasks({ howManyTasks, howManyValues, maximumSingleValue, typeOfMathOperators, isPositiveResults }) {
+function createTasks({
+                         howManyTasks,
+                         howManyValues,
+                         maximumSingleValue,
+                         typeOfMathOperators,
+                         isPositiveResults
+                     }) {
     const arrOfTasks = [];
 
     for ( let i = 0; i < howManyTasks; i++ ) {

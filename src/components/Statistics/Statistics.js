@@ -10,16 +10,25 @@ function Statistics() {
     const { t } = useTranslation();
 
     const statistics = useSelector(({ statistics }) => statistics, isEqual);
-    const { checks, done, correctDone, leftToDo, correctToDo, startTime, endTime, isCheckTasksActive } = statistics;
+    const {
+        checks,
+        done,
+        correctDone,
+        leftToDo,
+        correctToDo,
+        startTime,
+        endTime,
+        isCheckTasksActive
+    } = statistics;
 
-    if (!isCheckTasksActive) return null;
+    if ( !isCheckTasksActive ) return null;
 
     const isTaskFinish = startTime && endTime;
 
     const doneValue = `${done.inPercentage} (${done.inDecimals})`
     const correctDoneValue = `${correctDone.inPercentage} (${correctDone.inDecimals})`
 
-   window.scrollTo({top: document.body.scrollHeight, behavior: "smooth"});
+    window.scrollTo({ top: document.body.scrollHeight, behavior: "smooth" });
 
     return (
         <InformationAboutResultWrapper>
@@ -29,8 +38,9 @@ function Statistics() {
             <Header title={t('correctlyDone')} value={correctDoneValue}/>
             <Header title={t('leftToDo')} value={leftToDo}/>
             <Header title={t('correctLeftToDo')} value={correctToDo}/>
-            {isTaskFinish ? <Header title={t('yourTime')} value={msToTime(endTime - startTime)}/> : null}
-            <ResultOnChart />
+            {isTaskFinish ? <Header title={t('yourTime')}
+                                    value={msToTime(endTime - startTime)}/> : null}
+            <ResultOnChart/>
         </InformationAboutResultWrapper>
     );
 }

@@ -6,7 +6,11 @@ import { fontSize } from "variables";
 import { green, orange, red } from "colors";
 
 function ResultOnChart() {
-    const { correctDone, notDone, inCorrectDone }  = useSelector(({ statistics }) => ({
+    const {
+        correctDone,
+        notDone,
+        inCorrectDone
+    } = useSelector(({ statistics }) => ({
         correctDone: statistics.correctDone.correctAnswer,
         inCorrectDone: statistics.correctToDo - statistics.leftToDo,
         notDone: statistics.leftToDo,
@@ -53,7 +57,7 @@ function ResultOnChart() {
                 fontWeight: 500,
             }
         },
-        colors:[green, red, orange],
+        colors: [green, red, orange],
         series: [{
             colorByPoint: true,
             innerSize: '70%',
@@ -65,7 +69,7 @@ function ResultOnChart() {
         }]
     }
 
-    return <Chart {...{options}}/>
+    return <Chart {...{ options }}/>
 }
 
 export default ResultOnChart;

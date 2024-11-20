@@ -1,7 +1,13 @@
 import React, { useRef } from 'react';
 import { useSelector } from "react-redux";
 import isEqual from "lodash.isequal";
-import { Input, inputStyles, LabelResult, LabelTask, WrapperInputField } from './styles';
+import {
+    Input,
+    inputStyles,
+    LabelResult,
+    LabelTask,
+    WrapperInputField
+} from './styles';
 
 function InputFieldResult({ taskToDo, ...props }) {
 
@@ -9,7 +15,7 @@ function InputFieldResult({ taskToDo, ...props }) {
         <WrapperInputField>
             <LabelResult>
                 <LabelTask>{taskToDo}</LabelTask>
-               <InputPresenter {...{taskToDo}} {...props}/>
+                <InputPresenter {...{ taskToDo }} {...props}/>
             </LabelResult>
         </WrapperInputField>
     );
@@ -17,10 +23,17 @@ function InputFieldResult({ taskToDo, ...props }) {
 
 export default InputFieldResult;
 
-function InputPresenter({className, onChange, placeholder, taskToDo, isCorrect, ...props}) {
+function InputPresenter({
+                            className,
+                            onChange,
+                            placeholder,
+                            taskToDo,
+                            isCorrect,
+                            ...props
+                        }) {
     const ref = useRef(null);
 
-    const isCheckTasksActive = useSelector(({statistics}) =>statistics.isCheckTasksActive, isEqual);
+    const isCheckTasksActive = useSelector(({ statistics }) => statistics.isCheckTasksActive, isEqual);
 
     return (
         <Input

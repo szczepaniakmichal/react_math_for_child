@@ -11,7 +11,7 @@ function GenerateButton() {
     const { t } = useTranslation();
 
     const { tasks, settings } = useSelector(({ taskList, settings }) => ({
-        tasks: taskList.tasks ,
+        tasks: taskList.tasks,
         settings,
     }), isEqual);
 

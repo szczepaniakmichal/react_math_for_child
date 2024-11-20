@@ -1,6 +1,7 @@
 import styled from "styled-components";
-import { green,  white } from "colors";
+import { green, white } from "colors";
 import { borderRadius, boxShadow, opacity } from "variables";
+import { WrapperInputField } from 'components/InputField/styles.js'
 
 export const LiWrapper = styled.li`
   display: flex;
@@ -22,7 +23,7 @@ export const LiWrapper = styled.li`
       background-color: inherit;
     }
     
-    & WrapperInputField {
+    & ${WrapperInputField} {
       color: #000;
     }
   }

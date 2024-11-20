@@ -14,10 +14,10 @@ function App() {
     return (
         <Suspense fallback="Loading...">
             <Div padding={20} column>
-                <LanguageSelector />
-                <Settings />
+                <LanguageSelector/>
+                <Settings/>
                 <TasksList/>
-                <Statistics />
+                <Statistics/>
             </Div>
         </Suspense>
     );

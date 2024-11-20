@@ -1,7 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import { disabledStyles, Input, Label, WrapperInputMathOperators } from './styles'
+import {
+    disabledStyles,
+    Input,
+    Label,
+    WrapperInputMathOperators
+} from './styles'
 
 InputMathOperators.prototype = {
     type: PropTypes.string,

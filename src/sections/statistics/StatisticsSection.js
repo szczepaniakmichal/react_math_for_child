@@ -16,13 +16,13 @@ import { calculateDoneTasks } from "utils";
 function StatisticsSection() {
     return (
         <BottomSection>
-         <Statistics />
-        <GroupButtonWrapper>
-            <ButtonPresenter />
-            <GoToTop />
-        </GroupButtonWrapper>
-    </BottomSection>
-        );
+            <Statistics/>
+            <GroupButtonWrapper>
+                <ButtonPresenter/>
+                <GoToTop/>
+            </GroupButtonWrapper>
+        </BottomSection>
+    );
 }
 
 export default StatisticsSection;
@@ -31,13 +31,16 @@ function ButtonPresenter() {
     const dispatch = useDispatch();
     const { t } = useTranslation();
 
-    const { isCheckTasksActive, tasks } = useSelector(({ statistics, taskList }) =>({
+    const { isCheckTasksActive, tasks } = useSelector(({
+                                                           statistics,
+                                                           taskList
+                                                       }) => ({
         tasks: taskList.tasks,
         isCheckTasksActive: statistics.isCheckTasksActive,
     }), isEqual);
 
     const handleCheckTask = () => {
-       dispatch(updateIsCheckTasksActive( !isCheckTasksActive));
+        dispatch(updateIsCheckTasksActive( !isCheckTasksActive));
         if ( !isCheckTasksActive && tasks.length ) {
             dispatch(updateChecks());
             dispatch(updateCorrectDone(calculateDoneTasks(tasks)));

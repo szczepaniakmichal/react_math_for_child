@@ -9,7 +9,8 @@ function LanguageSelector() {
 
     const handleChangeLanguage = (value) => i18n.changeLanguage(value);
 
-    return   <Select options={languageOptions} onChange={handleChangeLanguage} title={t('chooseLanguage')}/>;
+    return <Select options={languageOptions} onChange={handleChangeLanguage}
+                   title={t('chooseLanguage')}/>;
 }
 
 export default LanguageSelector;
