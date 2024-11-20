@@ -3,42 +3,42 @@ import { darkerGreen, darkGreen, white } from "colors";
 import { border, borderRadius, transition } from "variables";
 
 export const SelectWrapper = styled.div`
-  position: relative;
-  z-index: 2;
-  width: 150px;
-  box-sizing: content-box;
+    position: relative;
+    z-index: 2;
+    width: 150px;
+    box-sizing: content-box;
 `;
 
 export const Trigger = styled.div`
-  width: 100%;
-  background-color: ${darkGreen};
-  height: 30px;
-  border: ${border};
-  color: ${white};
-  border-radius: ${borderRadius};
+    width: 100%;
+    background-color: ${darkGreen};
+    height: 30px;
+    border: ${border};
+    color: ${white};
+    border-radius: ${borderRadius};
 
-  div {
-    padding: 5px 10px;
-  }
+    div {
+        padding: 5px 10px;
+    }
 `;
 
 export const OptionsWrapper = styled.div`
-  position: absolute;
-  top: 32px;
-  width: 150px;
-  border: ${border};
-  border-radius: ${borderRadius};
+    position: absolute;
+    top: 32px;
+    width: 150px;
+    border: ${border};
+    border-radius: ${borderRadius};
 `;
 
 export const OptionWrapper = styled.div`
-  padding: 5px 10px;
-  background-color: ${darkGreen};
-  color: ${white};
-  transition: ${transition};
+    padding: 5px 10px;
+    background-color: ${darkGreen};
+    color: ${white};
+    transition: ${transition};
 
-  &:hover {
-    background-color: ${darkerGreen};
-  }
+    &:hover {
+        background-color: ${darkerGreen};
+    }
 `;
 
 SelectWrapper.displayName = 'SelectWrapper';

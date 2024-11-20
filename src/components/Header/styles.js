@@ -3,15 +3,15 @@ import { white } from "colors";
 import { opacity } from 'variables';
 
 export const HeaderWrapper = styled.h4`
-  color: ${white};
-  opacity: ${opacity};
-  margin: 0;
-  font-weight: 400;
-  margin-bottom: 2px;
+    color: ${white};
+    opacity: ${opacity};
+    margin: 0 0 2px 0;
+    font-weight: 400;
 
-  &:first-letter {
-    text-transform: capitalize;
-  }
+
+    &:first-letter {
+        text-transform: capitalize;
+    }
 `;
 
 HeaderWrapper.displayName = 'HeaderWrapper';

@@ -1,8 +1,8 @@
 import {
     resetChecks,
     updateEndTime,
-    updateStartTime,
-    updateIsCheckTasksActive
+    updateIsCheckTasksActive,
+    updateStartTime
 } from "components/Statistics/statisticsSlice";
 import { createTasks } from "utils/index";
 import { generateTasksReducer } from "components/TasksList/taskListSlice";
@@ -26,5 +26,5 @@ export function updateTasks(dispatch, tasks, settings) {
     }
     dispatch(updateStartTime(new Date().getTime()));
     generateTasks(dispatch, settings);
-};
+}
 

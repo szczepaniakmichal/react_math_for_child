@@ -4,9 +4,8 @@ import i18n from 'i18next'
 import { initReactI18next } from "react-i18next";
 import 'App.css';
 import { TasksList } from "components";
-import { Settings, Statistics } from "sections";
+import { LanguageSelector, Settings, Statistics } from "sections";
 import i18nConfig from 'translations/i18nConfig'
-import { LanguageSelector } from "sections";
 
 i18n.use(initReactI18next).init(i18nConfig);
 
