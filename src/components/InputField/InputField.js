@@ -16,7 +16,6 @@ InputField.defaultProps = {
 function InputField({
                         title,
                         value,
-                        className,
                         placeholder,
                         horizontalLabel,
                         onChange,
@@ -29,7 +28,7 @@ function InputField({
             <LabelField {...{ horizontalLabel }}>{title}
                 <Input
                     {...props}
-                    {...{ value, className, onChange, max, min }}
+                    {...{ value, onChange, max, min }}
                     type="number"
                     placeholder={placeholder || title}
                 />

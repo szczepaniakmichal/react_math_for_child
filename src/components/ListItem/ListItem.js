@@ -1,13 +1,11 @@
-import React from 'react';
+import React, { memo } from 'react';
 import { useDispatch } from "react-redux";
 import InputFieldResult from "components/InputField/InputFieldResult";
 import { CounterItem, LiWrapper } from "./styles";
 import { updateUserAnswer } from 'components/TasksList/taskListSlice'
-import { useTranslation } from "react-i18next";
 
 function ListItem({ id, userAnswer, correctDone, ...props }) {
     const dispatch = useDispatch();
-    const { t } = useTranslation();
 
     const handleValueChange = (e) => {
         dispatch(updateUserAnswer({ id, value: e.target.value }))
@@ -15,11 +13,10 @@ function ListItem({ id, userAnswer, correctDone, ...props }) {
 
     return (
         <LiWrapper>
-            <CounterItem>{id + 1}.</CounterItem>
+            <CounterItemPresenter {...{ id }} />
             <InputFieldResult {...props}
                               value={userAnswer}
                               isCorrect={correctDone}
-                              placeholder={t('enterTheResult')}
                               style={{ marginLeft: '10px' }}
                               onChange={handleValueChange}
             />
@@ -28,3 +25,7 @@ function ListItem({ id, userAnswer, correctDone, ...props }) {
 }
 
 export default React.memo(ListItem);
+
+const CounterItemPresenter = memo(({ id }) => {
+    return <CounterItem>{id + 1}.</CounterItem>
+})
