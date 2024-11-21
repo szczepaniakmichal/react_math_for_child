@@ -1,5 +1,6 @@
 export { default as Button } from 'components/Button/Button';
 export { default as Header } from 'components/Header/Header';
+export { default as SubHeader } from 'components/Header/SubHeader';
 export { default as Chart } from 'components/Highcharts/Chart';
 export { default as TasksList } from 'components/TasksList/TasksList';
 export { default as Select } from 'components/Select/Select';

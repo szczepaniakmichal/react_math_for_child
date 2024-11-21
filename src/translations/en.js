@@ -2,7 +2,7 @@ const en = {
     howManyTasks: 'How many tasks?',
     howManyValuesToCalculate: 'How many values to calculate?',
     maximumSingleValue: "Maximum single value?",
-    typeOperations: "type of mathematical operations:",
+    typeOperations: "type of mathematical operations",
     addition: "addition",
     subtraction: "subtraction",
     multiplication: "multiplication",

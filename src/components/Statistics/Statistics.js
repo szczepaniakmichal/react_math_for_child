@@ -2,7 +2,7 @@ import React from 'react';
 import { useSelector } from "react-redux";
 import isEqual from "lodash.isequal";
 import { useTranslation } from "react-i18next";
-import { Header, ResultOnChart } from "components";
+import { SubHeader, ResultOnChart } from "components";
 import { msToTime } from "utils";
 import { InformationAboutResultWrapper } from "./style";
 
@@ -33,12 +33,12 @@ function Statistics() {
     return (
         <InformationAboutResultWrapper>
             <p>Your result is:</p>
-            <Header title={t('checkCounter')} value={checks}/>
-            <Header title={t('done')} value={doneValue}/>
-            <Header title={t('correctlyDone')} value={correctDoneValue}/>
-            <Header title={t('leftToDo')} value={leftToDo}/>
-            <Header title={t('correctLeftToDo')} value={correctToDo}/>
-            {isTaskFinish ? <Header title={t('yourTime')}
+            <SubHeader title={t('checkCounter')} value={checks}/>
+            <SubHeader title={t('done')} value={doneValue}/>
+            <SubHeader title={t('correctlyDone')} value={correctDoneValue}/>
+            <SubHeader title={t('leftToDo')} value={leftToDo}/>
+            <SubHeader title={t('correctLeftToDo')} value={correctToDo}/>
+            {isTaskFinish ? <SubHeader title={t('yourTime')}
                                     value={msToTime(endTime - startTime)}/> : null}
             <ResultOnChart/>
         </InformationAboutResultWrapper>
