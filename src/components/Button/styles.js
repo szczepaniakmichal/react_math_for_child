@@ -1,6 +1,5 @@
-import styled, { keyframes } from "styled-components";
-
-import { darkerGreen } from "colors";
+import styled, { css, keyframes } from "styled-components";
+import { darkerGreen, red } from "colors";
 import { border, borderRadius } from "variables";
 
 export const GroupButtonWrapper = styled.div`
@@ -30,6 +29,24 @@ export const pulseLight = keyframes`
     }
 `;
 
+export const pulseDark = keyframes`
+    0% {
+        background-image: linear-gradient(to right,
+        transparent 33%,
+        rgba(0, 0, 0, 0.7) 50%,
+        transparent 66%);
+        background-size: 300% 100%;
+
+    }
+    100% {
+        background-position: right;
+        background-image: linear-gradient(to right,
+        transparent 33%,
+        rgba(0, 0, 0, 0.7) 50%,
+        transparent 66%);
+        background-size: 300% 100%;
+    }
+`;
 
 export const GlassButtonWrapper = styled.button`
     color: ${(props) => props.color ? props.color : '#fff'};
@@ -44,7 +61,6 @@ export const GlassButtonWrapper = styled.button`
     text-decoration: none;
     text-transform: uppercase;
     box-sizing: border-box;
-
     border: ${border};
     border-radius: ${borderRadius};
     transition: 0.3s;
@@ -56,6 +72,25 @@ export const GlassButtonWrapper = styled.button`
         background-color: rgba(255, 255, 255, 0.2);
         text-decoration: none;
     }
+
+    ${({ disabled }) => {
+        if ( disabled ) {
+            return css`
+                background-color: rgba(0, 0, 0, 0.7);
+                cursor: not-allowed;
+                border-color: rgba(0, 0, 0, 0.7);
+
+                &:hover {
+                    color: ${red};
+                    font-weight: 700;
+                    letter-spacing: 5px;
+                    animation-name: ${pulseDark};
+                    border-color: rgba(0, 0, 0, 0.4);
+                }
+            `;
+        }
+        return null;
+    }}
 `;
 
 // .white {
@@ -80,18 +115,6 @@ export const GlassButtonWrapper = styled.button`
 //         to right,
 //         transparent 33%,
 //         rgba(255,255,255,0.4) 50%,
-//         transparent 66%
-// );
-//     background-size:300% 100%;
-//     animation: shine 5s infinite;
-// }
-
-
-// .pulse-dark {
-//     background-image: linear-gradient(
-//         to right,
-//         transparent 33%,
-//         rgba(0,0,0,0.1) 50%,
 //         transparent 66%
 // );
 //     background-size:300% 100%;

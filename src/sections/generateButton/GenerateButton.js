@@ -17,10 +17,15 @@ function GenerateButton() {
 
     const handleGenerateTasks = () => updateTasks(dispatch, tasks, settings);
 
+    const { howManyTasks, howManyValues, maximumSingleValue } = settings;
+
+    const isDisabled = !Boolean(howManyTasks) || !Boolean(howManyValues) || !Boolean(maximumSingleValue);
+
     return (
         <SectionWrapper>
             <Button label={t('generateTask')}
                     onClick={handleGenerateTasks}
+                    disabled={isDisabled}
             />
         </SectionWrapper>
     );
