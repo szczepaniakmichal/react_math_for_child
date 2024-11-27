@@ -146,13 +146,7 @@
     -->
 
     <script>
-      const loaderId = setInterval(() => {
-        const progres = new ProgressEvent('progress');
-        console.log("progres", progres)
-      }, 5000)
-
       window.addEventListener('load', function() {
-        clearTimeout(loaderId);
         document.getElementById('root').removeAttribute("class");
       });
     </script>
