@@ -11,6 +11,7 @@ export const statisticsSlice = createSlice({
         startTime: 0,
         endTime: 0,
         isCheckTasksActive: false,
+        isAllTasksDone: false,
     },
     reducers: {
         updateChecks: state => {

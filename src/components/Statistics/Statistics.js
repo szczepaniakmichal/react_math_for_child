@@ -1,10 +1,11 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useSelector } from "react-redux";
 import isEqual from "lodash.isequal";
 import { useTranslation } from "react-i18next";
 import { SubHeader, ResultOnChart } from "components";
 import { msToTime } from "utils";
 import { InformationAboutResultWrapper } from "./style";
+import updateLastWorkSession from "utils/updateLastWorkSesion";
 
 function Statistics() {
     const { t } = useTranslation();
@@ -18,8 +19,12 @@ function Statistics() {
         correctToDo,
         startTime,
         endTime,
-        isCheckTasksActive
+        isCheckTasksActive,
     } = statistics;
+
+    useEffect(() => {
+        done.isAllTasksDone && updateLastWorkSession()
+    }, [done.isAllTasksDone]);
 
     if ( !isCheckTasksActive ) return null;
 
