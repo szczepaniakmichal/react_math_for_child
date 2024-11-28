@@ -1,5 +1,13 @@
 import styled from "styled-components";
 import { darkerGreen, white } from "colors";
+import { boxShadow } from "variables";
+
+export const AppWrapper = styled.div`
+    margin: 0 auto;
+    max-width: 800px;
+    padding: 20px;
+    box-shadow: ${boxShadow};
+`
 
 export const BottomSection = styled.div`
     background-color: ${darkerGreen};
