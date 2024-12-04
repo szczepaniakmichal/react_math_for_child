@@ -1,29 +1,34 @@
-import React, { useState } from 'react';
+import React from 'react';
+import { useDispatch, useSelector } from "react-redux";
+import isEqual from "lodash.isequal";
 import { useTranslation } from "react-i18next";
 import { SectionWrapper } from "styles";
 import { Header } from "components";
-import InputMathOperators
-    from "components/InputMathOperators/InputMathOperators";
+import InputMathOperators from "components/InputMathOperators/InputMathOperators";
+import updateSettingsHandler from "utils/updateSettingsHandler";
 
 function OperationsTypes() {
+    const dispatch = useDispatch();
     const { t } = useTranslation();
 
-    const [isPositiveResults, setIsPositiveResults] = useState(false);
-    const [typeOfMathOperators, setTypeOfMathOperators] = useState([]);
+    const { typeOfMathOperators, isPositiveResults } = useSelector(({ settings }) => ({
+        typeOfMathOperators: settings.typeOfMathOperators,
+        isPositiveResults: settings.isPositiveResults,
+    }), isEqual);
 
-    const handlePositiveResultsChange = () => setIsPositiveResults( !isPositiveResults);
+    const handlePositiveResultsChange = () => updateSettingsHandler(dispatch,'isPositiveResults', !isPositiveResults);
 
     const handleMathOperatorChange = (e) => {
         const mathOperator = e.target.value;
         const isChecked = e.target.checked;
 
-        if ( isChecked ) {
-            setTypeOfMathOperators([...typeOfMathOperators, mathOperator])
-        } else {
-            const newArr = typeOfMathOperators.filter(el => el !== mathOperator)
-            setTypeOfMathOperators(newArr);
+        const value = isChecked ? [...typeOfMathOperators, mathOperator] : typeOfMathOperators.filter(el => el !== mathOperator);
+
+        updateSettingsHandler(dispatch, 'typeOfMathOperators', value)
+
+        if ( mathOperator === '-' ) {
+          updateSettingsHandler(dispatch,'isPositiveResults', false);
         }
-        if ( mathOperator === '-' ) setIsPositiveResults(false);
     }
 
     return (
