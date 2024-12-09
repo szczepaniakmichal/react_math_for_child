@@ -1,12 +1,12 @@
 import React from 'react';
 import {HeaderWrapper} from "./styles";
 
-type Props = {
+type HeaderProps = {
     title: string,
     value?: string,
 }
 
-const Header: React.FC<Props> = ({title = '', value = ''}) => {
+const Header: React.FC<HeaderProps> = ({title = '', value = ''}) => {
     return <HeaderWrapper>{title}: {value}</HeaderWrapper>;
 }
 
