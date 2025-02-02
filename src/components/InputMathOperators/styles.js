@@ -24,6 +24,7 @@ export const Label = styled.label`
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    align-items: center;
     padding: 0 5px;
     color: ${white};
 

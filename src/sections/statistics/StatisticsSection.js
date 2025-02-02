@@ -39,9 +39,13 @@ function ButtonPresenter() {
         isCheckTasksActive: statistics.isCheckTasksActive,
     }), isEqual);
 
+    const isDisabled = !tasks.length;
+
     const handleCheckTask = () => {
+        if ( isDisabled ) return null;
+
         dispatch(updateIsCheckTasksActive( !isCheckTasksActive));
-        if ( !isCheckTasksActive && tasks.length ) {
+        if ( !isCheckTasksActive ) {
             dispatch(updateChecks());
             dispatch(updateCorrectDone(calculateDoneTasks(tasks)));
         }
@@ -50,6 +54,7 @@ function ButtonPresenter() {
     return (
         <Button label={isCheckTasksActive ? t('editTask') : t('checkTask')}
                 onClick={handleCheckTask}
+                disabled={isDisabled}
         />
     )
 }
