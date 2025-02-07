@@ -1,5 +1,5 @@
 import styled, { css, keyframes } from "styled-components";
-import { black, darkerGreen } from "colors";
+import { darkerGreen, gray } from "colors";
 import { border, borderRadius } from "variables";
 
 export const GroupButtonWrapper = styled.div`
@@ -77,8 +77,8 @@ export const GlassButtonWrapper = styled.button`
         if ( disabled ) {
             return css`
                 cursor: not-allowed;
-                border-color: rgba(0, 0, 0, 0.7);
-                color: ${black};
+                border-color: rgba(128,128,128, 0.7);
+                color: ${gray};
 
                 &:hover {
                     animation-name: ${pulseDark};

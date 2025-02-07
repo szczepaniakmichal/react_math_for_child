@@ -8,7 +8,6 @@ export function getCorrectInputsValue(target, min, max) {
 }
 
 function rangeValues(value, min, max) {
-    console.log("value", value)
     if (isNaN(value)) return '';
     if (value < min ) return min;
     if (value > max) return max;

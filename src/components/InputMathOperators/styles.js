@@ -1,6 +1,5 @@
 import styled from 'styled-components';
-
-import { white } from 'colors';
+import { darkerGreen, green, white } from 'colors';
 import {
     border,
     borderRadius,
@@ -39,6 +38,28 @@ export const Label = styled.label`
 export const Input = styled.input`
     width: 20px;
     height: 20px;
+    visibility: hidden;
+    position: relative;
+
+    &:before, &:after {
+        content: "✔";
+        position: absolute;
+        top: -13px;
+        font-size: 30px;
+    }
+
+    &:before {
+        visibility: visible;
+        color: ${darkerGreen};
+    }
+
+    &:checked {
+        &:after {
+            visibility: visible;
+            color: ${green};
+        }
+    }
+
 `;
 
 export const disabledStyles = (options = {}) => {
