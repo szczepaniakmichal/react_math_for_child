@@ -1,6 +1,8 @@
 import styled from "styled-components";
-import { white } from "colors";
+import { theme } from "colors";
 import { opacity } from 'variables';
+
+const { white } = theme;
 
 export const HeaderWrapper = styled.h4`
     color: ${white};

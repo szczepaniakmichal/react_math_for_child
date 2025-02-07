@@ -1,6 +1,8 @@
 import styled, { css, keyframes } from "styled-components";
-import { darkerGreen, gray } from "colors";
+import { theme } from "colors";
 import { border, borderRadius } from "variables";
+
+const { darkerGreen, gray } = theme;
 
 export const GroupButtonWrapper = styled.div`
     display: flex;

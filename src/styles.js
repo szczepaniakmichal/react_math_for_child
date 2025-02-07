@@ -1,6 +1,8 @@
 import styled from "styled-components";
-import { darkerGreen, white } from "colors";
+import { theme } from "colors";
 import { boxShadow } from "variables";
+
+const { darkerGreen, white } = theme;
 
 export const AppWrapper = styled.div`
     margin: 0 auto;

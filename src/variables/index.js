@@ -1,4 +1,6 @@
-import { white, yellow } from "colors";
+import { theme } from "colors";
+
+const { white, yellow } = theme;
 
 export const paddingButton = '10px 30px';
 export const paddingTopBottom = '5px';

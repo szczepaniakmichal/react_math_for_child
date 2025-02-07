@@ -1,6 +1,8 @@
 import styled from "styled-components";
-import { darkerGreen, darkGreen, white } from "colors";
+import { theme } from "colors";
 import { border, borderRadius, transition } from "variables";
+
+const { darkerGreen, darkGreen, white } = theme;
 
 export const SelectWrapper = styled.div`
     position: relative;

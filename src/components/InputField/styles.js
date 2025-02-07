@@ -1,7 +1,9 @@
 import styled from "styled-components";
 import { border, borderRadius, opacity, paddingTopBottom } from "variables";
-import { darkGreen, green, red, white } from "colors";
+import { theme } from "colors";
 import { pulseLight } from "components/Button/styles";
+
+const { darkGreen, green, red, white } = theme;
 
 export const WrapperInputField = styled.div`
     display: flex;
