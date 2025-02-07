@@ -3,23 +3,20 @@ import { Chart } from "components";
 import { useSelector } from "react-redux";
 import isEqual from "lodash.isequal";
 import { fontSize } from "variables";
-import { green, orange, red } from "colors";
+import { theme } from "colors";
 import { roundNum } from "utils/roundNum";
+import { categories } from "components/Statistics/constants";
+
+const { green, orange, red } = theme;
 
 function ResultOnChart() {
-    const {
-        correctDone,
-        notDone,
-        inCorrectDone
-    } = useSelector(({ statistics }) => ({
-        correctDone: statistics.correctDone.correctAnswer,
-        inCorrectDone: statistics.correctToDo - statistics.leftToDo,
-        notDone: statistics.leftToDo,
-    }), isEqual);
+    const data = useSelector(({ statistics }) => ([
+         statistics.correctDone.correctAnswer,
+         statistics.correctToDo - statistics.leftToDo,
+         statistics.leftToDo,
+    ]), isEqual);
 
-    const categories = ['Correct', 'In correct', 'Not done'];
-
-    const seriesData = [correctDone, inCorrectDone, notDone].map((el, i) => {
+    const seriesData = data.map((el, i) => {
         return {
             name: categories[i],
             y: el,

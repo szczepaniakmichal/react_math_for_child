@@ -1,0 +1,1 @@
+export const categories = ['Correct', 'In correct', 'Not done'];
