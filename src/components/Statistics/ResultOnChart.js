@@ -4,6 +4,7 @@ import { useSelector } from "react-redux";
 import isEqual from "lodash.isequal";
 import { fontSize } from "variables";
 import { green, orange, red } from "colors";
+import { roundNum } from "utils/roundNum";
 
 function ResultOnChart() {
     const {
@@ -57,6 +58,11 @@ function ResultOnChart() {
                 fontWeight: 500,
             }
         },
+        tooltip: {
+            useHTML: true,
+            backgroundColor: 'transparent',
+            formatter: resultTooltip,
+        },
         colors: [green, red, orange],
         series: [{
             colorByPoint: true,
@@ -73,3 +79,14 @@ function ResultOnChart() {
 }
 
 export default ResultOnChart;
+
+function resultTooltip() {
+    const {point, y, percentage, color} = this;
+    const percentageValue = roundNum(percentage);
+
+    return `<div class="tooltip-wrapper">
+                <span class="title" style="color: ${color}">${point.name}</span>
+                <span class="value-title">Number of tasks:</span><span class="value">${y} - ${percentageValue}% </span>
+            </div> `;
+
+}

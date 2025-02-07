@@ -7,3 +7,31 @@ body {
     background-color: darkgreen;
     font-family: monospace, sans-serif;
 }
+
+/* Highcharts */
+.tooltip-wrapper {
+    padding: 10px;
+    border: 1px solid var(--black);
+    background-color: rgba(255, 255, 255, 0.95);
+    color: var(--black);
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 7px;
+}
+
+.tooltip-wrapper .title {
+    font-size: 16px;
+    font-weight: 700;
+    grid-column: 1 / -1;
+}
+
+.tooltip-wrapper .value-title {
+    font-size: 14px;
+    font-weight: 400;
+}
+
+.tooltip-wrapper .value {
+    font-size: 16px;
+    font-weight: 700;
+    text-align: end;
+}
