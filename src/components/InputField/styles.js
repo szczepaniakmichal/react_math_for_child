@@ -63,20 +63,22 @@ export const LabelTask = styled.span`
 `;
 
 export const inputStyles = (options = {}) => {
-    const { isCorrect, isCheckTasksActive, ref } = options;
+    const { isCorrect, isCheckTasksActive, ref, value } = options;
 
     if ( !ref.current ) return {};
 
-    if ( !isCheckTasksActive ) {
+    if ( !isCheckTasksActive && value ) {
         return {
             borderColor: ref.current.style.borderColor,
             opacity: 1,
+            marginLeft: 'auto',
         }
     }
 
     return {
         borderColor: `${isCorrect ? green : red}`,
         opacity: `${opacity}`,
+        marginLeft: 'auto',
     }
 };
 

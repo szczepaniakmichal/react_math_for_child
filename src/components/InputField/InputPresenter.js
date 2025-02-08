@@ -12,6 +12,7 @@ function InputPresenter({
                             placeholder,
                             taskToDo,
                             isCorrect,
+                            value,
                             ...props
                         }) {
     const ref = useRef(null);
@@ -21,11 +22,11 @@ function InputPresenter({
     return (
         <Input
             {...props}
-            {...{ onChange, ref }}
+            {...{ onChange, ref, value }}
             type="number"
             placeholder={placeholder || taskToDo}
             disabled={isCheckTasksActive}
-            style={inputStyles({ isCorrect, isCheckTasksActive, ref })}
+            style={inputStyles({ isCorrect, isCheckTasksActive, ref, value })}
         />
     )
 }
