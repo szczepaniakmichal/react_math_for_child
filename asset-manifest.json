@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/react_math_for_child/static/css/main.6c5c844d.css",
-    "main.js": "/react_math_for_child/static/js/main.852b744c.js",
+    "main.css": "/react_math_for_child/static/css/main.09fd72e0.css",
+    "main.js": "/react_math_for_child/static/js/main.77539c34.js",
     "static/js/453.2ded3b2c.chunk.js": "/react_math_for_child/static/js/453.2ded3b2c.chunk.js",
     "index.html": "/react_math_for_child/index.html",
-    "main.6c5c844d.css.map": "/react_math_for_child/static/css/main.6c5c844d.css.map",
-    "main.852b744c.js.map": "/react_math_for_child/static/js/main.852b744c.js.map",
+    "main.09fd72e0.css.map": "/react_math_for_child/static/css/main.09fd72e0.css.map",
+    "main.77539c34.js.map": "/react_math_for_child/static/js/main.77539c34.js.map",
     "453.2ded3b2c.chunk.js.map": "/react_math_for_child/static/js/453.2ded3b2c.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.6c5c844d.css",
-    "static/js/main.852b744c.js"
+    "static/css/main.09fd72e0.css",
+    "static/js/main.77539c34.js"
   ]
 }
