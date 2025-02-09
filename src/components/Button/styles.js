@@ -1,6 +1,7 @@
-import styled, { css, keyframes } from "styled-components";
+import styled, { css } from "styled-components";
 import { theme } from "colors";
-import { border, borderRadius } from "variables";
+import { border, borderRadius, fontSize } from "variables";
+import { pulseLightAnimation, pulseDark } from "reusableStyles";
 
 const { darkerGreen, gray } = theme;
 
@@ -12,49 +13,11 @@ export const GroupButtonWrapper = styled.div`
     background-color: ${darkerGreen};
 `;
 
-export const pulseLight = keyframes`
-    0% {
-        background-image: linear-gradient(to right,
-        transparent 33%,
-        rgba(255, 255, 255, 0.4) 50%,
-        transparent 66%);
-        background-size: 300% 100%;
-
-    }
-    100% {
-        background-position: right;
-        background-image: linear-gradient(to right,
-        transparent 33%,
-        rgba(255, 255, 255, 0.4) 50%,
-        transparent 66%);
-        background-size: 300% 100%;
-    }
-`;
-
-export const pulseDark = keyframes`
-    0% {
-        background-image: linear-gradient(to right,
-        transparent 33%,
-        rgba(0, 0, 0, 0.7) 50%,
-        transparent 66%);
-        background-size: 300% 100%;
-
-    }
-    100% {
-        background-position: right;
-        background-image: linear-gradient(to right,
-        transparent 33%,
-        rgba(0, 0, 0, 0.7) 50%,
-        transparent 66%);
-        background-size: 300% 100%;
-    }
-`;
-
 export const GlassButtonWrapper = styled.button`
     color: ${(props) => props.color ? props.color : '#fff'};
     background-color: transparent;
     font-weight: 400;
-    font-size: .7rem;
+    font-size: ${fontSize};
     line-height: 1.8rem;
     padding: .3rem 1.9rem;
     flex: 1 1 auto;
@@ -68,10 +31,7 @@ export const GlassButtonWrapper = styled.button`
     transition: 0.3s;
 
     &:hover {
-        animation-name: ${pulseLight};
-        animation-duration: 3s;
-        animation-iteration-count: infinite;
-        background-color: rgba(255, 255, 255, 0.2);
+        ${pulseLightAnimation};
         text-decoration: none;
     }
 
@@ -90,34 +50,6 @@ export const GlassButtonWrapper = styled.button`
         return null;
     }}
 `;
-
-// .white {
-//     border: 2px solid #fff;
-//     border-radius: 3px;
-//     font-size: 1.8rem;
-//     text-transform: uppercase;
-//     color: #fff;
-//     line-height: 3.8rem;
-//     width: 100%;
-//     max-width: 320px;
-//     -webkit-transition: 0.3s;
-//     transition: 0.3s;
-// }
-
-// .white:hover {
-//     background-color: rgba(255, 255, 255, 0.2);
-// }
-
-// .pulse-light {
-//     background-image: linear-gradient(
-//         to right,
-//         transparent 33%,
-//         rgba(255,255,255,0.4) 50%,
-//         transparent 66%
-// );
-//     background-size:300% 100%;
-//     animation: shine 5s infinite;
-// }
 
 GroupButtonWrapper.displayName = "GroupButtonWrapper";
 GlassButtonWrapper.displayName = "GlassButtonWrapper";

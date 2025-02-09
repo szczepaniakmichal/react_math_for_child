@@ -1,6 +1,12 @@
 import styled from "styled-components";
 import { theme } from "colors";
-import { boxShadow } from "variables";
+import {
+    border,
+    borderRadius,
+    borderWidth,
+    boxShadow,
+    transition
+} from "variables";
 
 const { darkerGreen, white } = theme;
 
@@ -21,8 +27,20 @@ export const SectionWrapper = styled.div`
     flex-direction: column;
     margin: 10px 0;
     color: ${white};
-    gap: 15px;
+    gap: 10px;
 `;
 
+export const BorderWrapper = styled.div`
+    border: ${borderWidth} solid transparent;
+    border-radius: ${borderRadius};
+    transition: ${transition};
+
+    &:hover {
+        border: ${border};
+    }
+`;
+
+AppWrapper.displayName = "AppWrapper";
 BottomSection.displayName = "BottomSection";
 SectionWrapper.displayName = "SectionWrapper";
+BorderWrapper.displayName = "BorderWrapper";

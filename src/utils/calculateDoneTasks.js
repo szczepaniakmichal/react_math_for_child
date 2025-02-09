@@ -1,3 +1,5 @@
+import { roundNum } from "utils/roundNum";
+
 const calculateDoneTasks = (tasksArray) => {
     const tasksLength = tasksArray.length;
     const done = tasksArray.filter(el => el.done).length;
@@ -5,16 +7,14 @@ const calculateDoneTasks = (tasksArray) => {
     const isAllTasksDone = done === tasksLength;
 
     return {
-        done1: `${(done / tasksLength * 100).toFixed(2)}% (${done}/${tasksLength})`,
-        correctDone1: `${(correctAnswer / tasksLength * 100).toFixed(2)}% (${correctAnswer}/${tasksLength})`,
         done: {
-            inPercentage: `${(done / tasksLength * 100).toFixed(2)}%`,
+            inPercentage: `${roundNum(done / tasksLength)}%`,
             inDecimals: `${done}/${tasksLength}`,
             done,
             isAllTasksDone,
         },
         correctDone: {
-            inPercentage: `${(correctAnswer / tasksLength * 100).toFixed(2)}%`,
+            inPercentage: `${roundNum(correctAnswer / tasksLength)}%`,
             inDecimals: `${correctAnswer}/${tasksLength}`,
             correctAnswer,
         },

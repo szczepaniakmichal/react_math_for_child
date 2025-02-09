@@ -1,38 +1,15 @@
 import styled from 'styled-components';
-import { darkerGreen, green, white } from 'colors';
-import {
-    border,
-    borderRadius,
-    borderWidth,
-    opacity,
-    transition
-} from "variables";
-import { pulseLight } from "components/Button/styles";
-
-export const WrapperInputMathOperators = styled.div`
-    border: ${borderWidth} solid transparent;
-    border-radius: ${borderRadius};
-    transition: ${transition};
-
-    &:hover {
-        border: ${border};
-    }
-`;
+import { darkerGreen, green } from 'colors';
+import { fontSize, opacity } from "variables";
+import { displayItemsSpaceBetween, pulseLightAnimation } from "reusableStyles";
 
 export const Label = styled.label`
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 5px;
-    color: ${white};
-
-    &:hover {
-        animation-name: ${pulseLight};
-        animation-duration: 3s;
-        animation-iteration-count: infinite;
-        background-color: rgba(255, 255, 255, 0.2);
-    }
+     ${displayItemsSpaceBetween};
+    font-size: ${fontSize};
+    
+     &:hover {
+         ${pulseLightAnimation}
+     }
 `;
 
 export const Input = styled.input`
@@ -70,6 +47,5 @@ export const disabledStyles = (options = {}) => {
     }
 }
 
-WrapperInputMathOperators.displayName = "WrapperInputMathOperators";
 Label.displayName = "Label";
 Input.displayName = "Input";

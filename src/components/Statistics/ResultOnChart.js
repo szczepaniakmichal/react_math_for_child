@@ -27,6 +27,9 @@ function ResultOnChart() {
         chart: {
             type: 'pie',
             backgroundColor: 'transparent',
+            style: {
+                fontFamily: "'Arial', sans-serif",
+            }
         },
         credits: {
             enabled: false

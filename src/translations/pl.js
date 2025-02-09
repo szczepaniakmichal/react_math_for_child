@@ -20,6 +20,9 @@ const pl = {
     leftToDo: "Pozostałe do zrobienia",
     correctLeftToDo: "Do poprawy",
     yourTime: "Twój czas",
+    userProgress: 'Postęp użytkownika',
+    lastVisit: 'Ostatnia wizyta',
+    welcomeFirstTime: 'Witaj, po raz pierwszy!',
 }
 
 export default pl;

@@ -3,9 +3,8 @@ import { useSelector } from "react-redux";
 import isEqual from "lodash.isequal";
 import { useTranslation } from "react-i18next";
 import { SubHeader, ResultOnChart } from "components";
-import { msToTime } from "utils";
+import { msToTime, setSessionKey, getDate } from "utils";
 import { InformationAboutResultWrapper } from "./style";
-import updateLastWorkSession from "utils/updateLastWorkSesion";
 
 function Statistics() {
     const { t } = useTranslation();
@@ -23,7 +22,7 @@ function Statistics() {
     } = statistics;
 
     useEffect(() => {
-        done.isAllTasksDone && updateLastWorkSession()
+        done.isAllTasksDone && setSessionKey('lastWorkDate', getDate());
     }, [done.isAllTasksDone]);
 
     if ( !isCheckTasksActive ) return null;

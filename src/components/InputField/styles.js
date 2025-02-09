@@ -1,7 +1,13 @@
 import styled from "styled-components";
-import { border, borderRadius, opacity, paddingTopBottom } from "variables";
+import {
+    border,
+    borderRadius,
+    fontSize,
+    opacity,
+    paddingTopBottom
+} from "variables";
 import { theme } from "colors";
-import { pulseLight } from "components/Button/styles";
+import { pulseLightAnimation } from "reusableStyles";
 
 const { darkGreen, green, red, white } = theme;
 
@@ -17,6 +23,7 @@ export const Label = styled.label`
     display: flex;
     flex-direction: ${({ horizontalLabel }) => horizontalLabel ? 'row' : 'column'};
     color: inherit;
+    font-size: ${fontSize};
 `;
 
 export const LabelField = styled(Label)`
@@ -41,10 +48,7 @@ export const Input = styled.input`
     flex: 0 1 auto;
 
     &:focus {
-        animation-name: ${pulseLight};
-        animation-duration: 3s;
-        animation-iteration-count: infinite;
-        background-color: rgba(255, 255, 255, 0.2);
+        ${pulseLightAnimation};
     }
 
     &::placeholder {

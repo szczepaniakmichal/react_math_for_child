@@ -20,6 +20,9 @@ const en = {
     leftToDo: "Left to do",
     correctLeftToDo: "Correct left to do",
     yourTime: "Your time",
+    userProgress: 'User progress',
+    lastVisit: 'Last visit',
+    welcomeFirstTime: 'Welcome, first time!',
 }
 
 export default en;
