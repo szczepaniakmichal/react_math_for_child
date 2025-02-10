@@ -1,4 +1,5 @@
 function getDaysBetweenDates(dateFrom: string, dateTo?: string): number {
+    if (!dateFrom) return 0;
     const previousDate = parseDate(dateFrom);
     const newDate = dateTo ? parseDate(dateTo) : new Date();
     const diffTime = Math.abs(newDate.getTime() - previousDate.getTime());
