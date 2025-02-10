@@ -1,8 +1,8 @@
 import React from 'react';
-import InputField from "components/InputField/InputField";
 import { useDispatch, useSelector } from "react-redux";
 import { useTranslation } from "react-i18next";
 import isEqual from "lodash.isequal";
+import { InputField } from "components";
 import { updateSettings } from "sections/settings/settingsSlice";
 import { getCorrectInputsValue } from "utils/getCorrectInputsValue";
 

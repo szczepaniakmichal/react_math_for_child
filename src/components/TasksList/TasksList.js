@@ -2,7 +2,7 @@ import React from 'react';
 import { useSelector } from "react-redux";
 import isEqual from "lodash.isequal";
 import isEmpty from "lodash.isempty";
-import ListItem from 'components/ListItem/ListItem';
+import { ListItem } from 'components';
 import { TaskListWrapper } from "./styles";
 import { SectionWrapper } from "styles";
 

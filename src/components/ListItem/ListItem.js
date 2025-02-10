@@ -1,6 +1,6 @@
 import React, { memo } from 'react';
 import { useDispatch } from "react-redux";
-import InputFieldResult from "components/InputField/InputFieldResult";
+import { InputFieldResult } from "components";
 import { CounterItem, LiWrapper } from "./styles";
 import { updateUserAnswer } from 'components/TasksList/taskListSlice'
 

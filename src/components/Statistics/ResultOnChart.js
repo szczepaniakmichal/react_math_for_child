@@ -1,11 +1,11 @@
 import React from 'react';
-import { Chart } from "components";
 import { useSelector } from "react-redux";
 import isEqual from "lodash.isequal";
 import { fontSize } from "variables";
 import { theme } from "colors";
 import { roundNum } from "utils/roundNum";
 import { categories } from "components/Statistics/constants";
+import { Chart } from "components";
 
 const { green, orange, red } = theme;
 

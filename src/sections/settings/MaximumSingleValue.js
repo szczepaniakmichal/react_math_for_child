@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useTranslation } from "react-i18next";
 import isEqual from "lodash.isequal";
 import { updateSettings } from "sections/settings/settingsSlice";
-import InputField from "components/InputField/InputField";
+import { InputField } from "components";
 import { getCorrectInputsValue } from "utils/getCorrectInputsValue";
 
 function MaximumSingleValue() {

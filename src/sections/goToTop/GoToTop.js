@@ -1,6 +1,6 @@
 import React from 'react';
-import { Button } from "components";
 import { useTranslation } from "react-i18next";
+import { Button } from "components";
 
 function GoToTop() {
     const { t } = useTranslation();

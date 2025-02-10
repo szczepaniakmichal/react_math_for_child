@@ -4,7 +4,7 @@ body {
 }
 
 body {
-    background-color: darkgreen;
+    background-color: var(--darkGreen);
     font-family: monospace, sans-serif;
 }
 

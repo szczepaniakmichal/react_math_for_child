@@ -5,7 +5,7 @@ import {
     LabelTask,
     WrapperInputField
 } from './styles';
-import InputPresenter from "components/InputField/InputPresenter";
+import { InputPresenter } from "components";
 
 function InputFieldResult({ taskToDo, ...props }) {
     const { t } = useTranslation();

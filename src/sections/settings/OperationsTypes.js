@@ -3,8 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import isEqual from "lodash.isequal";
 import { useTranslation } from "react-i18next";
 import { SectionWrapper } from "styles";
-import { Header } from "components";
-import InputMathOperators from "components/InputMathOperators/InputMathOperators";
+import { Header, InputMathOperators } from "components";
 import updateSettingsHandler from "utils/updateSettingsHandler";
 
 function OperationsTypes() {
