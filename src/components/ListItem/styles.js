@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { theme } from "colors";
-import { borderRadius, boxShadow, opacity } from "variables";
+import { borderRadius, boxShadow, normalGap, opacity } from "variables";
 import { WrapperInputField } from 'components/InputField/styles.js'
 
 const { white, green } = theme;
@@ -8,7 +8,7 @@ const { white, green } = theme;
 export const LiWrapper = styled.li`
     display: flex;
     flex-direction: row;
-    gap: 10px;
+    gap: ${normalGap};
     align-items: center;
     flex: 1 1 auto;
     padding: 5px;

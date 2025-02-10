@@ -4,6 +4,7 @@ const { white, yellow } = theme;
 
 export const paddingButton = '10px 30px';
 export const paddingTopBottom = '5px';
+export const normalGap = '10px';
 
 export const borderWidth = '2px';
 export const borderRadius = '4px';

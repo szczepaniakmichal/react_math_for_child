@@ -5,6 +5,7 @@ import {
     borderRadius,
     borderWidth,
     boxShadow,
+    normalGap,
     transition
 } from "variables";
 
@@ -27,7 +28,10 @@ export const SectionWrapper = styled.div`
     flex-direction: column;
     margin: 10px 0;
     color: ${white};
-    gap: 10px;
+    gap: ${normalGap};
+    padding: 10px;
+    border-radius: ${borderRadius};
+    box-shadow: ${boxShadow};
 `;
 
 export const BorderWrapper = styled.div`

@@ -23,6 +23,9 @@ const pl = {
     userProgress: 'Postęp użytkownika',
     lastVisit: 'Ostatnia wizyta',
     welcomeFirstTime: 'Witaj, po raz pierwszy!',
+    daysAgo_zero: 'dzisiaj',
+    daysAgo_one: '{{datesDistance}} dzień temu',
+    daysAgo_other: '{{datesDistance}} dni temu',
 }
 
 export default pl;

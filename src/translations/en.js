@@ -23,6 +23,9 @@ const en = {
     userProgress: 'User progress',
     lastVisit: 'Last visit',
     welcomeFirstTime: 'Welcome, first time!',
+    daysAgo_zero: 'today',
+    daysAgo_one: '{{datesDistance}} day ago',
+    daysAgo_other: '{{datesDistance}} days ago',
 }
 
 export default en;

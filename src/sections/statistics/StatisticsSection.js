@@ -31,10 +31,7 @@ function ButtonPresenter() {
     const dispatch = useDispatch();
     const { t } = useTranslation();
 
-    const { isCheckTasksActive, tasks } = useSelector(({
-                                                           statistics,
-                                                           taskList
-                                                       }) => ({
+    const { isCheckTasksActive, tasks } = useSelector(({ statistics, taskList }) => ({
         tasks: taskList.tasks,
         isCheckTasksActive: statistics.isCheckTasksActive,
     }), isEqual);

@@ -1,6 +1,6 @@
 import styled, { css } from "styled-components";
 import { theme } from "colors";
-import { border, borderRadius, fontSize } from "variables";
+import { border, borderRadius, fontSize, normalGap } from "variables";
 import { pulseLightAnimation, pulseDark } from "reusableStyles";
 
 const { darkerGreen, gray } = theme;
@@ -9,7 +9,7 @@ export const GroupButtonWrapper = styled.div`
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
-    gap: 10px;
+    gap: ${normalGap};
     background-color: ${darkerGreen};
 `;
 
