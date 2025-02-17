@@ -2,8 +2,8 @@ import React from 'react';
 import { Icon } from "components";
 import iconMoodConfig from "configs/iconMoodConfig";
 
-function IconPresenter({lastVisitDate, datesDistance}) {
-    if (!lastVisitDate) return lastVisitDate;
+function IconPresenter({lastWorkDate, datesDistance}) {
+    if (!lastWorkDate) return lastWorkDate;
 
     const { icon, color } = iconMoodConfig(datesDistance);
 

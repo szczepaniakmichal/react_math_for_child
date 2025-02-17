@@ -1,12 +1,14 @@
 import React, { useEffect } from 'react';
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import isEqual from "lodash.isequal";
 import { useTranslation } from "react-i18next";
 import { SubHeader, ResultOnChart } from "components";
-import { msToTime, setSessionKey, getDate } from "utils";
+import {  msToTime, setLocalKey, getDate } from "utils";
+import { updateLastVisit } from "sections/user/progress/progressSlice";
 import { InformationAboutResultWrapper } from "./style";
 
 function Statistics() {
+    const dispatch = useDispatch();
     const { t } = useTranslation();
 
     const statistics = useSelector(({ statistics }) => statistics, isEqual);
@@ -22,7 +24,11 @@ function Statistics() {
     } = statistics;
 
     useEffect(() => {
-        done.isAllTasksDone && setSessionKey('lastWorkDate', getDate());
+        if (done.isAllTasksDone) {
+            const actualDate = getDate();
+            setLocalKey('lastWorkDate', actualDate)
+            dispatch(updateLastVisit(actualDate));
+        }
     }, [done.isAllTasksDone]);
 
     if ( !isCheckTasksActive ) return null;
