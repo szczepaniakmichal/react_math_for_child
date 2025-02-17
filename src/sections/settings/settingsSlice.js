@@ -1,10 +1,11 @@
 import { createSlice } from '@reduxjs/toolkit';
 import { getDaysBetweenDates, getLocalKey } from "utils";
+import { HOW_MANY_TASKS } from "constants/constants";
 
 export const settingsSlice = createSlice({
     name: 'settings',
     initialState: {
-        howManyTasks:  getDaysBetweenDates(getLocalKey('lastWorkDate')) * 20,
+        howManyTasks:  getDaysBetweenDates(getLocalKey('lastWorkDate')) * HOW_MANY_TASKS || HOW_MANY_TASKS,
         howManyValues: 2,
         maximumSingleValue: 30,
         typeOfMathOperators: [],

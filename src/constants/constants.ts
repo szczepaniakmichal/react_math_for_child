@@ -1,0 +1,1 @@
+export const HOW_MANY_TASKS: number = 20;
